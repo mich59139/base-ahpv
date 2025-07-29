@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Base AHPV – Ajout local</title>
+  <title>Base AHPV – Formulaire enrichi</title>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <link rel="stylesheet"
         href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
@@ -29,7 +29,7 @@
       display: block;
       margin-top: 1em;
     }
-    .formulaire input, .formulaire textarea {
+    .formulaire input, .formulaire textarea, .formulaire select {
       width: 100%;
       padding: 5px;
     }
@@ -40,17 +40,371 @@
   </style>
 </head>
 <body>
-  <h1>Base AHPV – Ajout local</h1>
+  <h1>Base AHPV – Ajout avec suggestions</h1>
 
   <div class="formulaire">
     <h2>Ajouter une nouvelle entrée</h2>
     <label>Mémoire <input type="text" id="mem" /></label>
     <label>Titre <textarea id="titre"></textarea></label>
     <label>Page(s) <input type="text" id="page" /></label>
-    <label>Auteur(s) <input type="text" id="auteur" /></label>
-    <label>Ville(s) <input type="text" id="ville" /></label>
-    <label>Thème(s) <input type="text" id="theme" /></label>
-    <label>Époque <input type="text" id="epoque" /></label>
+
+    <label>Auteur(s)
+      <select id="auteur_select"><option value="">— Sélectionner —</option><option value="-">-</option>
+<option value="? Chamoux">? Chamoux</option>
+<option value="? Murienne">? Murienne</option>
+<option value="Adrienne Celso">Adrienne Celso</option>
+<option value="Aimé Mollard">Aimé Mollard</option>
+<option value="Alain Chevalier">Alain Chevalier</option>
+<option value="Alain Emery">Alain Emery</option>
+<option value="Alain Floxoli">Alain Floxoli</option>
+<option value="Alain Romestant">Alain Romestant</option>
+<option value="Albert Gaillard">Albert Gaillard</option>
+<option value="Albert Ravanat">Albert Ravanat</option>
+<option value="Albert Samuell">Albert Samuell</option>
+<option value="Aliette Viard">Aliette Viard</option>
+<option value="Aline Pignat">Aline Pignat</option>
+<option value="André Clergeot">André Clergeot</option>
+<option value="André Falco">André Falco</option>
+<option value="André Finet">André Finet</option>
+<option value="André Frances">André Frances</option>
+<option value="André Glaudas">André Glaudas</option>
+<option value="André Rossi">André Rossi</option>
+<option value="Andrée Barras-Tixier">Andrée Barras-Tixier</option>
+<option value="Anne Cayol Gerin">Anne Cayol Gerin</option>
+<option value="Anne-Marie Causse">Anne-Marie Causse</option>
+<option value="Annie Achard">Annie Achard</option>
+<option value="Apolinne Troyes">Apolinne Troyes</option>
+<option value="Axelle Burnet">Axelle Burnet</option>
+<option value="B ? Bronner">B ? Bronner</option>
+<option value="Basile Bonnardon">Basile Bonnardon</option>
+<option value="Bernadette Belmont">Bernadette Belmont</option>
+<option value="Bernard De Saint-Léger">Bernard De Saint-Léger</option>
+<option value="Bernard François">Bernard François</option>
+<option value="Bernard Mingone">Bernard Mingone</option>
+<option value="Bernard Tixier">Bernard Tixier</option>
+<option value="Bernard Ycart">Bernard Ycart</option>
+<option value="Bruno Vallois">Bruno Vallois</option>
+<option value="CNR">CNR</option>
+<option value="Carlos Vasquez-Marquénez">Carlos Vasquez-Marquénez</option>
+<option value="Carmen Saunier">Carmen Saunier</option>
+<option value="Caroline Curnier">Caroline Curnier</option>
+<option value="Caroline Guérin">Caroline Guérin</option>
+<option value="Catherine Moulin">Catherine Moulin</option>
+<option value="Charles Paillet">Charles Paillet</option>
+<option value="Claire Marconnet">Claire Marconnet</option>
+<option value="Claude Bronner">Claude Bronner</option>
+<option value="Claude Ferradou">Claude Ferradou</option>
+<option value="Claude Muller">Claude Muller</option>
+<option value="Claudie Picot">Claudie Picot</option>
+<option value="Colette Expilly">Colette Expilly</option>
+<option value="Collectif - les Amis de l'Histoire">Collectif - les Amis de l'Histoire</option>
+<option value="Cécile Mauvy (Vivarat)">Cécile Mauvy (Vivarat)</option>
+<option value="Cécile Riviere">Cécile Riviere</option>
+<option value="Céline Laforest">Céline Laforest</option>
+<option value="Daniel Blanc-Gonnet">Daniel Blanc-Gonnet</option>
+<option value="Daniel Etienne">Daniel Etienne</option>
+<option value="Daniel Templier">Daniel Templier</option>
+<option value="Danielle Amar">Danielle Amar</option>
+<option value="Danièle Prud'homme">Danièle Prud'homme</option>
+<option value="Denis Bellon">Denis Bellon</option>
+<option value="Denis Chambaz">Denis Chambaz</option>
+<option value="Denise -">Denise -</option>
+<option value="Denise Rostaing">Denise Rostaing</option>
+<option value="Dominique Rossi">Dominique Rossi</option>
+<option value="Ecole Paul Langevin">Ecole Paul Langevin</option>
+<option value="Edith Falco">Edith Falco</option>
+<option value="Eric Freysselinard">Eric Freysselinard</option>
+<option value="Eric Plassot">Eric Plassot</option>
+<option value="Evelyne Dress">Evelyne Dress</option>
+<option value="Fernand Boeuf">Fernand Boeuf</option>
+<option value="Gabriel Fiat">Gabriel Fiat</option>
+<option value="Gabriel Perrin">Gabriel Perrin</option>
+<option value="Gaby Vair">Gaby Vair</option>
+<option value="Geneviève Dumolard">Geneviève Dumolard</option>
+<option value="Georges Mancat">Georges Mancat</option>
+<option value="Georges Martin">Georges Martin</option>
+<option value="Georgette Balor">Georgette Balor</option>
+<option value="Germaine Billon">Germaine Billon</option>
+<option value="Gilbert Gacon">Gilbert Gacon</option>
+<option value="Gilbert Jacquet">Gilbert Jacquet</option>
+<option value="Gilbert ORCEL">Gilbert ORCEL</option>
+<option value="Gilbert Vanel">Gilbert Vanel</option>
+<option value="Gilles Rey">Gilles Rey</option>
+<option value="Gilles Strappazzon">Gilles Strappazzon</option>
+<option value="Guy Le Comte">Guy Le Comte</option>
+<option value="Gwénaëlle Leyssieux">Gwénaëlle Leyssieux</option>
+<option value="Gérard Berthon">Gérard Berthon</option>
+<option value="Gérard Mingat">Gérard Mingat</option>
+<option value="Gérard Odore">Gérard Odore</option>
+<option value="Henri Girardy">Henri Girardy</option>
+<option value="Henri Jobert">Henri Jobert</option>
+<option value="Henri Ondel">Henri Ondel</option>
+<option value="Henri Rey">Henri Rey</option>
+<option value="Interview">Interview</option>
+<option value="J. Vaujany">J. Vaujany</option>
+<option value="Jacqueline Szister-Bismuth">Jacqueline Szister-Bismuth</option>
+<option value="Jacques Boffo">Jacques Boffo</option>
+<option value="Jacques Gasqui">Jacques Gasqui</option>
+<option value="Jacques Jérome">Jacques Jérome</option>
+<option value="Jacques Nivon">Jacques Nivon</option>
+<option value="Jean Caelen">Jean Caelen</option>
+<option value="Jean Danz">Jean Danz</option>
+<option value="Jean Fagno">Jean Fagno</option>
+<option value="Jean Gonnet">Jean Gonnet</option>
+<option value="Jean Guitton">Jean Guitton</option>
+<option value="Jean Huyghe">Jean Huyghe</option>
+<option value="Jean Metral">Jean Metral</option>
+<option value="Jean Millet">Jean Millet</option>
+<option value="Jean Perrier">Jean Perrier</option>
+<option value="Jean Perrin">Jean Perrin</option>
+<option value="Jean Vallon">Jean Vallon</option>
+<option value="Jean-Claude Michel">Jean-Claude Michel</option>
+<option value="Jean-Claude Ogier">Jean-Claude Ogier</option>
+<option value="Jean-Claude Vayr">Jean-Claude Vayr</option>
+<option value="Jean-Louis Philip">Jean-Louis Philip</option>
+<option value="Jean-Louis Rochaix">Jean-Louis Rochaix</option>
+<option value="Jeanette Cheveu D'or">Jeanette Cheveu D'or</option>
+<option value="Jeanne De Gaudenzi">Jeanne De Gaudenzi</option>
+<option value="Jeannette Della-Vedova">Jeannette Della-Vedova</option>
+<option value="Jocelyne BELLON">Jocelyne BELLON</option>
+<option value="Josiane Morel">Josiane Morel</option>
+<option value="José Duarte">José Duarte</option>
+<option value="Laurent Vivarat">Laurent Vivarat</option>
+<option value="Le Kiosque">Le Kiosque</option>
+<option value="Louis Beyler">Louis Beyler</option>
+<option value="Louis Bourdat">Louis Bourdat</option>
+<option value="Louis Girard-Reydet">Louis Girard-Reydet</option>
+<option value="Louis Sarte">Louis Sarte</option>
+<option value="Lucie Baud">Lucie Baud</option>
+<option value="Lucienne Cret">Lucienne Cret</option>
+<option value="Magali Roux">Magali Roux</option>
+<option value="Marc Masimbert">Marc Masimbert</option>
+<option value="Marc Robert">Marc Robert</option>
+<option value="Marguerite Vianney-Liaud">Marguerite Vianney-Liaud</option>
+<option value="Marie Del Net">Marie Del Net</option>
+<option value="Marie-Christine Bailly-Maitre -">Marie-Christine Bailly-Maitre -</option>
+<option value="Marie-Claude Argoud">Marie-Claude Argoud</option>
+<option value="Marie-Thérèse Emery">Marie-Thérèse Emery</option>
+<option value="Michaël Galle">Michaël Galle</option>
+<option value="Michel Etievent">Michel Etievent</option>
+<option value="Michel Merlin">Michel Merlin</option>
+<option value="Michel Vial">Michel Vial</option>
+<option value="Micheline Hauss">Micheline Hauss</option>
+<option value="Michelle Tournoud">Michelle Tournoud</option>
+<option value="Michèle Bruyat">Michèle Bruyat</option>
+<option value="Michèle Delahaye-Ferrafiat">Michèle Delahaye-Ferrafiat</option>
+<option value="Michèle Ferrafiat Delahaye">Michèle Ferrafiat Delahaye</option>
+<option value="Michèle Perrot">Michèle Perrot</option>
+<option value="Monique Bonvallet">Monique Bonvallet</option>
+<option value="Monique Canie">Monique Canie</option>
+<option value="Nathalie POIRET">Nathalie POIRET</option>
+<option value="Nathalie Poiret">Nathalie Poiret</option>
+<option value="Olivier Joseph">Olivier Joseph</option>
+<option value="Pascal Reinhard">Pascal Reinhard</option>
+<option value="Pascale Beyls">Pascale Beyls</option>
+<option value="Patrice Dore">Patrice Dore</option>
+<option value="Patrick Laudet">Patrick Laudet</option>
+<option value="Paul Bernard">Paul Bernard</option>
+<option value="Paul Berret">Paul Berret</option>
+<option value="Paul Billon-grand">Paul Billon-grand</option>
+<option value="Paul Blanc">Paul Blanc</option>
+<option value="Paul Courteaud">Paul Courteaud</option>
+<option value="Paul Fournier">Paul Fournier</option>
+<option value="Paul Girard">Paul Girard</option>
+<option value="Paul Kiener">Paul Kiener</option>
+<option value="Paul Schwoerer">Paul Schwoerer</option>
+<option value="Paul Wohlschlegel">Paul Wohlschlegel</option>
+<option value="Peter Fletcher">Peter Fletcher</option>
+<option value="Philippe Vatin-Perignon">Philippe Vatin-Perignon</option>
+<option value="Pierre Bourdat">Pierre Bourdat</option>
+<option value="Pierre Coing Boyat">Pierre Coing Boyat</option>
+<option value="Pierre Draï">Pierre Draï</option>
+<option value="Pierre Fiat">Pierre Fiat</option>
+<option value="Pierre Lafaverges">Pierre Lafaverges</option>
+<option value="Pierre Martin">Pierre Martin</option>
+<option value="Pierre Melquiond">Pierre Melquiond</option>
+<option value="Pierre Raymond Bonnardon">Pierre Raymond Bonnardon</option>
+<option value="Pierre Trouillon">Pierre Trouillon</option>
+<option value="Pierrette Tournier">Pierrette Tournier</option>
+<option value="Quentin Jagadzinskil">Quentin Jagadzinskil</option>
+<option value="Raoul Naz">Raoul Naz</option>
+<option value="Raymond Devey">Raymond Devey</option>
+<option value="Raymond Joffre">Raymond Joffre</option>
+<option value="Raymond Platel">Raymond Platel</option>
+<option value="René Faure">René Faure</option>
+<option value="René Simiand">René Simiand</option>
+<option value="René Villiot">René Villiot</option>
+<option value="Renée Gachet Berthon">Renée Gachet Berthon</option>
+<option value="Renée Guitton">Renée Guitton</option>
+<option value="Renée Rodolphe Vigroux">Renée Rodolphe Vigroux</option>
+<option value="Renée Vigroux">Renée Vigroux</option>
+<option value="Richard Dupuy">Richard Dupuy</option>
+<option value="Robert Aillaud">Robert Aillaud</option>
+<option value="Robert Bornecque">Robert Bornecque</option>
+<option value="Robert Chagny">Robert Chagny</option>
+<option value="Robert Guillaud">Robert Guillaud</option>
+<option value="Roger Canac">Roger Canac</option>
+<option value="Roger Finet">Roger Finet</option>
+<option value="Roger Morard">Roger Morard</option>
+<option value="Roland Mastrorillo">Roland Mastrorillo</option>
+<option value="Rémi Riolan">Rémi Riolan</option>
+<option value="Sergent A.B.C.">Sergent A.B.C.</option>
+<option value="Stéphane Callot">Stéphane Callot</option>
+<option value="Suzanne Ehrhard">Suzanne Ehrhard</option>
+<option value="Sylvie Vincent">Sylvie Vincent</option>
+<option value="Thierry Grand">Thierry Grand</option>
+<option value="Transcription">Transcription</option>
+<option value="Valérie Robert-Michon">Valérie Robert-Michon</option>
+<option value="Yves Armand">Yves Armand</option>
+<option value="Yves Marcel">Yves Marcel</option>
+<option value="Yves Vial">Yves Vial</option>
+<option value="Yvette Bonnaire">Yvette Bonnaire</option>
+<option value="Yvette Emieux">Yvette Emieux</option>
+<option value="Yvette Virot">Yvette Virot</option>
+<option value="gérard Guétat">gérard Guétat</option></select>
+      <input type="text" id="auteur" placeholder="ou saisissez un autre nom" />
+    </label>
+
+    <label>Ville(s)
+      <select id="ville_select"><option value="">— Sélectionner —</option><option value="-">-</option>
+<option value="Allemond (38114)">Allemond (38114)</option>
+<option value="Belledonne">Belledonne</option>
+<option value="Bessey d'Oz">Bessey d'Oz</option>
+<option value="Bourg d'Oisans">Bourg d'Oisans</option>
+<option value="Brandes en Oisans">Brandes en Oisans</option>
+<option value="Bresson">Bresson</option>
+<option value="Brié">Brié</option>
+<option value="Brié et Angonnes">Brié et Angonnes</option>
+<option value="Canton (38220)">Canton (38220)</option>
+<option value="Champ sur Drac">Champ sur Drac</option>
+<option value="Champagnier">Champagnier</option>
+<option value="Chamrousse">Chamrousse</option>
+<option value="Cholonge">Cholonge</option>
+<option value="Claix">Claix</option>
+<option value="Crots">Crots</option>
+<option value="Eybens">Eybens</option>
+<option value="Fontaine">Fontaine</option>
+<option value="France">France</option>
+<option value="Grenoble">Grenoble</option>
+<option value="Haute-Jarrie">Haute-Jarrie</option>
+<option value="Herbeys">Herbeys</option>
+<option value="Isère">Isère</option>
+<option value="Jarrie">Jarrie</option>
+<option value="L'Alpe d'Huez">L'Alpe d'Huez</option>
+<option value="L'Oisans">L'Oisans</option>
+<option value="La Morte">La Morte</option>
+<option value="La Paute">La Paute</option>
+<option value="Laffrey">Laffrey</option>
+<option value="Livet et Gavet">Livet et Gavet</option>
+<option value="Lyon">Lyon</option>
+<option value="Massif de Belledonne">Massif de Belledonne</option>
+<option value="Matheysine">Matheysine</option>
+<option value="Monestier de Clermont">Monestier de Clermont</option>
+<option value="Montchaboud">Montchaboud</option>
+<option value="Montchaffrey">Montchaffrey</option>
+<option value="Montjean">Montjean</option>
+<option value="Notre Dame de Mésage">Notre Dame de Mésage</option>
+<option value="Pays vizillois">Pays vizillois</option>
+<option value="Pellafol">Pellafol</option>
+<option value="Petichet">Petichet</option>
+<option value="Rioupéroux">Rioupéroux</option>
+<option value="Saint Barthélémy de Séchilienne">Saint Barthélémy de Séchilienne</option>
+<option value="Saint Georges de Commiers">Saint Georges de Commiers</option>
+<option value="Saint Jean de Vaux">Saint Jean de Vaux</option>
+<option value="Saint Martin de la Cluze">Saint Martin de la Cluze</option>
+<option value="Saint Paul de Varces">Saint Paul de Varces</option>
+<option value="Saint Pierre de Mésage">Saint Pierre de Mésage</option>
+<option value="Sassenage">Sassenage</option>
+<option value="Séchilienne">Séchilienne</option>
+<option value="Tavernolles">Tavernolles</option>
+<option value="Uriage">Uriage</option>
+<option value="Varces">Varces</option>
+<option value="Vaulnaveys">Vaulnaveys</option>
+<option value="Vaulnaveys le bas">Vaulnaveys le bas</option>
+<option value="Vaulnaveys le haut">Vaulnaveys le haut</option>
+<option value="Verdun">Verdun</option>
+<option value="Villeneuve d'Uriage">Villeneuve d'Uriage</option>
+<option value="Vizille">Vizille</option></select>
+      <input type="text" id="ville" placeholder="ou saisissez une autre ville" />
+    </label>
+
+    <label>Thème(s)
+      <select id="theme_select"><option value="">— Sélectionner —</option><option value="-">-</option>
+<option value="Activités agricoles">Activités agricoles</option>
+<option value="Activités artisanales">Activités artisanales</option>
+<option value="Activités commerçantes">Activités commerçantes</option>
+<option value="Activités industrielles">Activités industrielles</option>
+<option value="Actualités">Actualités</option>
+<option value="Archéologie">Archéologie</option>
+<option value="Arts">Arts</option>
+<option value="Bande dessinée">Bande dessinée</option>
+<option value="Bâtiments et édifices">Bâtiments et édifices</option>
+<option value="Chants">Chants</option>
+<option value="Contes et légendes">Contes et légendes</option>
+<option value="Cuisine et recettes">Cuisine et recettes</option>
+<option value="Danse">Danse</option>
+<option value="Divers">Divers</option>
+<option value="Documents remarquables">Documents remarquables</option>
+<option value="Eau">Eau</option>
+<option value="Edito">Edito</option>
+<option value="Enseignement">Enseignement</option>
+<option value="Evènements">Evènements</option>
+<option value="Grandes périodes">Grandes périodes</option>
+<option value="Guerres">Guerres</option>
+<option value="Généalogie">Généalogie</option>
+<option value="Géologie">Géologie</option>
+<option value="Histoires">Histoires</option>
+<option value="Héraldique">Héraldique</option>
+<option value="Lieux du pays vizillois">Lieux du pays vizillois</option>
+<option value="Lieux remarquables">Lieux remarquables</option>
+<option value="Littérature">Littérature</option>
+<option value="Medias">Medias</option>
+<option value="Mines et minéralogie">Mines et minéralogie</option>
+<option value="Montagne">Montagne</option>
+<option value="Musique">Musique</option>
+<option value="Médecine">Médecine</option>
+<option value="Patois">Patois</option>
+<option value="Patrimoine">Patrimoine</option>
+<option value="Personnages remarquables">Personnages remarquables</option>
+<option value="Photographie">Photographie</option>
+<option value="Religions">Religions</option>
+<option value="Récits">Récits</option>
+<option value="Souvenirs">Souvenirs</option>
+<option value="Sport">Sport</option>
+<option value="Théâtre">Théâtre</option>
+<option value="Toponymie">Toponymie</option>
+<option value="Tourisme">Tourisme</option>
+<option value="Traditions">Traditions</option>
+<option value="Transports">Transports</option>
+<option value="Vie de l'association">Vie de l'association</option>
+<option value="Vie locale">Vie locale</option>
+<option value="Voies de communication">Voies de communication</option>
+<option value="canaux et fontaines">canaux et fontaines</option>
+<option value="rivières">rivières</option>
+<option value="technologies">technologies</option></select>
+      <input type="text" id="theme" placeholder="ou saisissez un autre thème" />
+    </label>
+
+    <label>Époque
+      <select id="epoque_select"><option value="">— Sélectionner —</option><option value="-">-</option>
+<option value="Avant J-C">Avant J-C</option>
+<option value="IIe siècle">IIe siècle</option>
+<option value="IXe siècle">IXe siècle</option>
+<option value="Ve siècle">Ve siècle</option>
+<option value="XIIIe siècle">XIIIe siècle</option>
+<option value="XIIe siècle">XIIe siècle</option>
+<option value="XIVe siècle">XIVe siècle</option>
+<option value="XIXe siècle">XIXe siècle</option>
+<option value="XVIIIe siècle">XVIIIe siècle</option>
+<option value="XVIIe siècle">XVIIe siècle</option>
+<option value="XVIe siècle">XVIe siècle</option>
+<option value="XVe siècle">XVe siècle</option>
+<option value="XXIe siècle">XXIe siècle</option>
+<option value="XXe siècle">XXe siècle</option>
+<option value="Xe siècle">Xe siècle</option></select>
+      <input type="text" id="epoque" placeholder="ou saisissez une autre époque" />
+    </label>
+
     <button onclick="ajouterLigne()">Ajouter</button>
   </div>
 
@@ -69,6 +423,12 @@
   </table>
 
   <script>
+    function getInputValue(selectId, inputId) {
+      const select = document.getElementById(selectId).value;
+      const input = document.getElementById(inputId).value;
+      return input || select;
+    }
+
     let table;
     $(document).ready(function () {
       $.get('base_ahpv_tri.csv', function (csv) {
@@ -77,7 +437,7 @@
         const data = rows.slice(1).map(row => row.map(cell => cell.replace(/""/g, '"')));
         table = $('#table').DataTable({
           data: data,
-          columns: headers.map(h => ({ title: h })),
+          columns: headers.map(h => { return { title: h }; }),
           order: [[0, 'asc']],
           language: {
             url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/fr-FR.json"
@@ -92,13 +452,15 @@
       const mem = $('#mem').val();
       const titre = $('#titre').val();
       const page = $('#page').val();
-      const auteur = $('#auteur').val();
-      const ville = $('#ville').val();
-      const theme = $('#theme').val();
-      const epoque = $('#epoque').val();
+      const auteur = getInputValue("auteur_select", "auteur");
+      const ville = getInputValue("ville_select", "ville");
+      const theme = getInputValue("theme_select", "theme");
+      const epoque = getInputValue("epoque_select", "epoque");
+
       if (mem && titre) {
         table.row.add([mem, titre, page, auteur, ville, theme, epoque]).draw(false);
         $('#mem, #titre, #page, #auteur, #ville, #theme, #epoque').val('');
+        $('#auteur_select, #ville_select, #theme_select, #epoque_select').val('');
       } else {
         alert("Les champs Mémoire et Titre sont obligatoires.");
       }
