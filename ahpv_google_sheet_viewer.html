@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Base AHPV – Visualisation en direct</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 2em;
+      color: #333;
+    }
+    h1 {
+      color: #004080;
+    }
+    table {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>📖 Base des articles Mémoire – AHPV</h1>
+  <p>Cette base est affichée automatiquement à partir du <strong>Google Sheets</strong> source. Dernière mise à jour en direct à chaque chargement.</p>
+  <table id="data" class="display"></table>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script>
+    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDa2z_xA1isFaSjtRCCwbToIP33M40y_BJUOVvJQHmq-JwN1yycIbPQfwXocmpaKwPvXqTrr83QaYn/pub?output=csv";
+
+    Papa.parse(url, {
+      download: true,
+      header: true,
+      complete: function(results) {
+        const data = results.data;
+        const columns = Object.keys(data[0]).map(key => {
+          return { title: key, data: key };
+        });
+
+        $('#data').DataTable({
+          data: data,
+          columns: columns,
+          pageLength: 100,
+          lengthMenu: [ [25, 50, 100, -1], [25, 50, 100, "Tout afficher"] ],
+          language: {
+            url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
