@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>📊 Catalogue AHPV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
-  <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.2.0/css/searchPanes.dataTables.min.css"/>
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"/>
-
+<meta charset="utf-8"/>
+<title>📊 Catalogue AHPV</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/searchpanes/2.2.0/css/searchPanes.dataTables.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" rel="stylesheet"/>
 <style>
 #sidebarFilter {
   position: fixed;
@@ -43,492 +43,91 @@
   font-size: 0.9em;
 }
 </style>
-
+</link>
+<style>
+body {
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  background-color: #f8f5f0;
+  color: #333;
+  margin: 0;
+  padding: 1em;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+header img {
+  height: 60px;
+}
+header h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
+.dataTables_wrapper {
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+</style>
 </head>
 <body>
 
-<div style="text-align:center; margin: 1em 0;">
-  <label for="globalSearch"><strong>Recherche libre :</strong></label>
-  <input type="text" id="globalSearch" placeholder="Tapez un mot-clé..." style="width: 300px; padding: 0.4em;">
-</div>
-<script>
-document.getElementById("globalSearch").addEventListener("input", function () {
-  $('#data-table').DataTable().search(this.value).draw();
-});
-</script>
-
-  <header>
-    <img src="logo_ahpv.png" alt="Logo AHPV" id="logo" />
-    <h1>📊 Catalogue des publications des Amis de l’Histoire du Pays Vizillois</h1>
-  </header>
-
-  <div style="text-align: center; margin: 1em auto; display:flex; justify-content:center; gap:1em;">
-<button onclick="document.getElementById('filterModal').style.display='flex'" style="padding:0.5em 1em;">🔎 Recherche ciblée</button> position: relative; z-index: 2;">
+<header>
+  <img src="logo_ahpv.png" alt="Logo AHPV">
+  <h1>Catalogue des publications AHPV</h1>
+</header>
+<p style="text-align:center;"><a href="statistiques.html">📊 Voir les statistiques du catalogue</a></p>
+<div style="text-align:center; margin: 1em 0;"></div>
+<header>
+<img alt="Logo AHPV" id="logo" src="logo_ahpv.png"/>
+<h1>📊 Catalogue des publications des Amis de l’Histoire du Pays Vizillois</h1>
+</header>
+<p style="text-align:center;"><a href="statistiques.html">📊 Voir les statistiques du catalogue</a></p>
+<div style="text-align: center; margin: 1em auto; display:flex; justify-content:center; gap:1em;">
+<button onclick="document.getElementById('filterModal').style.display='flex'" style="padding:0.5em 1em;">🔎 Recherche ciblée</button> position: relative; z-index: 2;"&gt;
     <button id="openStats">📊 Voir les statistiques</button>
-  </div>
-
-  <table id="data-table" class="display" style="width:100%">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
-<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
-<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
-
-  <!-- Fenêtre modale pour stats -->
-  <div id="statsModal">
-    <div>
-      <span id="closeStats">&times;</span>
-      <h2 style="text-align:center;">Statistiques du catalogue</h2>
-<div style="margin: 20px auto; text-align: center;">
-  <label for="statsField">Afficher les statistiques pour : </label>
-  <select id="statsField">
-    <option value="Themes">Thèmes</option>
-    <option value="Auteurs">Auteurs</option>
-    <option value="Villes">Villes</option>
-    <option value="Siecle">Siècles</option>
-  </select>
 </div>
-
-      <canvas id="themeChart"></canvas>
-      <canvas id="centuryChart"></canvas>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<table class="display" id="data-table" style="width:100%">
+<thead></thead>
+<tbody></tbody>
+</table>
+<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
+<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
+<!-- Fenêtre modale pour stats -->
+<div id="statsModal">
+<div>
+<span id="closeStats">×</span>
+<h2 style="text-align:center;">Statistiques du catalogue</h2>
+<div style="margin: 20px auto; text-align: center;">
+<label for="statsField">Afficher les statistiques pour : </label>
+<select id="statsField">
+<option value="Themes">Thèmes</option>
+<option value="Auteurs">Auteurs</option>
+<option value="Villes">Villes</option>
+<option value="Siecle">Siècles</option>
+</select>
+</div>
+<canvas id="themeChart"></canvas>
+<canvas id="centuryChart"></canvas>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-  <script src="https://cdn.datatables.net/searchpanes/2.2.0/js/dataTables.searchPanes.min.js"></script>
-  <script>
-    // Affichage des stats modales
-    document.getElementById("openStats").onclick = () => {
-      const modal = document.getElementById("statsModal");
-      modal.style.display = "flex";
-      setTimeout(() => { modal.style.opacity = 1; }, 10);
-    };
-    document.getElementById("closeStats").onclick = () => {
-      const modal = document.getElementById("statsModal");
-      modal.style.opacity = 0;
-      setTimeout(() => { modal.style.display = "none"; }, 300);
-    };
-
-    // Charger CSV et initialiser tableau + stats
-    fetch("base_ahpv_enriched_simplified.csv")
-      .then(response => response.text())
-      .then(csv => {
-        Papa.parse(csv, {
-          header: true,
-          skipEmptyLines: true,
-          complete: function(results) {
-            const data = results.data;
-            const headers = Object.keys(data[0]);
-
-            // Table dynamique
-            const thead = document.querySelector("#data-table thead");
-            const headerRow = document.createElement("tr");
-            headers.forEach(h => {
-              const th = document.createElement("th");
-              th.textContent = h;
-              headerRow.appendChild(th);
-            });
-            thead.appendChild(headerRow);
-
-            const tbody = document.querySelector("#data-table tbody");
-            data.forEach(row => {
-              const tr = document.createElement("tr");
-              headers.forEach(h => {
-                const td = document.createElement("td");
-                td.textContent = row[h] || "";
-                tr.appendChild(td);
-              });
-              tbody.appendChild(tr);
-            });
-
-            
-    new DataTable("#data-table", {
-      pageLength: 25,
-      lengthMenu: [ [25, 50, 100, -1], [25, 50, 100, "Tous"] ],
-      language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" },
-    
-              searchPanes: { cascadePanes: true, layout: 'columns-4' },
-              dom: 'Plfrtip',
-              language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" }
-            });
-
-            // Préparer les données pour les stats
-            const themeCount = {};
-            const centuryCount = {};
-
-            data.forEach(row => {
-              const themes = row["Themes"]?.split(",") || [];
-              themes.forEach(t => {
-                const clean = t.trim();
-                if (clean) themeCount[clean] = (themeCount[clean] || 0) + 1;
-              });
-
-              const siecle = row["Siecle"]?.trim();
-              if (siecle) centuryCount[siecle] = (centuryCount[siecle] || 0) + 1;
-            });
-
-            const sortedThemes = Object.entries(themeCount).sort((a,b) => b[1] - a[1]).slice(0,10);
-            const themeLabels = sortedThemes.map(e => e[0]);
-            const themeValues = sortedThemes.map(e => e[1]);
-
-            
-// Mise à jour du compteur
-const dt = new DataTable("#data-table", {
-  dom: 'Bfrtip',
-  buttons: ['copy', 'csv', 'excel', 'print'],
-  language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" }
-});
-dt.on('draw', function () {
-  document.getElementById("recordCount").textContent =
-    "Nombre d’enregistrements affichés : " + dt.rows({search:'applied'}).count();
-});
-
-// Ajouter clic sur les barres pour afficher les détails
-document.getElementById("themeChart").onclick = (evt) => {
-  const points = currentChart1.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, false);
-  if (points.length) {
-    const label = currentChart1.data.labels[points[0].index];
-    const field = document.getElementById("statsField").value;
-
-    fetch("base_ahpv_enriched_simplified.csv")
-      .then(r => r.text())
-      .then(csv => {
-        Papa.parse(csv, {
-          header: true,
-          skipEmptyLines: true,
-          complete: function(results) {
-            const data = results.data;
-            const matching = data.filter(row => (row[field] || "").includes(label));
-
-            const list = document.getElementById("detailList");
-            list.innerHTML = "";
-            matching.forEach(row => {
-              const li = document.createElement("li");
-              li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
-              list.appendChild(li);
-            });
-
-            document.getElementById("detailTitle").textContent = `Articles associés à « ${label} » (${matching.length})`;
-            const modal = document.getElementById("detailModal");
-            modal.style.display = "flex";
-            modal.style.opacity = 0;
-            setTimeout(() => { modal.style.opacity = 1; }, 10);
-          }
-        });
-      });
-  }
-};
-
-document.getElementById("closeDetail").onclick = () => {
-  const modal = document.getElementById("detailModal");
-  modal.style.opacity = 0;
-  setTimeout(() => { modal.style.display = "none"; }, 300);
-};
-
-
-
-let currentChart1, currentChart2;
-document.getElementById("statsField").addEventListener("change", function() {
-  loadStatCharts(this.value);
-});
-function loadStatCharts(field) {
-  fetch("base_ahpv_enriched_simplified.csv")
-    .then(response => response.text())
-    .then(csv => {
-      Papa.parse(csv, {
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          const data = results.data;
-          const countMap = {};
-          data.forEach(row => {
-            const values = (row[field] || "").split(",");
-            values.forEach(v => {
-              const val = v.trim();
-              if (val) countMap[val] = (countMap[val] || 0) + 1;
-            });
-          });
-          const sorted = Object.entries(countMap).sort((a,b) => b[1] - a[1]).slice(0, 20);
-          const labels = sorted.map(e => e[0]);
-          const values = sorted.map(e => e[1]);
-          if (currentChart1) currentChart1.destroy();
-          currentChart1 = new Chart(document.getElementById("themeChart"), {
-            type: "bar",
-            data: {
-              labels: labels,
-              datasets: [{
-                label: `Nombre d’entrées par ${field}`,
-                data: values,
-                backgroundColor: "#b8946b"
-              }]
-            },
-            options: {
-              plugins: { legend: { display: false } },
-              responsive: true,
-              scales: { y: { beginAtZero: true } }
-            }
-          });
-
-          // Clic sur la barre = afficher détails
-          document.getElementById("themeChart").onclick = (evt) => {
-            const points = currentChart1.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, false);
-            if (points.length) {
-              const label = currentChart1.data.labels[points[0].index];
-              const matching = data.filter(row => (row[field] || "").includes(label));
-              const list = document.getElementById("detailList");
-              list.innerHTML = "";
-              matching.forEach(row => {
-                const li = document.createElement("li");
-                li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
-                list.appendChild(li);
-              });
-              document.getElementById("detailTitle").textContent = `Articles associés à « ${label} » (${matching.length})`;
-              const modal = document.getElementById("detailModal");
-              modal.style.display = "flex";
-              modal.style.opacity = 0;
-              setTimeout(() => { modal.style.opacity = 1; }, 10);
-            }
-          };
-        }
-      });
-    });
-}
-
-
-function applyCustomFilter() {
-  const field = document.getElementById("filterField").value;
-  const value = document.getElementById("filterValue").value.toLowerCase();
-  fetch("base_ahpv_enriched_simplified.csv")
-    .then(res => res.text())
-    .then(csv => {
-      Papa.parse(csv, {
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          const data = results.data;
-          const matches = data.filter(row => (row[field] || "").toLowerCase().includes(value));
-          const list = document.getElementById("filterResultList");
-          list.innerHTML = "";
-          matches.forEach(row => {
-            const li = document.createElement("li");
-            li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
-            list.appendChild(li);
-          });
-          document.getElementById("filterResultCount").textContent =
-            `${matches.length} résultat(s) pour « ${value} » dans le champ ${field}`;
-        }
-      });
-    });
-}
-
-
-document.getElementById("toggleSidebar").addEventListener("click", () => {
-  document.getElementById("sidebarFilter").classList.toggle("open");
-});
-
-
-// suppression ancienne modale :
-  const modal = document.getElementById("filterModal");
-  modal.style.opacity = 0;
-  setTimeout(() => { modal.style.display = "none"; modal.style.opacity = 1; }, 300);
-};
-
-
-// compteur
-const dt = new DataTable("#data-table", {
-  dom: 'Bfrtip',
-  buttons: ['copy', 'csv', 'excel', 'print'],
-  language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" }
-});
-dt.on('draw', function () {
-  document.getElementById("recordCount").textContent =
-    "Nombre d’enregistrements affichés : " + dt.rows({search:'applied'}).count();
-});
-
-document.getElementById("closeDetail").onclick = () => {
-  const modal = document.getElementById("detailModal");
-  modal.style.opacity = 0;
-  setTimeout(() => { modal.style.display = "none"; }, 300);
-};
-
-loadStatCharts('Themes');
-
-
-let currentChart1, currentChart2;
-document.getElementById("statsField").addEventListener("change", function() {
-  loadStatCharts(this.value);
-});
-
-function loadStatCharts(field) {
-  fetch("base_ahpv_enriched_simplified.csv")
-    .then(response => response.text())
-    .then(csv => {
-      Papa.parse(csv, {
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          const data = results.data;
-          const countMap = {};
-          data.forEach(row => {
-            const values = (row[field] || "").split(",");
-            values.forEach(v => {
-              const val = v.trim();
-              if (val) countMap[val] = (countMap[val] || 0) + 1;
-            });
-          });
-
-          const sorted = Object.entries(countMap).sort((a,b) => b[1] - a[1]).slice(0, 20);
-          const labels = sorted.map(e => e[0]);
-          const values = sorted.map(e => e[1]);
-
-          if (currentChart1) currentChart1.destroy();
-          currentChart1 = new Chart(document.getElementById("themeChart"), {
-            type: "bar",
-            data: {
-              labels: labels,
-              datasets: [{
-                label: `Nombre d’entrées par ${field}`,
-                data: values,
-                backgroundColor: "#b8946b"
-              }]
-            },
-            options: {
-              plugins: { legend: { display: false } },
-              responsive: true,
-              scales: { y: { beginAtZero: true } }
-            }
-          });
-        }
-      });
-    });
-}
-
-loadStatCharts('Themes');
-
-new Chart(document.getElementById("themeChart"), {
-              type: "bar",
-              data: {
-                labels: themeLabels,
-                datasets: [{
-                  label: "Articles par thème",
-                  data: themeValues,
-                  backgroundColor: "#b8946b"
-                }]
-              },
-              options: {
-                plugins: { legend: { display: false } },
-                responsive: true,
-                scales: { y: { beginAtZero: true } }
-              }
-            });
-
-            const sortedCenturies = Object.entries(centuryCount).sort((a,b) => +a[0] - +b[0]);
-            const centuryLabels = sortedCenturies.map(e => "Siècle " + e[0]);
-            const centuryValues = sortedCenturies.map(e => e[1]);
-
-            new Chart(document.getElementById("centuryChart"), {
-              type: "bar",
-              data: {
-                labels: centuryLabels,
-                datasets: [{
-                  label: "Articles par siècle",
-                  data: centuryValues,
-                  backgroundColor: "#6c91a1"
-                }]
-              },
-              options: {
-                plugins: { legend: { display: false } },
-                responsive: true,
-                scales: { y: { beginAtZero: true } }
-              }
-            });
-          }
-        });
-      });
-  </script>
+<script src="https://cdn.datatables.net/searchpanes/2.2.0/js/dataTables.searchPanes.min.js"></script>
 
 <!-- Fenêtre latérale pour filtre personnalisé -->
-<div id="filterModal">
-  <div style="max-height: 90vh; overflow-y: auto; padding: 1em;">
-    <span id="closeFilter" style="position:absolute;top:10px;right:15px;font-size:20px;cursor:pointer;">&times;</span>
-    <h2 style="text-align:center;">Filtrer les enregistrements</h2>
-    <div style="text-align:center;margin-bottom:1em;">
-      <label for="filterField">Choisir un champ :</label>
-      <select id="filterField">
-        <option value="Themes">Thèmes</option>
-        <option value="Auteurs">Auteurs</option>
-        <option value="Villes">Villes</option>
-        <option value="Siecle">Siècles</option>
-        <option value="Numero">Numéro</option>
-      </select>
-      <input type="text" id="filterValue" placeholder="Valeur à rechercher" style="margin-left:10px;">
-      <button onclick="applyCustomFilter()">Afficher</button>
-    </div>
-    <div id="filterResultCount" style="text-align:center;font-weight:bold;margin-bottom:1em;"></div>
-    <ul id="filterResultList" style="list-style:none;padding:0;"></ul>
-  </div>
-</div>
-
-
-<div id="sidebarFilter" >
-  <button id="toggleSidebar" class="sidebar-toggle">🔍</button>
-  <div class="sidebar-content">
-    <h3>Recherche ciblée</h3>
-    <label for="filterField">Champ :</label>
-    <select id="filterField">
-      <option value="Themes">Thèmes</option>
-      <option value="Auteurs">Auteurs</option>
-      <option value="Villes">Villes</option>
-      <option value="Siecle">Siècles</option>
-      <option value="Numero">Numéro</option>
-    </select><br>
-    <input type="text" id="filterValue" placeholder="Valeur recherchée" style="width:100%;margin:0.5em 0;">
-    <button onclick="applyCustomFilter()" style="width:100%;">Afficher</button>
-    <div id="filterResultCount" style="margin-top:1em;font-weight:bold;"></div>
-    <ul id="filterResultList" style="list-style:none;padding-left:1em;"></ul>
-  </div>
-</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-<script>
-function applyCustomFilter() {
-  const field = document.getElementById("filterField").value;
-  const value = document.getElementById("filterValue").value.toLowerCase();
-  fetch("base_ahpv_enriched_simplified.csv")
-    .then(res => res.text())
-    .then(csv => {
-      Papa.parse(csv, {
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          const data = results.data;
-          const matches = data.filter(row => (row[field] || "").toLowerCase().includes(value));
-          const list = document.getElementById("filterResultList");
-          list.innerHTML = "";
-          matches.forEach(row => {
-            const li = document.createElement("li");
-            li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
-            list.appendChild(li);
-          });
-          document.getElementById("filterResultCount").textContent =
-            `${matches.length} résultat(s) pour « ${value} » dans le champ ${field}`;
-        }
-      });
-    });
-}
-
-document.getElementById("toggleSidebar").addEventListener("click", () => {
-  document.getElementById("sidebarFilter").classList.toggle("open");
-});
-</script>
 
 </body>
 </html>

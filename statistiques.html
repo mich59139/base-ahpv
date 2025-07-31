@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistiques – Catalogue AHPV</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Inter', sans-serif;
+      background-color: #f8f5f0;
+      color: #333;
+      padding: 2em;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    canvas {
+      margin: 2em 0;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Statistiques du catalogue AHPV</h1>
+  <p id="totalCount"></p>
+  <canvas id="themesChart"></canvas>
+  <canvas id="auteursChart"></canvas>
+
+  <script>
+    fetch("base_ahpv_enriched_simplified.csv")
+      .then(res => res.text())
+      .then(csv => {
+        Papa.parse(csv, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function(results) {
+            const data = results.data;
+            document.getElementById("totalCount").textContent = "Nombre total d'enregistrements : " + data.length;
+
+            const countByField = (rows, field) => {
+              const counts = {};
+              rows.forEach(row => {
+                const key = (row[field] || "").split(/[;,]/);
+                key.forEach(k => {
+                  const trimmed = k.trim();
+                  if (trimmed) counts[trimmed] = (counts[trimmed] || 0) + 1;
+                });
+              });
+              return counts;
+            };
+
+            const plotTop = (counts, canvasId, label, topN=10) => {
+              const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]).slice(0, topN);
+              new Chart(document.getElementById(canvasId), {
+                type: 'bar',
+                data: {
+                  labels: sorted.map(e => e[0]),
+                  datasets: [{
+                    label,
+                    data: sorted.map(e => e[1]),
+                    backgroundColor: '#b8946b'
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  plugins: { legend: { display: false } },
+                  scales: {
+                    y: { beginAtZero: true, ticks: { precision:0 } }
+                  }
+                }
+              });
+            };
+
+            const themes = countByField(data, "Themes");
+            const auteurs = countByField(data, "Auteurs");
+
+            plotTop(themes, "themesChart", "Publications par thème");
+            plotTop(auteurs, "auteursChart", "Auteurs les plus publiés");
+          }
+        });
+      });
+  </script>
+</body>
+</html>
