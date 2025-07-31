@@ -1,111 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>📊 Catalogue AHPV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.2.0/css/searchPanes.dataTables.min.css"/>
+</head>
+<body>
+  <header>
+    <img src="logo_ahpv.png" alt="Logo AHPV" id="logo" />
+    <h1>📊 Catalogue des publications des Amis de l’Histoire du Pays Vizillois</h1>
+  </header>
 
-<!-- Bouton pour ouvrir les statistiques -->
-<div style="text-align: center; margin-top: 2em;">
-  <button id="openStats" style="background:#d4b483;color:white;padding:8px 16px;border:none;border-radius:4px;cursor:pointer;">
-    📊 Voir les statistiques
-  </button>
-</div>
-
-<!-- Fenêtre modale -->
-<div id="statsModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center;">
-  <div style="background:#fffef9; padding:20px; border-radius:8px; max-width:800px; width:90%; position:relative;">
-    <span id="closeStats" style="position:absolute; top:10px; right:15px; font-size:20px; cursor:pointer;">&times;</span>
-    <h2 style="text-align:center;">Statistiques du catalogue</h2>
-    <canvas id="themeChart" style="margin-top:20px;"></canvas>
-    <canvas id="centuryChart" style="margin-top:40px;"></canvas>
+  <div style="text-align: center; margin: 1em auto; position: relative; z-index: 2;">
+    <button id="openStats">📊 Voir les statistiques</button>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <table id="data-table" class="display" style="width:100%">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
 
-<script>
-document.getElementById("openStats").onclick = () => {
-  document.getElementById("statsModal").style.display = "flex";
-};
-document.getElementById("closeStats").onclick = () => {
-  document.getElementById("statsModal").style.display = "none";
-};
+  <!-- Fenêtre modale pour stats -->
+  <div id="statsModal">
+    <div>
+      <span id="closeStats">&times;</span>
+      <h2 style="text-align:center;">Statistiques du catalogue</h2>
+      <canvas id="themeChart"></canvas>
+      <canvas id="centuryChart"></canvas>
+    </div>
+  </div>
 
-// Charger et afficher les stats uniquement au premier affichage
-let statsLoaded = false;
-document.getElementById("openStats").addEventListener("click", function() {
-  if (statsLoaded) return;
-  statsLoaded = true;
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/searchpanes/2.2.0/js/dataTables.searchPanes.min.js"></script>
+  <script>
+    // Affichage des stats modales
+    document.getElementById("openStats").onclick = () => {
+      const modal = document.getElementById("statsModal");
+      modal.style.display = "flex";
+      setTimeout(() => { modal.style.opacity = 1; }, 10);
+    };
+    document.getElementById("closeStats").onclick = () => {
+      const modal = document.getElementById("statsModal");
+      modal.style.opacity = 0;
+      setTimeout(() => { modal.style.display = "none"; }, 300);
+    };
 
-  fetch("base_ahpv_enriched_simplified.csv")
-    .then(response => response.text())
-    .then(csv => {
-      Papa.parse(csv, {
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          const data = results.data;
+    // Charger CSV et initialiser tableau + stats
+    fetch("base_ahpv_enriched_simplified.csv")
+      .then(response => response.text())
+      .then(csv => {
+        Papa.parse(csv, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function(results) {
+            const data = results.data;
+            const headers = Object.keys(data[0]);
 
-          const themeCount = {};
-          data.forEach(row => {
-            const themes = row["Themes"]?.split(",") || [];
-            themes.forEach(t => {
-              const clean = t.trim();
-              if (clean) themeCount[clean] = (themeCount[clean] || 0) + 1;
+            // Table dynamique
+            const thead = document.querySelector("#data-table thead");
+            const headerRow = document.createElement("tr");
+            headers.forEach(h => {
+              const th = document.createElement("th");
+              th.textContent = h;
+              headerRow.appendChild(th);
             });
-          });
-          const sortedThemes = Object.entries(themeCount).sort((a,b) => b[1] - a[1]).slice(0,10);
-          const themeLabels = sortedThemes.map(e => e[0]);
-          const themeValues = sortedThemes.map(e => e[1]);
+            thead.appendChild(headerRow);
 
-          new Chart(document.getElementById("themeChart"), {
-            type: "bar",
-            data: {
-              labels: themeLabels,
-              datasets: [{
-                label: "Articles par thème",
-                data: themeValues,
-                backgroundColor: "#b8946b"
-              }]
-            },
-            options: {
-              plugins: {
-                legend: { display: false }
+            const tbody = document.querySelector("#data-table tbody");
+            data.forEach(row => {
+              const tr = document.createElement("tr");
+              headers.forEach(h => {
+                const td = document.createElement("td");
+                td.textContent = row[h] || "";
+                tr.appendChild(td);
+              });
+              tbody.appendChild(tr);
+            });
+
+            new DataTable("#data-table", {
+              searchPanes: { cascadePanes: true, layout: 'columns-4' },
+              dom: 'Plfrtip',
+              language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" }
+            });
+
+            // Préparer les données pour les stats
+            const themeCount = {};
+            const centuryCount = {};
+
+            data.forEach(row => {
+              const themes = row["Themes"]?.split(",") || [];
+              themes.forEach(t => {
+                const clean = t.trim();
+                if (clean) themeCount[clean] = (themeCount[clean] || 0) + 1;
+              });
+
+              const siecle = row["Siecle"]?.trim();
+              if (siecle) centuryCount[siecle] = (centuryCount[siecle] || 0) + 1;
+            });
+
+            const sortedThemes = Object.entries(themeCount).sort((a,b) => b[1] - a[1]).slice(0,10);
+            const themeLabels = sortedThemes.map(e => e[0]);
+            const themeValues = sortedThemes.map(e => e[1]);
+
+            new Chart(document.getElementById("themeChart"), {
+              type: "bar",
+              data: {
+                labels: themeLabels,
+                datasets: [{
+                  label: "Articles par thème",
+                  data: themeValues,
+                  backgroundColor: "#b8946b"
+                }]
               },
-              responsive: true,
-              scales: {
-                y: { beginAtZero: true }
+              options: {
+                plugins: { legend: { display: false } },
+                responsive: true,
+                scales: { y: { beginAtZero: true } }
               }
-            }
-          });
+            });
 
-          const centuryCount = {};
-          data.forEach(row => {
-            const siecle = row["Siecle"]?.trim();
-            if (siecle) centuryCount[siecle] = (centuryCount[siecle] || 0) + 1;
-          });
-          const sortedCenturies = Object.entries(centuryCount).sort((a,b) => +a[0] - +b[0]);
-          const centuryLabels = sortedCenturies.map(e => "Siècle " + e[0]);
-          const centuryValues = sortedCenturies.map(e => e[1]);
+            const sortedCenturies = Object.entries(centuryCount).sort((a,b) => +a[0] - +b[0]);
+            const centuryLabels = sortedCenturies.map(e => "Siècle " + e[0]);
+            const centuryValues = sortedCenturies.map(e => e[1]);
 
-          new Chart(document.getElementById("centuryChart"), {
-            type: "bar",
-            data: {
-              labels: centuryLabels,
-              datasets: [{
-                label: "Articles par siècle",
-                data: centuryValues,
-                backgroundColor: "#6c91a1"
-              }]
-            },
-            options: {
-              plugins: {
-                legend: { display: false }
+            new Chart(document.getElementById("centuryChart"), {
+              type: "bar",
+              data: {
+                labels: centuryLabels,
+                datasets: [{
+                  label: "Articles par siècle",
+                  data: centuryValues,
+                  backgroundColor: "#6c91a1"
+                }]
               },
-              responsive: true,
-              scales: {
-                y: { beginAtZero: true }
+              options: {
+                plugins: { legend: { display: false } },
+                responsive: true,
+                scales: { y: { beginAtZero: true } }
               }
-            }
-          });
-        }
+            });
+          }
+        });
       });
-    });
-});
-</script>
+  </script>
+</body>
+</html>
