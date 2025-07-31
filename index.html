@@ -8,6 +8,42 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.2.0/css/searchPanes.dataTables.min.css"/>
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"/>
+
+<style>
+#sidebarFilter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #f9f5ee;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+#sidebarFilter.open {
+  transform: translateX(0);
+}
+.sidebar-toggle {
+  position: absolute;
+  top: 1em;
+  right: -2em;
+  width: 2em;
+  height: 2em;
+  background-color: #b8946b;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.sidebar-content {
+  padding: 1em;
+  font-size: 0.9em;
+}
+</style>
+
 </head>
 <body>
   <header>
@@ -281,7 +317,13 @@ function applyCustomFilter() {
     });
 }
 
-document.getElementById("closeFilter").onclick = () => {
+
+document.getElementById("toggleSidebar").addEventListener("click", () => {
+  document.getElementById("sidebarFilter").classList.toggle("open");
+});
+
+
+// suppression ancienne modale :
   const modal = document.getElementById("filterModal");
   modal.style.opacity = 0;
   setTimeout(() => { modal.style.display = "none"; modal.style.opacity = 1; }, 300);
@@ -401,7 +443,7 @@ new Chart(document.getElementById("themeChart"), {
       });
   </script>
 
-<!-- Fenêtre modale pour filtre personnalisé -->
+<!-- Fenêtre latérale pour filtre personnalisé -->
 <div id="filterModal">
   <div style="max-height: 90vh; overflow-y: auto; padding: 1em;">
     <span id="closeFilter" style="position:absolute;top:10px;right:15px;font-size:20px;cursor:pointer;">&times;</span>
@@ -420,6 +462,26 @@ new Chart(document.getElementById("themeChart"), {
     </div>
     <div id="filterResultCount" style="text-align:center;font-weight:bold;margin-bottom:1em;"></div>
     <ul id="filterResultList" style="list-style:none;padding:0;"></ul>
+  </div>
+</div>
+
+
+<div id="sidebarFilter" class="sidebar-closed">
+  <button id="toggleSidebar" class="sidebar-toggle">🔍</button>
+  <div class="sidebar-content">
+    <h3>Recherche ciblée</h3>
+    <label for="filterField">Champ :</label>
+    <select id="filterField">
+      <option value="Themes">Thèmes</option>
+      <option value="Auteurs">Auteurs</option>
+      <option value="Villes">Villes</option>
+      <option value="Siecle">Siècles</option>
+      <option value="Numero">Numéro</option>
+    </select><br>
+    <input type="text" id="filterValue" placeholder="Valeur recherchée" style="width:100%;margin:0.5em 0;">
+    <button onclick="applyCustomFilter()" style="width:100%;">Afficher</button>
+    <div id="filterResultCount" style="margin-top:1em;font-weight:bold;"></div>
+    <ul id="filterResultList" style="list-style:none;padding-left:1em;"></ul>
   </div>
 </div>
 
