@@ -28,6 +28,16 @@
     <div>
       <span id="closeStats">&times;</span>
       <h2 style="text-align:center;">Statistiques du catalogue</h2>
+<div style="margin: 20px auto; text-align: center;">
+  <label for="statsField">Afficher les statistiques pour : </label>
+  <select id="statsField">
+    <option value="Themes">Thèmes</option>
+    <option value="Auteurs">Auteurs</option>
+    <option value="Villes">Villes</option>
+    <option value="Siecle">Siècles</option>
+  </select>
+</div>
+
       <canvas id="themeChart"></canvas>
       <canvas id="centuryChart"></canvas>
     </div>
@@ -83,7 +93,12 @@
               tbody.appendChild(tr);
             });
 
-            new DataTable("#data-table", {
+            
+    new DataTable("#data-table", {
+      pageLength: 25,
+      lengthMenu: [ [25, 50, 100, -1], [25, 50, 100, "Tous"] ],
+      language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" },
+    
               searchPanes: { cascadePanes: true, layout: 'columns-4' },
               dom: 'Plfrtip',
               language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" }
@@ -108,7 +123,60 @@
             const themeLabels = sortedThemes.map(e => e[0]);
             const themeValues = sortedThemes.map(e => e[1]);
 
-            new Chart(document.getElementById("themeChart"), {
+            // --- init chart below is replaced dynamically ---
+
+let currentChart1, currentChart2;
+document.getElementById("statsField").addEventListener("change", function() {
+  loadStatCharts(this.value);
+});
+
+function loadStatCharts(field) {
+  fetch("base_ahpv_enriched_simplified.csv")
+    .then(response => response.text())
+    .then(csv => {
+      Papa.parse(csv, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const data = results.data;
+          const countMap = {};
+          data.forEach(row => {
+            const values = (row[field] || "").split(",");
+            values.forEach(v => {
+              const val = v.trim();
+              if (val) countMap[val] = (countMap[val] || 0) + 1;
+            });
+          });
+
+          const sorted = Object.entries(countMap).sort((a,b) => b[1] - a[1]).slice(0, 20);
+          const labels = sorted.map(e => e[0]);
+          const values = sorted.map(e => e[1]);
+
+          if (currentChart1) currentChart1.destroy();
+          currentChart1 = new Chart(document.getElementById("themeChart"), {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [{
+                label: `Nombre d’entrées par ${field}`,
+                data: values,
+                backgroundColor: "#b8946b"
+              }]
+            },
+            options: {
+              plugins: { legend: { display: false } },
+              responsive: true,
+              scales: { y: { beginAtZero: true } }
+            }
+          });
+        }
+      });
+    });
+}
+
+loadStatCharts('Themes');
+
+new Chart(document.getElementById("themeChart"), {
               type: "bar",
               data: {
                 labels: themeLabels,
