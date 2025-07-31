@@ -23,6 +23,7 @@
     <tbody></tbody>
   </table>
 <div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
+<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
 
   <!-- Fenêtre modale pour stats -->
   <div id="statsModal">
@@ -175,7 +176,89 @@ document.getElementById("closeDetail").onclick = () => {
 };
 
 
-// --- init chart below is replaced dynamically ---
+
+let currentChart1, currentChart2;
+document.getElementById("statsField").addEventListener("change", function() {
+  loadStatCharts(this.value);
+});
+function loadStatCharts(field) {
+  fetch("base_ahpv_enriched_simplified.csv")
+    .then(response => response.text())
+    .then(csv => {
+      Papa.parse(csv, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const data = results.data;
+          const countMap = {};
+          data.forEach(row => {
+            const values = (row[field] || "").split(",");
+            values.forEach(v => {
+              const val = v.trim();
+              if (val) countMap[val] = (countMap[val] || 0) + 1;
+            });
+          });
+          const sorted = Object.entries(countMap).sort((a,b) => b[1] - a[1]).slice(0, 20);
+          const labels = sorted.map(e => e[0]);
+          const values = sorted.map(e => e[1]);
+          if (currentChart1) currentChart1.destroy();
+          currentChart1 = new Chart(document.getElementById("themeChart"), {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [{
+                label: `Nombre d’entrées par ${field}`,
+                data: values,
+                backgroundColor: "#b8946b"
+              }]
+            },
+            options: {
+              plugins: { legend: { display: false } },
+              responsive: true,
+              scales: { y: { beginAtZero: true } }
+            }
+          });
+
+          // Clic sur la barre = afficher détails
+          document.getElementById("themeChart").onclick = (evt) => {
+            const points = currentChart1.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, false);
+            if (points.length) {
+              const label = currentChart1.data.labels[points[0].index];
+              const matching = data.filter(row => (row[field] || "").includes(label));
+              const list = document.getElementById("detailList");
+              list.innerHTML = "";
+              matching.forEach(row => {
+                const li = document.createElement("li");
+                li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
+                list.appendChild(li);
+              });
+              document.getElementById("detailTitle").textContent = `Articles associés à « ${label} » (${matching.length})`;
+              const modal = document.getElementById("detailModal");
+              modal.style.display = "flex";
+              modal.style.opacity = 0;
+              setTimeout(() => { modal.style.opacity = 1; }, 10);
+            }
+          };
+        }
+      });
+    });
+}
+
+// compteur
+const dt = new DataTable("#data-table");
+dt.on('draw', function () {
+  document.getElementById("recordCount").textContent =
+    "Nombre d’enregistrements affichés : " + dt.rows({search:'applied'}).count();
+});
+
+document.getElementById("closeDetail").onclick = () => {
+  const modal = document.getElementById("detailModal");
+  modal.style.opacity = 0;
+  setTimeout(() => { modal.style.display = "none"; }, 300);
+};
+
+loadStatCharts('Themes');
+
 
 let currentChart1, currentChart2;
 document.getElementById("statsField").addEventListener("change", function() {
