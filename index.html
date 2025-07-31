@@ -46,6 +46,17 @@
 
 </head>
 <body>
+
+<div style="text-align:center; margin: 1em 0;">
+  <label for="globalSearch"><strong>Recherche libre :</strong></label>
+  <input type="text" id="globalSearch" placeholder="Tapez un mot-clé..." style="width: 300px; padding: 0.4em;">
+</div>
+<script>
+document.getElementById("globalSearch").addEventListener("input", function () {
+  $('#data-table').DataTable().search(this.value).draw();
+});
+</script>
+
   <header>
     <img src="logo_ahpv.png" alt="Logo AHPV" id="logo" />
     <h1>📊 Catalogue des publications des Amis de l’Histoire du Pays Vizillois</h1>
@@ -484,6 +495,40 @@ new Chart(document.getElementById("themeChart"), {
     <ul id="filterResultList" style="list-style:none;padding-left:1em;"></ul>
   </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+function applyCustomFilter() {
+  const field = document.getElementById("filterField").value;
+  const value = document.getElementById("filterValue").value.toLowerCase();
+  fetch("base_ahpv_enriched_simplified.csv")
+    .then(res => res.text())
+    .then(csv => {
+      Papa.parse(csv, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const data = results.data;
+          const matches = data.filter(row => (row[field] || "").toLowerCase().includes(value));
+          const list = document.getElementById("filterResultList");
+          list.innerHTML = "";
+          matches.forEach(row => {
+            const li = document.createElement("li");
+            li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
+            list.appendChild(li);
+          });
+          document.getElementById("filterResultCount").textContent =
+            `${matches.length} résultat(s) pour « ${value} » dans le champ ${field}`;
+        }
+      });
+    });
+}
+
+document.getElementById("toggleSidebar").addEventListener("click", () => {
+  document.getElementById("sidebarFilter").classList.toggle("open");
+});
+</script>
 
 </body>
 </html>
