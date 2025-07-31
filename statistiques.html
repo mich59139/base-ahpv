@@ -14,22 +14,82 @@
       padding: 2em;
     }
     h1 {
-      font-size: 1.5em;
-      margin-bottom: 0.5em;
+      font-size: 1.6em;
+    }
+    label, select {
+      font-size: 1em;
     }
     canvas {
-      margin: 2em 0;
+      margin-top: 2em;
       max-width: 700px;
+    }
+    .control {
+      margin: 1em 0;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2em;
+      text-decoration: none;
+      color: #005577;
     }
   </style>
 </head>
 <body>
-  <h1>Statistiques du catalogue AHPV</h1>
+  <h1>📊 Statistiques du catalogue AHPV</h1>
   <p id="totalCount"></p>
-  <canvas id="themesChart"></canvas>
-  <canvas id="auteursChart"></canvas>
+  <div class="control">
+    <label for="fieldSelect">Choisir un champ à analyser :</label>
+    <select id="fieldSelect">
+      <option value="Themes">Thèmes</option>
+      <option value="Auteurs">Auteurs</option>
+      <option value="Villes">Villes</option>
+      <option value="Siècles">Siècles</option>
+    </select>
+  </div>
+  <canvas id="statsChart"></canvas>
+  <a href="index.html">⬅️ Retour au catalogue</a>
 
   <script>
+    let chart;
+
+    const plotTop = (counts, label, topN=10) => {
+      const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]).slice(0, topN);
+      const ctx = document.getElementById("statsChart").getContext("2d");
+      if (chart) chart.destroy();
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: sorted.map(e => e[0]),
+          datasets: [{
+            label,
+            data: sorted.map(e => e[1]),
+            backgroundColor: '#b8946b'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { precision: 0 } }
+          }
+        }
+      });
+    };
+
+    const countByField = (rows, field) => {
+      const counts = {};
+      rows.forEach(row => {
+        const key = (row[field] || "").split(/[;,]/);
+        key.forEach(k => {
+          const trimmed = k.trim();
+          if (trimmed) counts[trimmed] = (counts[trimmed] || 0) + 1;
+        });
+      });
+      return counts;
+    };
+
+    let allData = [];
+
     fetch("base_ahpv_enriched_simplified.csv")
       .then(res => res.text())
       .then(csv => {
@@ -37,51 +97,20 @@
           header: true,
           skipEmptyLines: true,
           complete: function(results) {
-            const data = results.data;
-            document.getElementById("totalCount").textContent = "Nombre total d'enregistrements : " + data.length;
-
-            const countByField = (rows, field) => {
-              const counts = {};
-              rows.forEach(row => {
-                const key = (row[field] || "").split(/[;,]/);
-                key.forEach(k => {
-                  const trimmed = k.trim();
-                  if (trimmed) counts[trimmed] = (counts[trimmed] || 0) + 1;
-                });
-              });
-              return counts;
-            };
-
-            const plotTop = (counts, canvasId, label, topN=10) => {
-              const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]).slice(0, topN);
-              new Chart(document.getElementById(canvasId), {
-                type: 'bar',
-                data: {
-                  labels: sorted.map(e => e[0]),
-                  datasets: [{
-                    label,
-                    data: sorted.map(e => e[1]),
-                    backgroundColor: '#b8946b'
-                  }]
-                },
-                options: {
-                  responsive: true,
-                  plugins: { legend: { display: false } },
-                  scales: {
-                    y: { beginAtZero: true, ticks: { precision:0 } }
-                  }
-                }
-              });
-            };
-
-            const themes = countByField(data, "Themes");
-            const auteurs = countByField(data, "Auteurs");
-
-            plotTop(themes, "themesChart", "Publications par thème");
-            plotTop(auteurs, "auteursChart", "Auteurs les plus publiés");
+            allData = results.data;
+            document.getElementById("totalCount").textContent = "Nombre total d'enregistrements : " + allData.length;
+            const initialField = document.getElementById("fieldSelect").value;
+            const counts = countByField(allData, initialField);
+            plotTop(counts, `Répartition des ${initialField.toLowerCase()}`);
           }
         });
       });
+
+    document.getElementById("fieldSelect").addEventListener("change", function () {
+      const field = this.value;
+      const counts = countByField(allData, field);
+      plotTop(counts, `Répartition des ${field.toLowerCase()}`);
+    });
   </script>
 </body>
 </html>
