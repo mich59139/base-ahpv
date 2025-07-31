@@ -1,146 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>📊 Publications AHPV</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
-  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"/>
+  <meta charset="UTF-8">
+  <title>📊 Publications des Amis de l’Histoire du Pays Vizillois</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f6f1;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f8f6f1;
+      margin: 2rem;
       color: #333;
-      padding: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .logo {
+      height: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
     header {
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 1.5rem;
     }
-    header img {
-      height: 60px;
-    }
-    h1 {
-      font-size: 1.8em;
-      margin: 0;
-    }
-    .actions {
-      margin-bottom: 20px;
-    }
-    .actions a {
-      padding: 8px 12px;
-      background-color: #e0c9a6;
-      color: #000;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .dataTables_wrapper .dt-buttons {
-      margin-bottom: 10px;
+    .link {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="logo_ahpv.png" alt="Logo AHPV">
-    <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
-  </header>
+<header>
+  <img src="logo_ahpv.png" alt="Logo AHPV" class="logo">
+  <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
+</header>
 
-  <div class="actions">
-  <div id="filters" style="margin-bottom: 20px;">
-    <label for="filter-champ">Filtrer par :</label>
-    <select id="filter-champ">
-      <option value="Auteurs">Auteurs</option>
-      <option value="Villes">Villes</option>
-      <option value="Themes">Thèmes</option>
-      <option value="Epoque">Époque</option>
-      <option value="Siecle">Siècle</option>
-    </select>
-    <select id="filter-valeur">
-      <option value="">-- Choisissez une valeur --</option>
-    </select>
-  </div>
+<table id="data-table" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Titre</th>
+      <th>Auteurs</th>
+      <th>Villes</th>
+      <th>Themes</th>
+      <th>Epoque</th>
+      <th>Siecle</th>
+      <th>Pages</th>
+      <th>Auteurs_Liste</th>
+      <th>Villes_Liste</th>
+      <th>Themes_Liste</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
-    <a href="statistiques.html">📈 Voir les statistiques interactives</a>
-  </div>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+  fetch('base_ahpv_enriched_simplified.csv')
+    .then(response => response.text())
+    .then(csv => {
+      const lines = csv.trim().split('\n');
+      const headers = lines[0].split(',');
+      const rows = lines.slice(1).map(line => line.split(','));
+      const tbody = document.querySelector('#data-table tbody');
+      tbody.innerHTML = rows.map(cells => {
+        return '<tr>' + headers.map((_, i) => `<td>${cells[i] || ''}</td>`).join('') + '</tr>';
+      }).join('');
 
-  <table id="data-table" class="display nowrap" style="width:100%">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
-
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-
-  <script>
-    const visibleColumns = ['Numero', 'Titre', 'Pages', 'Auteurs', 'Villes', 'Themes', 'Epoque', 'Siecle'];
-    const hiddenColumns = ['Auteurs_Liste', 'Villes_Liste', 'Themes_Liste'];
-
-    let headers = [];
-    let table;
-    let globalData = [];
-    
-      // Filtres simples sur la page index
-      let globalData = [];
-      document.getElementById('filter-champ').addEventListener('change', () => {
-        const champ = document.getElementById('filter-champ').value;
-        const select = document.getElementById('filter-valeur');
-        const colIndex = headers.indexOf(champ);
-        const uniqueValues = [...new Set(globalData.map(row => row[colIndex]).filter(Boolean))].sort();
-        select.innerHTML = '<option value="">-- Choisissez une valeur --</option>' +
-          uniqueValues.map(v => `<option value="${v}">${v}</option>`).join('');
+      $('#data-table').DataTable({
+        dom: 'Blfrtip',
+        buttons: ['copy', 'csv', 'excel'],
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Tous"]],
+        columnDefs: [
+          { targets: [7,8,9,10], visible: false } // Pages, Auteurs_Liste, Villes_Liste, Themes_Liste masqués
+        ],
+        language: {
+          url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
+        }
       });
-
-      document.getElementById('filter-valeur').addEventListener('change', () => {
-        const champ = document.getElementById('filter-champ').value;
-        const valeur = document.getElementById('filter-valeur').value;
-        const colIndex = headers.indexOf(champ);
-        table.column(colIndex).search(valeur).draw();
-      });
-
-    fetch('base_ahpv_enriched_simplified.csv')
-      .then(response => response.text())
-      .then(data => {
-        const lines = data.trim().split('\n');
-        headers = lines[0].split(',');
-        const allIndices = headers.map((h, i) => ({name: h, index: i}));
-
-        const thead = '<tr>' + allIndices.map(ci => `<th>${ci.name}</th>`).join('') + '</tr>';
-        globalData = lines.slice(1).map(row => row.split(','));
-        const rows = globalData.map(cells => {
-          const cells = row.split(',');
-          return '<tr>' + allIndices.map(ci => `<td>${cells[ci.index] || ''}</td>`).join('') + '</tr>';
-        }).join('');
-
-        $('#data-table thead').html(thead);
-        $('#data-table tbody').html(rows);
-
-        const columnDefs = allIndices.map((col, idx) => ({
-          targets: idx,
-          visible: visibleColumns.includes(col.name),
-          searchable: true
-        }));
-
-        const table = $('#data-table').DataTable({
-          dom: 'Bfrtip',
-          buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-          responsive: true,
-          columnDefs: columnDefs,
-          lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Tous"]],
-          language: {
-            url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
-          }
-        });
-      });
-  </script>
+    });
+</script>
 
 </body>
 </html>
