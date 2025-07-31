@@ -49,6 +49,20 @@
   </header>
 
   <div class="actions">
+  <div id="filters" style="margin-bottom: 20px;">
+    <label for="filter-champ">Filtrer par :</label>
+    <select id="filter-champ">
+      <option value="Auteurs">Auteurs</option>
+      <option value="Villes">Villes</option>
+      <option value="Themes">Thèmes</option>
+      <option value="Epoque">Époque</option>
+      <option value="Siecle">Siècle</option>
+    </select>
+    <select id="filter-valeur">
+      <option value="">-- Choisissez une valeur --</option>
+    </select>
+  </div>
+
     <a href="statistiques.html">📈 Voir les statistiques interactives</a>
   </div>
 
@@ -70,15 +84,38 @@
     const visibleColumns = ['Numero', 'Titre', 'Pages', 'Auteurs', 'Villes', 'Themes', 'Epoque', 'Siecle'];
     const hiddenColumns = ['Auteurs_Liste', 'Villes_Liste', 'Themes_Liste'];
 
+    let headers = [];
+    let table;
+    let globalData = [];
+    
+      // Filtres simples sur la page index
+      let globalData = [];
+      document.getElementById('filter-champ').addEventListener('change', () => {
+        const champ = document.getElementById('filter-champ').value;
+        const select = document.getElementById('filter-valeur');
+        const colIndex = headers.indexOf(champ);
+        const uniqueValues = [...new Set(globalData.map(row => row[colIndex]).filter(Boolean))].sort();
+        select.innerHTML = '<option value="">-- Choisissez une valeur --</option>' +
+          uniqueValues.map(v => `<option value="${v}">${v}</option>`).join('');
+      });
+
+      document.getElementById('filter-valeur').addEventListener('change', () => {
+        const champ = document.getElementById('filter-champ').value;
+        const valeur = document.getElementById('filter-valeur').value;
+        const colIndex = headers.indexOf(champ);
+        table.column(colIndex).search(valeur).draw();
+      });
+
     fetch('base_ahpv_enriched_simplified.csv')
       .then(response => response.text())
       .then(data => {
         const lines = data.trim().split('\n');
-        const headers = lines[0].split(',');
+        headers = lines[0].split(',');
         const allIndices = headers.map((h, i) => ({name: h, index: i}));
 
         const thead = '<tr>' + allIndices.map(ci => `<th>${ci.name}</th>`).join('') + '</tr>';
-        const rows = lines.slice(1).map(row => {
+        globalData = lines.slice(1).map(row => row.split(','));
+        const rows = globalData.map(cells => {
           const cells = row.split(',');
           return '<tr>' + allIndices.map(ci => `<td>${cells[ci.index] || ''}</td>`).join('') + '</tr>';
         }).join('');
@@ -92,7 +129,7 @@
           searchable: true
         }));
 
-        $('#data-table').DataTable({
+        const table = $('#data-table').DataTable({
           dom: 'Bfrtip',
           buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
           responsive: true,
