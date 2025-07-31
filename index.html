@@ -1,89 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>📊 Publications des Amis de l’Histoire du Pays Vizillois</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f8f6f1;
-      margin: 2rem;
-      color: #333;
-    }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .logo {
-      height: 60px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>📊 Publications des Amis de l’Histoire du Pays Vizillois</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f9f6ef;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+        }
+        #logo {
+            display: block;
+            margin: 0 auto 20px;
+            height: 80px;
+        }
+        table.dataTable thead th {
+            background-color: #e8dcc5;
+        }
+    </style>
 </head>
 <body>
+    <img id="logo" src="logo_ahpv.png" alt="Logo AHPV">
+    <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
+    <table id="data-table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Titre</th>
+                <th>Auteurs</th>
+                <th>Villes</th>
+                <th>Themes</th>
+                <th>Epoque</th>
+            </tr>
+        </thead>
+    </table>
 
-<header>
-  <img src="logo_ahpv.png" alt="Logo AHPV" class="logo">
-  <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
-</header>
-
-<table id="data-table" class="display" style="width:100%">
-  <thead>
-    <tr>
-      <th>Numero</th>
-      <th>Titre</th>
-      <th>Auteurs</th>
-      <th>Villes</th>
-      <th>Themes</th>
-      <th>Epoque</th>
-      <th>Siecle</th>
-      <th>Pages</th>
-      <th>Auteurs_Liste</th>
-      <th>Villes_Liste</th>
-      <th>Themes_Liste</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script>
-  fetch('base_ahpv_enriched_simplified.csv')
-    .then(response => response.text())
-    .then(csv => {
-      const lines = csv.trim().split('\n');
-      const headers = lines[0].split(',');
-      const rows = lines.slice(1).map(line => line.split(','));
-      const tbody = document.querySelector('#data-table tbody');
-      tbody.innerHTML = rows.map(cells => {
-        return '<tr>' + headers.map((_, i) => `<td>${cells[i] || ''}</td>`).join('') + '</tr>';
-      }).join('');
-
-      $('#data-table').DataTable({
-        dom: 'Blfrtip',
-        buttons: ['copy', 'csv', 'excel'],
-        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Tous"]],
-        columnDefs: [
-          { targets: [7,8,9,10], visible: false } // Pages, Auteurs_Liste, Villes_Liste, Themes_Liste masqués
-        ],
-        language: {
-          url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
-        }
-      });
-    });
-</script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#data-table').DataTable({
+                ajax: 'base_ahpv_enriched_simplified.csv',
+                dom: 'Blfrtip',
+                buttons: ['csvHtml5', 'excelHtml5'],
+                paging: true,
+                pageLength: 25,
+                lengthMenu: [10, 25, 50, 100, "All"],
+                columns: [
+                    { data: "Numero" },
+                    { data: "Titre" },
+                    { data: "Auteurs" },
+                    { data: "Villes" },
+                    { data: "Themes" },
+                    { data: "Epoque" }
+                ],
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
+                }
+            });
+        });
+    </script>
 </body>
 </html>
