@@ -22,6 +22,7 @@
     <thead></thead>
     <tbody></tbody>
   </table>
+<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
 
   <!-- Fenêtre modale pour stats -->
   <div id="statsModal">
@@ -123,7 +124,58 @@
             const themeLabels = sortedThemes.map(e => e[0]);
             const themeValues = sortedThemes.map(e => e[1]);
 
-            // --- init chart below is replaced dynamically ---
+            
+// Mise à jour du compteur
+const dt = new DataTable("#data-table");
+dt.on('draw', function () {
+  document.getElementById("recordCount").textContent =
+    "Nombre d’enregistrements affichés : " + dt.rows({search:'applied'}).count();
+});
+
+// Ajouter clic sur les barres pour afficher les détails
+document.getElementById("themeChart").onclick = (evt) => {
+  const points = currentChart1.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, false);
+  if (points.length) {
+    const label = currentChart1.data.labels[points[0].index];
+    const field = document.getElementById("statsField").value;
+
+    fetch("base_ahpv_enriched_simplified.csv")
+      .then(r => r.text())
+      .then(csv => {
+        Papa.parse(csv, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function(results) {
+            const data = results.data;
+            const matching = data.filter(row => (row[field] || "").includes(label));
+
+            const list = document.getElementById("detailList");
+            list.innerHTML = "";
+            matching.forEach(row => {
+              const li = document.createElement("li");
+              li.innerHTML = "<strong>" + (row["Titre"] || "Sans titre") + "</strong><br><em>" + (row["Auteurs"] || "") + "</em>";
+              list.appendChild(li);
+            });
+
+            document.getElementById("detailTitle").textContent = `Articles associés à « ${label} » (${matching.length})`;
+            const modal = document.getElementById("detailModal");
+            modal.style.display = "flex";
+            modal.style.opacity = 0;
+            setTimeout(() => { modal.style.opacity = 1; }, 10);
+          }
+        });
+      });
+  }
+};
+
+document.getElementById("closeDetail").onclick = () => {
+  const modal = document.getElementById("detailModal");
+  modal.style.opacity = 0;
+  setTimeout(() => { modal.style.display = "none"; }, 300);
+};
+
+
+// --- init chart below is replaced dynamically ---
 
 let currentChart1, currentChart2;
 document.getElementById("statsField").addEventListener("change", function() {
