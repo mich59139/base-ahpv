@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Base AHPV - Recherche Avancée</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.13.4/api/fnFilterOnReturn.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- Extensions DataTables pour les boutons d’export et les volets de recherche -->
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/searchpanes/2.1.0/js/dataTables.searchPanes.min.js"></script>
+  <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.1.0/css/searchPanes.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.5.0/css/select.dataTables.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #005691;
+    }
+    #logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-height: 120px;
+    }
+    table.dataTable thead th {
+      background-color: #e6f2fb;
+    }
+    tfoot input {
+      width: 100%;
+      padding: 3px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="logo_ahpv.png" alt="Logo AHPV">
+  <h1>Catalogue des publications des Amis de l’Histoire du Pays Vizillois</h1>
+  <!-- Ajout d’un pied de tableau pour accueillir les champs de recherche par colonne -->
+  <table id="data-table" class="display" style="width:100%">
+    <tfoot>
+      <tr></tr>
+    </tfoot>
+  </table>
+
+  <script>
+    // Charger la base de données enrichie. Celle-ci contient des colonnes supplémentaires
+    // (Siècle, début/fin de page, listes) et des valeurs nettoyées.
+    fetch('base_ahpv_enriched.csv')
+      .then(response => response.text())
+      .then(csv => {
+        Papa.parse(csv, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function(results) {
+            const data = results.data;
+            // Définir manuellement les colonnes à afficher avec des titres francisés.
+            const columns = [
+              { title: 'Numéro', data: 'Numéro' },
+              { title: 'Titre', data: 'Titre' },
+              { title: 'Pages', data: 'Page(s)' },
+              { title: 'Auteurs', data: 'Auteur(s)' },
+              { title: 'Villes', data: 'Ville(s)' },
+              { title: 'Thèmes', data: 'Theme(s)' },
+              { title: 'Époque', data: 'Epoque' },
+              { title: 'Siècle', data: 'Siècle' },
+              // Colonnes techniques masquées pour les recherches/exports
+              { title: 'Début page', data: 'Page_Debut', visible: false },
+              { title: 'Fin page', data: 'Page_Fin', visible: false },
+              { title: 'Auteurs Liste', data: 'Auteurs_Liste', visible: false },
+              { title: 'Villes Liste', data: 'Villes_Liste', visible: false },
+              { title: 'Thèmes Liste', data: 'Themes_Liste', visible: false },
+              // Colonne d’action : un bouton pour afficher plus de détails
+              { title: 'Détails', data: null, defaultContent: "<button class='details-btn'>Détails</button>", orderable: false, searchable: false }
+            ];
+            // Initialisation du tableau DataTables
+            const table = $('#data-table').DataTable({
+              data: data,
+              columns: columns,
+              // Activer SearchPanes et Buttons via le paramètre dom :
+              dom: 'PBlfrtip',
+              buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+              searchPanes: {
+                // Limiter les volets de recherche aux colonnes Villes, Thèmes, Époque et Siècle
+                columns: [4, 5, 6, 7],
+                cascadePanes: true,
+                viewTotal: true,
+                initCollapsed: true
+              },
+              order: [[0, 'asc']],
+              pageLength: 25,
+              lengthMenu: [10, 25, 50, 100, 250],
+              language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/fr-FR.json'
+              },
+              initComplete: function () {
+                // Ajouter des champs de recherche en pied de tableau pour chaque colonne visible (hors colonne d’action)
+                this.api().columns().every(function (idx) {
+                  const column = this;
+                  const colDef = columns[idx];
+                  if (!column.visible() || colDef.title === 'Détails') {
+                    return;
+                  }
+                  const input = document.createElement('input');
+                  input.placeholder = 'Rechercher...';
+                  $(input).appendTo($(column.footer()).empty())
+                    .on('keyup change clear', function () {
+                      if (column.search() !== this.value) {
+                        column.search(this.value).draw();
+                      }
+                    });
+                });
+              },
+              // Demander explicitement à DataTables de créer un pied de tableau s’il n’existe pas
+              footer: true
+            });
+            // Générer le contenu HTML pour les détails d’une ligne
+            function formatDetail(rowData) {
+              return `<div style="padding:10px;">
+  <strong>Numéro&nbsp;:</strong> ${rowData['Numéro'] || ''}<br>
+  <strong>Titre&nbsp;:</strong> ${rowData['Titre'] || ''}<br>
+  <strong>Pages&nbsp;:</strong> ${rowData['Page(s)'] || ''} (${rowData['Page_Debut'] || ''} – ${rowData['Page_Fin'] || ''})<br>
+  <strong>Auteurs&nbsp;:</strong> ${rowData['Auteur(s)'] || ''}<br>
+  <strong>Villes&nbsp;:</strong> ${rowData['Ville(s)'] || ''}<br>
+  <strong>Thèmes&nbsp;:</strong> ${rowData['Theme(s)'] || ''}<br>
+  <strong>Époque&nbsp;:</strong> ${rowData['Epoque'] || ''} (Siècle&nbsp;: ${rowData['Siècle'] || ''})
+</div>`;
+            }
+            // Ajouter un gestionnaire d’événement sur le bouton de détails
+            $('#data-table tbody').on('click', 'button.details-btn', function () {
+              const tr = $(this).closest('tr');
+              const row = table.row(tr);
+              if (row.child.isShown()) {
+                row.child.hide();
+                tr.removeClass('shown');
+              } else {
+                row.child(formatDetail(row.data())).show();
+                tr.addClass('shown');
+              }
+            });
+          }
+        });
+      })
+      .catch(error => {
+        document.body.innerHTML += "<p style='color:red;'>Erreur de chargement du fichier CSV.</p>";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
