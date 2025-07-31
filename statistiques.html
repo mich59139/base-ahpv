@@ -1,116 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Statistiques – Catalogue AHPV</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <title>📈 Statistiques des publications AHPV</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
   <style>
     body {
-      font-family: 'Segoe UI', 'Inter', sans-serif;
-      background-color: #f8f5f0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f9f6f0;
+      padding: 2rem;
       color: #333;
-      padding: 2em;
     }
     h1 {
-      font-size: 1.6em;
+      font-size: 1.8rem;
     }
-    label, select {
-      font-size: 1em;
-    }
-    canvas {
-      margin-top: 2em;
-      max-width: 700px;
-    }
-    .control {
-      margin: 1em 0;
-    }
-    a {
-      display: inline-block;
-      margin-top: 2em;
-      text-decoration: none;
-      color: #005577;
+    .filters {
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
-  <h1>📊 Statistiques du catalogue AHPV</h1>
-  <p id="totalCount"></p>
-  <div class="control">
-    <label for="fieldSelect">Choisir un champ à analyser :</label>
-    <select id="fieldSelect">
-      <option value="Themes">Thèmes</option>
+  <h1>📈 Statistiques interactives des publications AHPV</h1>
+
+  <div class="filters">
+    <label for="champ">Champ :</label>
+    <select id="champ">
       <option value="Auteurs">Auteurs</option>
       <option value="Villes">Villes</option>
-      <option value="Siècles">Siècles</option>
+      <option value="Themes">Thèmes</option>
+      <option value="Epoque">Époque</option>
+      <option value="Siecle">Siècle</option>
     </select>
+    <input type="text" id="valeur" placeholder="Rechercher...">
+    <button onclick="filtrer()">Afficher</button>
   </div>
-  <canvas id="statsChart"></canvas>
-  <a href="index.html">⬅️ Retour au catalogue</a>
+
+  <table id="filteredTable" class="display" style="width:100%">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
   <script>
-    let chart;
-
-    const plotTop = (counts, label, topN=10) => {
-      const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]).slice(0, topN);
-      const ctx = document.getElementById("statsChart").getContext("2d");
-      if (chart) chart.destroy();
-      chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: sorted.map(e => e[0]),
-          datasets: [{
-            label,
-            data: sorted.map(e => e[1]),
-            backgroundColor: '#b8946b'
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: { legend: { display: false } },
-          scales: {
-            y: { beginAtZero: true, ticks: { precision: 0 } }
-          }
-        }
-      });
-    };
-
-    const countByField = (rows, field) => {
-      const counts = {};
-      rows.forEach(row => {
-        const key = (row[field] || "").split(/[;,]/);
-        key.forEach(k => {
-          const trimmed = k.trim();
-          if (trimmed) counts[trimmed] = (counts[trimmed] || 0) + 1;
-        });
-      });
-      return counts;
-    };
+    const visibleColumns = ['Numero', 'Titre', 'Pages', 'Auteurs', 'Villes', 'Themes', 'Epoque', 'Siecle'];
+    const hiddenColumns = ['Auteurs_Liste', 'Villes_Liste', 'Themes_Liste'];
 
     let allData = [];
 
-    fetch("base_ahpv_enriched_simplified.csv")
-      .then(res => res.text())
-      .then(csv => {
-        Papa.parse(csv, {
-          header: true,
-          skipEmptyLines: true,
-          complete: function(results) {
-            allData = results.data;
-            document.getElementById("totalCount").textContent = "Nombre total d'enregistrements : " + allData.length;
-            const initialField = document.getElementById("fieldSelect").value;
-            const counts = countByField(allData, initialField);
-            plotTop(counts, `Répartition des ${initialField.toLowerCase()}`);
-          }
-        });
+    function initTable(data) {
+      const headers = Object.keys(data[0]);
+      const theadHTML = '<tr>' + headers.map(h => '<th>' + h + '</th>').join('') + '</tr>';
+      const tbodyHTML = data.map(row => {
+        return '<tr>' + headers.map(h => '<td>' + (row[h] || '') + '</td>').join('') + '</tr>';
+      }).join('');
+      $('#filteredTable thead').html(theadHTML);
+      $('#filteredTable tbody').html(tbodyHTML);
+
+      const colDefs = headers.map((h, i) => {
+        return {
+          targets: i,
+          visible: visibleColumns.includes(h)
+        };
       });
 
-    document.getElementById("fieldSelect").addEventListener("change", function () {
-      const field = this.value;
-      const counts = countByField(allData, field);
-      plotTop(counts, `Répartition des ${field.toLowerCase()}`);
-    });
+      if ($.fn.DataTable.isDataTable('#filteredTable')) {
+        $('#filteredTable').DataTable().destroy();
+      }
+
+      $('#filteredTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['copy', 'csv', 'excel'],
+        columnDefs: colDefs,
+        language: {
+          url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
+        }
+      });
+    }
+
+    function filtrer() {
+      const champ = document.getElementById('champ').value;
+      const valeur = document.getElementById('valeur').value.toLowerCase();
+      const filtered = allData.filter(row => 
+        row[champ] && row[champ].toLowerCase().includes(valeur)
+      );
+      initTable(filtered);
+    }
+
+    fetch('base_ahpv_enriched_simplified.csv')
+      .then(response => response.text())
+      .then(csv => {
+        const [headerLine, ...lines] = csv.trim().split('\n');
+        const headers = headerLine.split(',');
+        allData = lines.map(line => {
+          const values = line.split(',');
+          return headers.reduce((obj, h, i) => {
+            obj[h] = values[i] || "";
+            return obj;
+          }, {});
+        });
+        initTable(allData);
+      });
   </script>
 </body>
 </html>
