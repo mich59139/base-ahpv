@@ -67,23 +67,36 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
   <script>
+    const visibleColumns = ['Numero', 'Titre', 'Pages', 'Auteurs', 'Villes', 'Themes', 'Epoque', 'Siecle'];
+    const hiddenColumns = ['Auteurs_Liste', 'Villes_Liste', 'Themes_Liste'];
+
     fetch('base_ahpv_enriched_simplified.csv')
       .then(response => response.text())
       .then(data => {
         const lines = data.trim().split('\n');
         const headers = lines[0].split(',');
-        const rows = lines.slice(1).map(row => row.split(','));
+        const allIndices = headers.map((h, i) => ({name: h, index: i}));
 
-        let thead = '<tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr>';
-        let tbody = rows.map(row => '<tr>' + row.map(cell => `<td>${cell}</td>`).join('') + '</tr>').join('');
+        const thead = '<tr>' + allIndices.map(ci => `<th>${ci.name}</th>`).join('') + '</tr>';
+        const rows = lines.slice(1).map(row => {
+          const cells = row.split(',');
+          return '<tr>' + allIndices.map(ci => `<td>${cells[ci.index] || ''}</td>`).join('') + '</tr>';
+        }).join('');
 
         $('#data-table thead').html(thead);
-        $('#data-table tbody').html(tbody);
+        $('#data-table tbody').html(rows);
+
+        const columnDefs = allIndices.map((col, idx) => ({
+          targets: idx,
+          visible: visibleColumns.includes(col.name),
+          searchable: true
+        }));
 
         $('#data-table').DataTable({
           dom: 'Bfrtip',
           buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
           responsive: true,
+          columnDefs: columnDefs,
           language: {
             url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
           }
