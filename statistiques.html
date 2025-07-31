@@ -32,7 +32,7 @@
       <option value="Epoque">Époque</option>
       <option value="Siecle">Siècle</option>
     </select>
-    <input type="text" id="valeur" placeholder="Rechercher...">
+    <select id="valeur"><option value="">-- Choisissez une valeur --</option></select>
     <button onclick="filtrer()">Afficher</button>
   </div>
 
@@ -91,6 +91,15 @@
       );
       initTable(filtered);
     }
+
+    
+      document.getElementById('champ').addEventListener('change', () => {
+        const champ = document.getElementById('champ').value;
+        const uniqueValues = [...new Set(allData.map(d => d[champ]).filter(Boolean))].sort();
+        const select = document.getElementById('valeur');
+        select.innerHTML = '<option value="">-- Choisissez une valeur --</option>' +
+          uniqueValues.map(v => `<option value="${v}">${v}</option>`).join('');
+      });
 
     fetch('base_ahpv_enriched_simplified.csv')
       .then(response => response.text())
