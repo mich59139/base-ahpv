@@ -1,133 +1,95 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<title>📊 Catalogue AHPV</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="style.css" rel="stylesheet"/>
-<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/searchpanes/2.2.0/css/searchPanes.dataTables.min.css" rel="stylesheet"/>
-<link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" rel="stylesheet"/>
-<style>
-#sidebarFilter {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 280px;
-  height: 100vh;
-  background-color: #f9f5ee;
-  border-right: 1px solid #ccc;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-#sidebarFilter.open {
-  transform: translateX(0);
-}
-.sidebar-toggle {
-  position: absolute;
-  top: 1em;
-  right: -2em;
-  width: 2em;
-  height: 2em;
-  background-color: #b8946b;
-  color: white;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
-.sidebar-content {
-  padding: 1em;
-  font-size: 0.9em;
-}
-</style>
-</link>
-<style>
-body {
-  font-family: 'Segoe UI', 'Inter', sans-serif;
-  background-color: #f8f5f0;
-  color: #333;
-  margin: 0;
-  padding: 1em;
-}
-header {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  margin-bottom: 1.5em;
-}
-header img {
-  height: 60px;
-}
-header h1 {
-  font-size: 1.8em;
-  margin: 0;
-}
-.dataTables_wrapper {
-  background-color: white;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📊 Publications AHPV</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f6f1;
+      color: #333;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    header img {
+      height: 60px;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+    .actions {
+      margin-bottom: 20px;
+    }
+    .actions a {
+      padding: 8px 12px;
+      background-color: #e0c9a6;
+      color: #000;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .dataTables_wrapper .dt-buttons {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <img src="logo_ahpv.png" alt="Logo AHPV">
-  <h1>Catalogue des publications AHPV</h1>
-</header>
-<p style="text-align:center;"><a href="statistiques.html">📊 Voir les statistiques du catalogue</a></p>
-<div style="text-align:center; margin: 1em 0;"></div>
-<header>
-<img alt="Logo AHPV" id="logo" src="logo_ahpv.png"/>
-<h1>📊 Catalogue des publications des Amis de l’Histoire du Pays Vizillois</h1>
-</header>
-<p style="text-align:center;"><a href="statistiques.html">📊 Voir les statistiques du catalogue</a></p>
-<div style="text-align: center; margin: 1em auto; display:flex; justify-content:center; gap:1em;">
-<button onclick="document.getElementById('filterModal').style.display='flex'" style="padding:0.5em 1em;">🔎 Recherche ciblée</button> position: relative; z-index: 2;"&gt;
-    <button id="openStats">📊 Voir les statistiques</button>
-</div>
-<table class="display" id="data-table" style="width:100%">
-<thead></thead>
-<tbody></tbody>
-</table>
-<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
-<div id="recordCount" style="text-align:center; margin: 1em; font-weight:bold;"></div>
-<!-- Fenêtre modale pour stats -->
-<div id="statsModal">
-<div>
-<span id="closeStats">×</span>
-<h2 style="text-align:center;">Statistiques du catalogue</h2>
-<div style="margin: 20px auto; text-align: center;">
-<label for="statsField">Afficher les statistiques pour : </label>
-<select id="statsField">
-<option value="Themes">Thèmes</option>
-<option value="Auteurs">Auteurs</option>
-<option value="Villes">Villes</option>
-<option value="Siecle">Siècles</option>
-</select>
-</div>
-<canvas id="themeChart"></canvas>
-<canvas id="centuryChart"></canvas>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/searchpanes/2.2.0/js/dataTables.searchPanes.min.js"></script>
+  <header>
+    <img src="logo_ahpv.png" alt="Logo AHPV">
+    <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
+  </header>
 
-<!-- Fenêtre latérale pour filtre personnalisé -->
+  <div class="actions">
+    <a href="statistiques.html">📈 Voir les statistiques interactives</a>
+  </div>
 
+  <table id="data-table" class="display nowrap" style="width:100%">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
+  <script>
+    fetch('base_ahpv_enriched_simplified.csv')
+      .then(response => response.text())
+      .then(data => {
+        const lines = data.trim().split('\n');
+        const headers = lines[0].split(',');
+        const rows = lines.slice(1).map(row => row.split(','));
+
+        let thead = '<tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr>';
+        let tbody = rows.map(row => '<tr>' + row.map(cell => `<td>${cell}</td>`).join('') + '</tr>').join('');
+
+        $('#data-table thead').html(thead);
+        $('#data-table tbody').html(tbody);
+
+        $('#data-table').DataTable({
+          dom: 'Bfrtip',
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+          responsive: true,
+          language: {
+            url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
+          }
+        });
+      });
+  </script>
 
 </body>
 </html>
