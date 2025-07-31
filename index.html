@@ -40,6 +40,7 @@
                 <th>Epoque</th>
             </tr>
         </thead>
+        <tbody></tbody>
     </table>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -51,26 +52,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
     <script>
     $(document).ready(function() {
-        $('#data-table').DataTable({
-            ajax: 'base_ahpv_visible.json',
-            columns: [
-                { data: 'Numero' },
-                { data: 'Titre' },
-                { data: 'Auteurs' },
-                { data: 'Villes' },
-                { data: 'Themes' },
-                { data: 'Epoque' }
-            ],
-            dom: 'Bfrtip',
-            buttons: [
-                'pageLength',
-                'csv', 'excel', 'pdf'
-            ],
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json'
+        Papa.parse('base_ahpv_visible.csv', {
+            download: true,
+            header: true,
+            complete: function(results) {
+                $('#data-table').DataTable({
+                    data: results.data,
+                    columns: [
+                        { data: 'Numero' },
+                        { data: 'Titre' },
+                        { data: 'Auteurs' },
+                        { data: 'Villes' },
+                        { data: 'Themes' },
+                        { data: 'Epoque' }
+                    ],
+                    dom: 'Bfrtip',
+                    buttons: ['pageLength', 'csv', 'excel', 'pdf'],
+                    language: {
+                        url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json'
+                    }
+                });
             }
         });
     });
