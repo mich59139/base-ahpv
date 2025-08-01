@@ -1,65 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>📊 Publications des Amis de l’Histoire du Pays Vizillois</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
-  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #fefbf7;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    #data-table_wrapper {
-      margin-top: 30px;
-    }
-    header img {
-      height: 50px;
-      vertical-align: middle;
-    }
-    header {
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>📊 Publications des Amis de l’Histoire du Pays Vizillois</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #fefbf7; }
+        h1 { text-align: center; color: #333; }
+        #data-table_wrapper { margin-top: 30px; }
+        header img { height: 50px; vertical-align: middle; }
+        header { text-align: center; }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo_ahpv.png" alt="Logo AHPV">
-    <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
-  </header>
+    <header>
+        <img src="logo_ahpv.png" alt="Logo AHPV">
+        <h1>📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
+    </header>
 
-  <table id="data-table" class="display" style="width:100%"></table>
+    <table id="data-table" class="display" style="width:100%"></table>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-  <script>
-    Papa.parse("base_ahpv_visible.csv", {
-      download: true,
-      header: true,
-      complete: function(results) {
-        const data = results.data;
-        const columns = Object.keys(data[0]).map(key => ({ title: key, data: key }));
-        $('#data-table').DataTable({
-          data: data,
-          columns: columns,
-          dom: 'Bfrtip',
-          buttons: ['csv', 'excel'],
-          language: {
-            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/fr-FR.json"
-          },
-          pageLength: 10
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        Papa.parse("base_ahpv_visible.csv", {
+          download: true,
+          header: true,
+          complete: function(results) {
+            const data = results.data;
+            const columns = Object.keys(data[0]).map(key => ({ title: key, data: key }));
+            $('#data-table').DataTable({
+              data: data,
+              columns: columns,
+              dom: 'Bfrtip',
+              buttons: ['csv', 'excel'],
+              language: { url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/fr-FR.json" },
+              pageLength: 25,
+              lengthMenu: [10, 25, 50, 100, 250, 500, "Tous"]
+            });
+          }
         });
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>
