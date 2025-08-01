@@ -1,11 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>📊 Publications des Amis de l’Histoire du Pays Vizillois</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f6f1;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #data-table_wrapper {
+            margin-top: 20px;
+        }
+        .logo {
+            max-height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Page exemple</h1>
+    <h1><img src="logo_ahpv.png" class="logo" alt="Logo AHPV">📊 Publications des Amis de l’Histoire du Pays Vizillois</h1>
+    <table id="data-table" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Titre</th>
+                <th>Auteurs</th>
+                <th>Villes</th>
+                <th>Themes</th>
+                <th>Epoque</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#data-table').DataTable({
+                ajax: 'base_ahpv_visible.csv',
+                dom: 'Bfrtip',
+                buttons: ['csvHtml5', 'excelHtml5'],
+                columns: [
+                    { data: 'Numero' },
+                    { data: 'Titre' },
+                    { data: 'Auteurs' },
+                    { data: 'Villes' },
+                    { data: 'Themes' },
+                    { data: 'Epoque' }
+                ],
+                columnDefs: [{ targets: '_all', className: 'dt-center' }],
+                responsive: true,
+                paging: true,
+                pageLength: 25,
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
+                }
+            });
+        });
+    </script>
 </body>
 </html>
