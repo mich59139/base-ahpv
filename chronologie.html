@@ -2,950 +2,578 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Chronologie</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <title>Frise Chronologique AHPV</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 40px; }
+        h1 { text-align: center; }
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #bbb;
+            top: 0;
+            bottom: 0;
+            left: 50%%;
+            margin-left: -3px;
+        }
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%%;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%%;
+        }
+        .content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #bbb;
+            top: 15px;
+            border-radius: 50%%;
+            z-index: 1;
+        }
+        .right::after {
+            left: -16px;
+        }
+    </style>
+
+<style>
+.timeline {
+  max-width: 100%;
+  margin: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.timeline-entry {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  position: relative;
+}
+.timeline-entry.left {
+  text-align: left;
+}
+.timeline-entry.right {
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .timeline-entry {
+    text-align: left !important;
+  }
+}
+</style>
+
 </head>
 <body>
-    <h1>Chronologie</h1>
-    <table id="chronologie-table" class="display">
-        <thead><tr><th>Numéro</th><th>Année</th><th>Titre</th></tr></thead>
-        <tbody><tr><td>Mémoire n°01</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Comment la Ille République a sombré Journal de Marguerite Lebrun (août 39 julle 40)  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Les châteaux et autres demeures anciennes de l'ex-canton de Vizille Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Notre couverture  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Vie rurale à Brié pendant la période révolutionnaire  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Paul Michel, photographe  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>La bataille de Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Alexandre Zeis - Une récente découverte  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Alexandre Zeis - Une récente découverte  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>L'inondation de 1928 à Bourg d'Oisans  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Bains électriques d'air chaud au château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Le choléra dans nos contrées en 1854  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Le pont de la Rivoire  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>D'aigua sioplait (de l'eau s'il vous plaît)  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Le souvenir  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Les Tissages de Vizille de 1918 à 1968 ()  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>A propos du Prieuré de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>I - Un séjour à émotion de Marcel Deprez  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Un grand mariage à Vizille au XVIIIe siècle  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>La chapelle Sainte Madeleine  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Les femmes dans la guerre de 14-18 - Seconde partie )  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>Comment a commencé ma collection d'objets sur les JeuxOlympiques d'hiver de Grenoble  Résumé</td></tr>
-<tr><td>Mémoire n°01</td><td>nan</td><td>La page utile  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Premiers noms connus à Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>II - Biographie de Marcel Deprez  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Chapelle de Montchaboud  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Incendie de Champ village  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Drame dans la montagne de Vaulnaveys  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Propriétaires successifs du Château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Le secret de la mine  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Foires, fêtes et loisirs à Brié  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Recettes dauphinoises  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Lou rena et lou courba  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Vizille en feu  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Evolution de l'art religieux : St Hippolyte des Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Louis XIII et Richelieu à Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Manière de se soigner autrefois  Résumé</td></tr>
-<tr><td>Mémoire n°02</td><td>nan</td><td>Bibliographie et sources  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>La romance des bruleurs de loups  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Stendhal en pays vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Le train dans le canton de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Peillaud, le guide de l'Ile Falcon  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Saint François Régis (chapelle)  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Vizille et le tour de France  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Saint Georges de Commiers  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>La marmite de Lesdiguières  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>III - Marcel Deprez : l'expérience de Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Vizille il y a 100 ans  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Journées mésageoises : exposition St-Pierre  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>L'église de Vizille : un siècle de péripéties  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Le certificat d'études primaires  Résumé</td></tr>
-<tr><td>Mémoire n°03</td><td>nan</td><td>Bibliographie et sources  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>La vallée de la Romanche (moyenne et basse)  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Les docteurs Bonnardon  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Les tribulations du Baptiste  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Contrat de mariage  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Villeneuve d'Uriage et son église  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Cinquante ans déjà : la dissolution du 6e BCA  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Le mariage de Céline : la mariée humoriste  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Le train de St Georges  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>De Grenoble à Brié  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>La guerre de 14/18  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Le quartier de la Gaffe  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Bibliographie et sources  Résumé</td></tr>
-<tr><td>Mémoire n°04</td><td>nan</td><td>Protection et restauration du Prieuré de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Organigramme de la direction du patrimoine  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Notre patrimoine : signification  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Le musée de Champ sur Drac  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Faits divers : Incendie des Traverses à St Pierre de Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Villages Laffrey et St Jean de Vaulx  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Route de Brié  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Les papeteries de Vizille : plus de 400 ans cette année  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Prieuré de Vizille : quoi de neuf !  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>IV - Transport d'électricité - Marcel Deprez  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Une exploitation agricole au XVIIIe - St Pierre de Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>La formation des groupes de résistance à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Le Prieuré de St Michel de Connexe  Résumé</td></tr>
-<tr><td>Mémoire n°05</td><td>nan</td><td>Adduction d'eau à St Jean et Notre Dame de Vaulx  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>La basse vallée de la Romanche  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>I - La vie en 1793 à Champ sur Drac sous la révolution Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>Métiers d'antan  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>50 ans déjà : la Rafle du 18 février 1944  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>I - le fort des 4 seigneurs  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>II - le fort des 4 seigneurs  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>Poème d'hier : si mes grands-parents revenaient  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>Vie quotidienne : la buille chez nos grans-mères  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>Vins futés des grands-mères  Résumé</td></tr>
-<tr><td>Mémoire n°06</td><td>nan</td><td>Bibliographie et sources  Résumé</td></tr>
-<tr><td>Mémoire n°06 bis</td><td>nan</td><td>Libération du pays vizillois - 22 aout 1944 (n° spécial)  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>II - La vie en 1793 à Champ sur Drac sous la révolution Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Guigues II : neuvième prieur des Chartreux  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Un peu de toponymie  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Visite de l'évêque de Grenoble : 1672 à Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Les vins futés de nos grands-mères  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Souvenirs autour de St Firmin  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Adolphe Delleda : coureur cycliste  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Docteur Billerey à Brié  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>22 aout 1944 : le film oublié  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Le moulin neuf de Tavernolles  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Métiers ambulants  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Bibliographie et sources : le Prieuré de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°07</td><td>nan</td><td>Il était une fois à Jarrie : les travaux des champs  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Facheux XXe siècle : St Michel de Connexe  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>La vallée de la Romanche  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Un instrument insolite  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>15 mars 1777 : testament de l'abbé de Beauregard  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Tournerie de Vaulnaveys le haut  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>La pierre cerise  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Une belle trouvaille, un bon réflexe  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>St Barthélémy : église raconte moi ton histoire  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Il était une fois Jarrie : les plaisirs de neige  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Le rideau de scène de la cité Navarre  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Un contrat d'apprentissage : 1895 à Brié  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Traditions et coutumes dans la région  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Construction d'un pont Tarron par le génie  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Renards d'aujourd'hui, loups d'autrefois  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>La croix de Chamrousse  Résumé</td></tr>
-<tr><td>Mémoire n°08</td><td>nan</td><td>Bibliographie et sources  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Au revoir père Meyer  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Attention : un malentendu peut en cacher un autre  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Une soirée inoubliable  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>La St Barnard (et chanson)  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Vie religieuse à Vaulnaveys  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>I - Les aventures de Charvet - Citoyen vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Conventions rapport  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Cure et littérature à Uriage  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>La bataille de St Barthélémy de Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Les sapeurs pompiers St Georgeois  Résumé</td></tr>
-<tr><td>Mémoire n°09</td><td>nan</td><td>Chantier archéologique de Varces  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Naissance d'un blason  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>II - Les aventures de Charvet  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Paysages du canton de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Vizille 1711 : un contrat d'apprentissage  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Chateau d'Herbeys  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Enfant à Vizille dans les années 30  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Religion réformée - Brié en 1727  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>St Pierre de Mésage - son église  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Que ferons-nous de nos églises ?  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Familles nobles du M.A. à Brié  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Un intérieur paysan en 1710 et 1880  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Le "port" de Gavet  Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Comment fut fixé le prix du pain à Vizille en 1615 Résumé</td></tr>
-<tr><td>Mémoire n°10</td><td>nan</td><td>Le village nègre  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Le raffour de la montagne du Péage  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Balade automnale d'un enfant vers 1930  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Lo Toëne de Monchaffrey  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>III - Les aventures de Charvet  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>L'histoire du Mont-Larron  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Missionnaire de la Salette : le révérend Père Archier  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Archéologie : la plaine du Lavanchon  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Le musée historique de la vallée de la Romanche  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>En 1782 : les vaches de Brié étaient-elles folles ?  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Quand Jean-Jacques Rousseau cherchait une maison  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Souvenir des usines Keller  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Il était une fois Jarrie : les commerces  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Retour à l'école des cadres d'Uriage  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Soirée Rigodon à Pellafol 10 aout 1996  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Pique-nique avec les amis de la vallée de la Gresse  Résumé</td></tr>
-<tr><td>Mémoire n°11</td><td>nan</td><td>Les deux mulets (poème)  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>I - Les registres paroissiaux de Brié  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>IV - Les aventures de Charvet  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Le plâtre d'Herbeys  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Un aspect de la vie des campagnes - St Barthélémy de Séchilienne Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>18 février 1944  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Vizille fait divers : 18 février 1944  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Les scouts de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Moulin syndical de Vaulnaveys le haut  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>La chartreuse de Prémol  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Dramatiques évènements aux Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Toponymie et origine des noms des communes  Résumé</td></tr>
-<tr><td>Mémoire n°12</td><td>nan</td><td>Bibliographie et sources  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>"L'aigle a deux têtes" vu par Raymond Voinquel  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>II - Les registres paroissiaux de Brié  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Défense et illustration du patrimoine  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Il revient : retour de Napoléon  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Un projet de monument commémoratif du passage de Napoléon  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Les conscrits (St Pierre et Notre Dame)  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Le battage, du fléau à la batteuse  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Une coutume religieuse : "le pain bénit"  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>V - Les aventures de Charvet : 1814-1816  Résumé</td></tr>
-<tr><td>Mémoire n°13</td><td>nan</td><td>Journées du patrimoine 21 septembre 1997  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>La croix du Mottet  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>A propos de cloche  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Un curé de choc à St Martin de la Cluze  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>III - Les registres paroissiaux de Brié (fin)  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Quand les vizillois chantaient  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>VI - Les aventures de Charvet  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Les débuts du tourisme dans notre région  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Un mariage compromis à Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Avis de recherche  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Un trépas très suivi  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Chamrousse : station olympique de Duhamel à Killy  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Le monologue de Janin  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Histoire d'un site industriel  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Vogues avec violence  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Le dore  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Traditions et coutumes de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Actualités : les 20 ans de Bonrepos  Résumé</td></tr>
-<tr><td>Mémoire n°14</td><td>nan</td><td>Abbaye de Boscodon : sortie du 6 juin 1998  Résumé</td></tr>
-<tr><td>Mémoire n°14 bis</td><td>nan</td><td>Le tour de France en pays Vizillois (n° spécial)  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>Le chatelain d'Herbeys  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>Les cloutiers de St Barthélémy  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>Le président Gaston Doumergue à Prémol  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>Le trolleybus du Péage de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>VII - Les aventures de Charvet (fin)  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>A la fin du XVIIe siècle, un évêque en visite pastorale dans notre région  Résumé</td></tr>
-<tr><td>Mémoire n°15</td><td>nan</td><td>L'appareil judiciaire grenoblois Napoléon et la magistrature  Résumé</td></tr>
-<tr><td>Mémoire n°16</td><td>nan</td><td>Le chateau de Bonrepos  Résumé</td></tr>
-<tr><td>Mémoire n°16</td><td>nan</td><td>L'historique de la fusillade des Tillegrets  Résumé</td></tr>
-<tr><td>Mémoire n°16</td><td>nan</td><td>I - Le fort de Montavie : les fortifications  Résumé</td></tr>
-<tr><td>Mémoire n°16</td><td>nan</td><td>L'abjuration  Résumé</td></tr>
-<tr><td>Mémoire n°16</td><td>nan</td><td>I - Les visites pastorales du Cardinal Le Camus en Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°16</td><td>nan</td><td>Jadis et naguère Chamrousse-Béranger  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>II - Le fort de Montavie : un projet de reconversion  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>Un cheval peu ordinaire  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>Il était une fois Jarrie : la colonie de St Maurice en Trièves  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>La restauration de la chapelle des Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>Comme autrefois  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>Accident du grand mur dans la cote de Laffrey : 25 aout 1946  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>Relation des incidents survenus à Jarrie en juillet et août 44  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>L'art roman dans le canton de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>Chroniques de Champagnier dans les grimoires de Bonrepos  Résumé</td></tr>
-<tr><td>Mémoire n°17</td><td>nan</td><td>II - Les visites pastorales du Cardinal Le Camus en Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>Il était une fois Jarrie : traditions chrétiennes d'antan  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>1943 - 1944 : la voiture au gazo de mon père  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>29 février 1632 : ordonnance de médecins lyonnais  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>St Jean de Vaulx  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>Comment Lesdiguières punit cruellement Jacquet le Maraudeur Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>Les distractions vers les années 30  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>Vizille, camp des veilles ou pays des eaux  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>16 juillt 1911 : Remédo pire que le mâ  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>III - Les visites pastorales du Cardinal Le Camus en Pays Vizillois Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>III - Le fort de Montavie : un projt de reconversion  Résumé</td></tr>
-<tr><td>Mémoire n°18</td><td>nan</td><td>Mémoire d'une communauté : visages de Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>Il était une fois Jarrie : nos pélerinages  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>La famille de Saint-Léger fête 1000 ans d'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>Sur les traces d'André Charvet : citoyen vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>Belledonne ou "qui sait le mot sait les choses" (Platon dans "Le Cratyle")  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>Contrat de mariage  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>La chapelle baroque des Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>Déjà la circulation en 1924 : le tramway à Brié  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>IV - Le fort de Montavie : un projet de reconversion (fin)  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>IV - Les visites pastorales du Cardinal Le Camus en pays Vizillois : Notre-Dame de Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°19</td><td>nan</td><td>Les aventures de Basile Bonnardon : médecin à Vizille au XIXe siècle  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Une affaire entre Casimir Périer et Claude Rouget de Lisle  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>1843 : Histoire d'eau - 1852 : Histoire de débit de boisson  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Les fièvres intermittentes à Vaulnaveys au cours du XVIIIe siècle  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Mon ami le père Paradis : le dernier des tueurs d'ours  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Le premier gardien de refuge : le père Tasse  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Le bas-relief du château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Un faire-part de décès original  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>V - Les visites pastorales du Cardinal Le Camus en Pays Vizillois : prieuré de Vaulnaveys Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>Enigme à Champanier Printemps 44  Résumé</td></tr>
-<tr><td>Mémoire n°20</td><td>nan</td><td>L'élection de St Pierre de Mésage : février 1790  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>Les mémoires du docteur Bonnardon  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>Des nouvelles de nos chateaux  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>Le pont de Vizille et son péage  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>La carte postale témoin de l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>Le centre de documentation du domaine départemental  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>L'ours de la Poyat  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>Trois vizilloises dans la vie "chamboulée" des normaliennes  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>VI - Les visites pastorales du cardinal Le Camus : pays d'Uriage  Résumé</td></tr>
-<tr><td>Mémoire n°21</td><td>nan</td><td>Lieudit et bail à ferme à Jarrie en 1653  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Votre grand-père fait-il partie de cette brochette de cycliste ?  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>La wehrmacht à Vizille du 10 au 21 aout 1944  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Raconte grand-père... Souvenirs d'école  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>La mairie école des Chaberts  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Une maison disparue au passé revenu  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Trois siècles de mémoire  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Les présidents de la République vus par un enfant  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Un blason pour la commune de Brié et Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Un diplôme d'honneur pour Brié et Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>Laffrey  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>I - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>I - L'annuaire d'un curé de campagne aux Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>A propos d'un sauvetage  Résumé</td></tr>
-<tr><td>Mémoire n°22</td><td>nan</td><td>La mort du maire de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>II - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>Le renard et la cigogne  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>Les sites du canton vous ouvrent leurs portes  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>La dolomite de St Pierre de Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>VII - Les visites pastorales du cardinal Le Camus : la Matheysine (fin) Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>Le domaine Rabit à Herbeys  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>Mondanité à Grenoble et Vizille - 1950  Résumé</td></tr>
-<tr><td>Mémoire n°23</td><td>nan</td><td>Histoire d'ours dans la montagne de Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>Nouvelles histoires d'ours  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>L'église de Brié  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>Un mésageois à la découverte du monde  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>Les bassins de Notre-Dame de Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>Dendrochronologie  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>St Sauveur souvenir de guerre  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>Les premiers guides dauphinois sont de Belledonne  Résumé</td></tr>
-<tr><td>Mémoire n°24</td><td>nan</td><td>III - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°25</td><td>nan</td><td>Les suites du spectacle"A la claire fontaine"  Résumé</td></tr>
-<tr><td>Mémoire n°25</td><td>nan</td><td>IV - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°25</td><td>nan</td><td>"La Marianne" : le monument commémoratif de l'assemble de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°25</td><td>nan</td><td>II - L'annuaire d'un curé de campagne aux Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°25</td><td>nan</td><td>Montjean sur Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Herbeys dans l'histoire - La complainte du kiosque  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Les problèmes de la route des Hautes-Alpes  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Histoire de cloche... à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Les mémoires de Basile Bonnardon  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Le temps des échafaudages  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>V - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>A Brié... Des fontaines républicaines et radicales socialistes Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Autour de la légende du mmur du château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°26</td><td>nan</td><td>Un hôte de marque à Vizille : Jean Jaurès  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Un peu de nouveauté  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Assemblé générale des Amis de l'Histoire  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Contribution à l'histoire de la Libération de Vizille. Le 22 aout 1944  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Les 4 saisons de Léonce et Renée  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>VI - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Le patronnage Champ - Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Fontaines et bassins de Vaulnaveys-le-Haut  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Le bureau de poste de Brié et Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Le service postal à Herbeys  Résumé</td></tr>
-<tr><td>Mémoire n°27</td><td>nan</td><td>Mon premier poste d'institutrice  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Edito  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Le saut du moine  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>La fonderie de la mine d'argent de Brandes en Oisans  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Connaissance et actions du patrimoine  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Le triste sort de Pierre Guymet-Node de Montchaffrey qui avait un peu trop fêté la St-Barthélémy 1805  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Recherches sur la première église de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>VII - Les moulins de Jarrie à travers l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>L'hydroscope de Montjean  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Commune de Livet et Gavet - Aout 1944  Résumé</td></tr>
-<tr><td>Mémoire n°28</td><td>nan</td><td>Brié et Angonnes - La commune parraine le village martyr ardennais d'Etrepigny (1920) Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Des amis de l'histoire à l'honneur  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Souvenirs personnels de la libération de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>L'église de Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Jarrie et ses montagnes  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Ceux du magnésium  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Mérimée, professeur d'architecture de Stendhal  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>La Pauline  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Le chateau de paille : les habitants passent, le cadre reste  Résumé</td></tr>
-<tr><td>Mémoire n°29</td><td>nan</td><td>Lucis Baud (1870 - 1913)  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Une journée festive et conviviale - 100 ans d'école à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Un cas de rage à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Notre-Dame des Autels à Champ-sur-Drac  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Le tourisme en Oisans  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Visite du château de Vizille en 1628  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Vizille et ses commerces - 1ère partie de la rue Général De Gaulle  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>Quatre ans de retard pour la classe  Résumé</td></tr>
-<tr><td>Mémoire n°30</td><td>nan</td><td>L'antiquité du plateau de Champagnier  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>La photographie, irremplacable témoin  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>17 juin 1788 - 14 juillet 1789  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>Une famille au Bessey d'Oz au siècle dernier  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>1790 : Dominique Bonnet, curé de St Pierre de Mésage, prête serment à la Constitution Civile du Clergé  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>Vizille et ses commerces : la place Stalingrad  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>100 ans d'école à Vizille - Encore des témoignages  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>La Fayette à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>Un café peu ordinaire  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>Souvenirs au fil du temps : les usines de l'Alliance et du Tissage  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>Commune de Livet et Gavet, aout 1944  Résumé</td></tr>
-<tr><td>Mémoire n°31</td><td>nan</td><td>Un accident du train de la société des VFD  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Femmes  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Le tragique éboulement du 1er avril 1827 à Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Etrange détour dans la destinée d'un pionnier de l'Alpe d'Huez  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Des nouvelles de 1903  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Industries minières et métallurgiques tombées dans l'oubli à Vaulnaveys-le-Bas et à Uriage Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>L'électrification de Grenoble, un enjeu disputé  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Vizille et ses commerces : un quartier dans la ville  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>A lire... ou à danser  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>100 ans d'école à Vizille - Encore des témoignages  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Personnages et demeures de Jarrie, Bon Repos et la Valentine au temps des Vaucanson et Benoit Duperier  Résumé</td></tr>
-<tr><td>Mémoire n°32</td><td>nan</td><td>Ils auraient 100 ans cette année - classe 1927 de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Structure et histoire géologique du plateau de champagnier  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Géologie et contruction  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Des passionnés d'aviation  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Vizille et ses commerces : dernière partie de la rue Général de Gaulle  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Année 1815 : le retour de Napoléon et son passage à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Les aventures du capitaine Randon en marge du passage de Napoléon à Vizille Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Un peu de mémoire qui s'en va  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Edition  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>Un vizillois Huguenot émigré en Prusse au XVIIe siècle  Résumé</td></tr>
-<tr><td>Mémoire n°33</td><td>nan</td><td>A propos du chevalier Bayard et du chateau d'Uriage  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Encore deux nouvelles éditions  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Vizille : foires, marchés, quinzaines commerciales, braderies  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Du chateau médiéval au palais du Connétable  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Le chateau de Vizille avant la Révolution Française  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Fresque de la façade de l'école Jean Jaurès  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Quand la restauration d'objets du patrimoins provoque une cérémonie officielle de l'église catholique Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>La mine de zinc de Laffrey : une ruineuse chimère  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>L'incendie du village de Montchaffrey  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Le tonneau de Diogène, Diogène le cynique  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Olivier Messiaen, l'un des plus grands musiciens du XXe siècle à Petichet  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>1816 : le coup d'état manqué de Jean-Paul Didier  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Un peu de toponymie : chanse, chansure...  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Un triste mois de janvier à Brié : le meurtre du café restaurant Vigier  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Actualités  Résumé</td></tr>
-<tr><td>Mémoire n°34</td><td>nan</td><td>Les anciennes familles de Brié et Angonnes : la famille Ogier  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>La ferme "présidentielle" du chateau de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>Promenade découverte à partir du saut du moine  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>Nos hommes de la révolutions  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>Vizille et ses commerces - Les rues : Casimir. Périer, de la République, Sadi Carnot  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>I - Le parc du chateau du roi  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>Le chateau des Simianes à Haute-Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°35</td><td>nan</td><td>Souvenirs de Georges Vivier : un "personnage", une "figure" humaniste  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>La toponymie  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Fermage à Chachatier en 1730  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Un courroux... magistral  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>La méridienne du bar de la Paix  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Hercule de retour à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Vizille, les maisons de l'abbé Pierre  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Accident miraculeux à Huez  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Barrage de l'Etroit... de l'eau qui a fait couler beaucoup d'encre!  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>A Brié, elles aussi ont une histoire  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Brié et ses environs en 1922 : promenade d'automne autour des 4 seigneurs  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Curiosités de nos archives communales - Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Eté 2009 - Patrimoine en fête  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>La desserte ferroviaire de la vallée de la Romanche  Résumé</td></tr>
-<tr><td>Mémoire n°36</td><td>nan</td><td>Appel à témoins  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Le patrimoine vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Brié et ses environs en 1922 : promenade d'automne autour des 4 Seigneurs Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Canal de navigation ou chemin de fer entre Grenoble et Vizille - Rêves et réalité  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Vizille et ses commerces : La rue Aristide Briand (rue d'Italie)  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>II - Le parc du vieux château du roi  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Souvenirs d'enfance de Gavet au Poursollet  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Centenaire des sapeurs-pompiers de Brié et Angonnes : 1909-2009  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>L'auto-école il y a 40 ans  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>La prise du château de Champ par Lesdiguières le 1er avril 1587  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Une très jeune dame de 100 ans  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Le petit musée de la coiffure  Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>Curiosités de nos archives communales - Les curés racontent l'histoire Résumé</td></tr>
-<tr><td>Mémoire n°37</td><td>nan</td><td>La masse d'arme du Chevalier Bayard  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Adrienne  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>La pierre plate à Rioupéroux  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Vizille et ses comerces : la boucherie Cret - 1908 à 1979 -1ère partie de la rue Jean Jaurès Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Vizille et ses commerces : La rue Aristide Briand (rue d'Italie) - 2ème partie  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Brié et ses environs en 1922 : promenade d'automne autour des 4 Seigneurs  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Ou l'on retrouve les Hache ?  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Une ténébreuse affaire : la conspiration Didier  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>L'histoire dans les archives - Le fonds Jouvin - Carnet du Sieur Corréard  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>A propos de... Les livres de raison  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>L'alambic de la Gaffe  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Le chateau de paille dans les années 50  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Histoires d'eaux au château de Paille  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Ozias Féronce : un grand astronome vizillois méconnu  Résumé</td></tr>
-<tr><td>Mémoire n°38</td><td>nan</td><td>Attention... aux excès de vitesse !  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Hommage à Pierre Melquiond  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Histoire de la Poste (1e partie) à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Sur la route de Montchaffrey  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Le secret d'Hercule - Conte de Noël  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Un ouvrage sur le château de Bon Repos  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>L'histoire dans les archives (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>L'authenticité éxigée par l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Emile Rivet  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Les cavalcades à Vizille (1e partie)  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>1310 - 2010, déjà 700 ans! Les libertés communales de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Les chroniques oubliées : le contrat de mariage  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>Appel à recettes  Résumé</td></tr>
-<tr><td>Mémoire n°39</td><td>nan</td><td>La fabrication du pain à la ferme  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Témoignage de Micheline Hauss  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Tous à vos souvenirs ! Qui peut compléter cette grille ?  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Les hommes de la conspiration Didier  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Histoire de la Poste (2e partie)  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Les cavalcades à Vizille (2e partie)  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Les chroniques oubliées : le contrat de mariage  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Historique de la maison Chamoux  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Vizille et ses commerces : la rue Jean Jaurès (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Etre royaliste  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>La tradition de Guignol à Uriage  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Notre-Dame-de-Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Berthe Vial  Résumé</td></tr>
-<tr><td>Mémoire n°41</td><td>nan</td><td>Le fils d'Ozias Féronce, l'astronome vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Le cimetière de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Le monument aux morts de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Les Jeux Olympiques modernes, une invention Grenobloise  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Repas de fête  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Notre-Dame-de-Jarrie (2e partie)  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Le Lac Mort de Laffrey à Saint-Barthélémy-de-Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Mon premier travail...  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Curiosité  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Histoire de la Poste à Vizille (3e partie)  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Cavalcades organisées par le Comité du sou des écoles (3e partie)  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Mon enfance à Livet - Jeanne Fagno née Bergonzoli  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>La chapelle Notre-Dame-sous-la-Croix à Chamrousse  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Souvenirs d'enfance aux Peyrauds  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>Parcours d'un Français libre  Résumé</td></tr>
-<tr><td>Mémoire n°42</td><td>nan</td><td>La vie de l'association  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Avis de recherche  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Les orgues historiques de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>La chapelle des Angonnes en 1867  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Histoire de la Reine de Mai ou le conte de l'Aspérule  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Les fêtes de Jarrie en 1867  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Les tenues des facteurs  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>L'incroyable vie de Charles d'Albigny, seigneur de Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>L'oeuvre de Charles Albert Keller dans l'électrométallurgie et la production d'énergie électrique  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Le chemin des Huguenots  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Nomination d'un garde champêtre à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Les champignons  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>La société mycologique de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>La tombe de la famille Du Terrail-Couvat dans l'ancien cimetière de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Les productions des Amis de l'Histoire du Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>Nos publications hors-séries  Résumé</td></tr>
-<tr><td>Mémoire n°43</td><td>nan</td><td>La vie de l'association  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Michelle Perrot à travers la presse...  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Michelle Perrot : sur les traces de Lucie Baud  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Témoignage de Lucie Baud  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>L'histoire de l'Alliance Textile  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Un carré de soie représentant le château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Une autre vision peu flatteuse de Vizille en 1882  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Une résistante vizilloise à l'honneur  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Adolphe Grimaldi  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Parcs et jardins de Brié et Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Champ-sur-Drac et son musée d'histoire locale "Autrefois"  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Le moulin de Tavernolles  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>La maison Allard au Louvaroux  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Napoléon 1er à Tavernolles  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Reculement de la Grande Rue à Vizille en 1893  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Les gypsoducs de Champ au XVIIIe siècle  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>Le symbolisme dans le cimetière de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°44</td><td>nan</td><td>La vie de l'association  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Vous avez dit patrimoine ?  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Bain de jouvence pour le château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Lesdiguières, le renard des montagnes  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Claudine de Bérenger et François de Bonne, duc de Lesdiguières Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>L'évêque de Grenoble se suicide dans son château d'Herbeys  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Vous avez dit : lieux-dits ? Une histoire de toponymes  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Le balancier et le bon Saint-Eloi  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Les archives anciennes de Brié et Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Souvenir... souvenir... Les Jeux Olympiques de Grenoble en 1968 Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Une tentative d'incendie à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>L'association des "Amis de l'orgue de Vizille" est née  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Le refuge de la société des Touristes du Dauphiné à La Morte  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Vizille et ses commerces : la rue Jean Jaurès (3ème et dernière partie) Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Vizille, ville d'eau  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>La généalogie de Lucie Baud  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>La maison d'Hugues-Allerme au Louvaroux  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Le cimetière de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Le symbolisme dans le cimetière de Vizille (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>La vie de l'association  Résumé</td></tr>
-<tr><td>Mémoire n°45</td><td>nan</td><td>Table des articles publiés dans Mémoire 41 à 44  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Editorial  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Ambroise Croizat ou l'invention sociale  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Jean Métral raconte  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Les jours heureux - Le programme du Conseil National de la Résistance  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Les Etats Généraux de la Résistance à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Les Justes - Justes parmi les Nations  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Circonstances du sauvetage et recherches  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>La République des enfants de Moulin Vieux (1)  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Le stade René Perrouault à Champ-sur-Drac  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Le sous-lieutenant Joseph Auguste Floxoli  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Quelques heures avant la Libération  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Une triste fin  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Ils venaient d'avoir 18 ans... Les conscrits  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Aout 1944 - Une période tragique à La Morte et dans le Taillefer  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Les chantiers de la jeunesse  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>Chantiers de jeunesse n°12  Résumé</td></tr>
-<tr><td>Mémoire n°46</td><td>nan</td><td>La vie de l'association - Deuxième semestre 2013  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Albert Lebrun, le dernier Président de la IIIe République  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>A travers la presse régionale et nationale  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>L'orgue de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Aimé Guille, portrait d'un résistant  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Les états généraux de la Résistance  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Yvonne Bonthoux et Jean-Marcel Champon  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Ma rencontre avec Pierre Draï  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>La mémoire dévérouillée  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Moulin-Vieux ou les enfants de la République  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Le château de Vizille efface les traces de ses blessures  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Les timbres de la Libération  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Groupes-francs contre les Forces de l'Ordre dans l'Isère  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>André Morel, mon voisin de palier  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Morts pour la France dans le Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>La grande guerre de 1914-1918 - Vizille et ses soldats décédés en 1914  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>La guerre 14/18 et l'utilisation des gaz de combat  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>Les belles années des corsos à Vizille - 1971/1997  Résumé</td></tr>
-<tr><td>Mémoire n°47</td><td>nan</td><td>La chasse aux bornes est ouverte...  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Le séjour de Napoléon à l'île d'Elbe  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>La route Napoléon  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>La statue de Napoléon 1er à Laffrey  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Les mémoires de Basile Bonnardon, médecin à Vizille 1786-1863  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Le cadastre napoléonien  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Alexandre Debelle  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Le passage de Napoléon lors de son retour de l'île d'Elbe  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Alexandre Zeis, instituteur et géomètre  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Le colonel Moustache de St-Barthélémy de Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Vizille a toujours été fidèle à l'Empereur et à sa descendance  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>La grande guerre de 1914-1918 - Vizille et ses soldats décédés entre le 1er janvier et le 30 juin 1915  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Uriage-les-Bains - Hôpital militaire complémentaire n°42 (1914-1919)  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Le mystère de Saint Firmin ou la légende de la cloche à la sauge  Résumé</td></tr>
-<tr><td>Mémoire n°48</td><td>nan</td><td>Les belles années des corsos à Vizille - les années 80 (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Mourir une deuxième fois  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Histoire d'un résistant un peu spécial : Jean Freysselinard , le gendre du président Albert Lebrun à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>la SAMA Société Anonyme des Meles artificielles  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Souvenirs au fil des saisons  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>La Grande Guerre de 1914-1918 : Vizille et ses soldats décédés entre le 1er juillet et le 31 décembre 1915  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Les quatrièmes grand rendez-vous de l'histoire du Pays Vizillois : mai/juin 2016 Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>L'hôpital temporaire de La Valentine  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Vizille et sa piscine  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Le centre d'apprentissage de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Les eaux d'Uriage : des Thermes romains à l'entreprise industrielle : 2000 ans d'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Histoire courte des cordiers de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>La corde à 13 noeuds  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>ElirViallet capitaine de chasseurs alpins ; Août 1914- Juin 1915  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Raoul Naz  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>L'orgue de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>1799, l'exode du Pape Pie VI et son passage à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Les belles années des corsos ; les années 1990  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Vizille et ses commerces: Désiré Trouillon, marchand de vin  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Jean Guitton 1917-2015  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>La page des poètes : Moi Connétable  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>Une des trois grandes usines de tissage de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°49</td><td>nan</td><td>La page des jeux  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Morts pour la France  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>14-18 Folie meurtrière  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Compte rendu de la mobilisation à Vizille (1er août 1914)  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>La grande guerre de 1914-1918 . Vizille et ses soldats décédés entre le 1er janvier et le 30 juin 1906  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>François-Joseph Durand mort pour la France  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Gabriel Fiat Carnets de guerre - 1914-1918  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>M. l'abbé Biard  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Saint-Georges-de-Commiers . Morts pour la France pendant la grande guerre Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Pour de vrais "poilus"  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>La complainte du guetteur  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>La Madelon  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>L'histoire des Clavel, bourreliers à Vizille, place du château  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Vizille et ses commerces ; Place de la Libération, Place du château 1ère partie Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Elles se souviennent et elles racontent  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Hier, le chemin de fer  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Mon premier club sportif  Résumé</td></tr>
-<tr><td>Mémoire n°50</td><td>nan</td><td>Théâtre d'antan La muette de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Heureux 25 ans  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>En amont du spectacle - l'écriture  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Mémoires ouvrières - Le spectacle - La compagnie Partage  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Les industries de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Brèves d'archives - Pour le renom de la ville: la propreté  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Accidents industriels en Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>La grande guerre de 1914-1918 - Vizille et ses soldats décédés entre le 1er juillet et le 31 décembre 1916  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Transports Paul Vallet  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Vizille et ses commerces - Place de la Libération/Place du Château - 2ème partie  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Les quatrièmes grands rendez-vous de l'histoire du Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Inauguration de l'orgue de Vizille le dimanche 26 novembre 1899  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>Le protonotaire et le curé de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°51</td><td>nan</td><td>L'orgue de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Guy Delahaye , photographe  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>2017,Année Lesdiguières  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Vizille et le festival 1973/ 1988 ; Le Diable et le Capitaine -1983  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>A la rencontre de François de Bonne  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Marie Vignon seconde femme du connétable  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Les ancêtres de Lesdiguières  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Chronologie de la vie de François de Bonne, Duc de Lesdiguières  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Les rois de France du temps de Lesdiguières  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Lesdiguières dans tous ses états  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Le Château des Diguières ( Propriété de Lesdiguières) ; Le Glaizil ( Hautes-Alpes)  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Le pont Lesdiguières à Claix  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>La prise du Château de Champ, du Pont de Cognet, du Château du Monestier  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Une épouvantable défaite-1587 : la bataille de Jarrie vue du côté suisse  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Les enfants et notre patrimoine : le Château, les arts  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Un élixir ...tiré par les cheveux  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>La Grande Guerre de 1914-1918 : Vizille et ses soldats décédés entre le 1er Janvier et le 30 juin 1917  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Notre chère Annie  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Vizille et ses commerces : Place de la Libération / Place du Château - 3ème partie Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Les pages des jeux : Lesdiguières  Résumé</td></tr>
-<tr><td>Mémoire n°52</td><td>nan</td><td>Un orgue historique à restaurer  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Jean-Claude Gallotta , chorégraphe  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>A la découverte de l'art  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Madame et Monsieur de Lesdiguières...  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Complément à l'histoire de la Chapelle des Angonnes  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Olivier Messiaen à Petichet  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>La musique à Vizille depuis 1873 -1ère partie : La fanfare de Vizille ou "La Vizilloise" - 1873/1982  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Séraphin Guimet  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Les groupes musicaux  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>L'art vivant - La danse : Jean-Claude Gallotta  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Daise , Guy Desarmagnat  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>L'art...de la table au temps des Dauphins  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>L'art sur le plateau de Champagnier  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Les tableaux restaurés de l'église de Saint Georges de Commiers  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>L'église Saint-Blaise à Champ sur Drac  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Enquête sur les tribulations d'un meuble d'église  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Un regard artistique sur le patrimoine industriel local par L'Artelier d'Uriage  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>L'Ecole Nationale Professionnelle de jeunes filles de Vizille - l'ENP  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>La BD Jojo de la Gaffe  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Les portes du Château de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Uriage : la fontaine de la déesse Hygie  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>La première foire de Champagnier en 1758  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>La Grande Guerre de 1914-1918 : Vizille et ses soldats décédés entre le 1er juillet et le31 décembre 1917  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Une page de l'histoire se tourne...L'hôpital-hospice  Résumé</td></tr>
-<tr><td>Mémoire n°53</td><td>nan</td><td>Vizille et ses commerces : Place de la Libération - 4ème partie  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Adrienne Celso  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Les retours et la reconstruction  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Le général Regard de la Grande Guerre à la Résistance  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Centenaire de la mort de Serge Basset, homme de lettres, auteur dramatique et journaliste français  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Victor Chambe 1896-1965  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Une famille qui a failli disparaître dans la tourmente de la pere guerre mondiale  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Deuxième carnet* Fiat Gabriel - Etapes depuis la Somme  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Les cérémonies du souvenir en Days Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>Les soldats de Brié-et-Angonnes décédés durant le conflit…  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>La grande guerre de 1914-1918 Vizille et ses soldats décédés entre le 1*' janvier et le 30 juin 1918  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>L'épopée du ski jarrois - père partie - 1947/1968  Résumé</td></tr>
-<tr><td>Mémoire n°54</td><td>nan</td><td>De la Vizilloise à l'Harmonie de Vizille - 2° partie - 1983-2017  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Sommaire  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>•« Plus jamais ça ! »  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>• L'hirondelle de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>La pisciculture du Château de Vizile  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Une vie au... Parc des Princes ; La ferme prince à FontReygner, hameau de Saint jean de Vaux  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Le général Auguste Lardant soldat des troupes de montagne Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>L'été 1944 au Péage-de-Vizile André raconte  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Les femmes dans la guerre de 1914 à 1918  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Joseph et François Baldacci  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>La grande guerre de 1914-1918 Viille et ses soldats décédés entre le 1* juillet et le 31 décembre 1918  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Homblières  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Les anciennes routes du Pays Vizilois  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>• L'épopée du ski jarrois - 2° partie - 1969/2017  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>•La « Samba Parade » de 2006 à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Les soldats de Saint-Barthélémy-de-Séchilienne décédés durant la Grande Guerre  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>• Un passé bien antérieur ! Coupe de bois à Jarrie en 1743 Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Moi collectionneur  Résumé</td></tr>
-<tr><td>Mémoire n°55</td><td>nan</td><td>Une liqueur oubliée La «Benoîte d'Uriage »  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>L'esprit de Résistance  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Germaine et Louis Vallier Résistants  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Jean-Marcel Champon Résistant  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>/Users/michelt/Pictures/Photothèque.photoslibrary/originals/0/02DF1CB0-B94D-4170-A15F-41A54515EAB3.png  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Parcours d'un Résistant sans frontière Ces étrangers qui ont fait la France (Dominique Rossi)  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>La famille Marangoni - Une triste histoire ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Renée et André Berthon se souviennent ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>L'équipage américain du B24 - Libérator ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Huez et l'Alpe - Été 1944 ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>« Retour à Rivesaltes » - Le film des 8e grands rendez-vous de l'Histoire du Pays Vizillois ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Des représentations d'animaux dans le Pays Vizillois ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Catalogue 2019  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>D'où vient le mot Jarrie et que veut-il dire ? ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Des Vizillois oubliés ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Le train de la Romanche ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Herbeys - Chemins d'hier et d'aujourd'hui ()  Résumé</td></tr>
-<tr><td>Mémoire n°56</td><td>nan</td><td>Un espace culturel Paul Bernard à Jarrie ()  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>14 septembre 1219: les jours d'après à Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Les paléo-lacs d'Oisans - Une histoire de 30 000 ans  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Histoire d'eau à Saint-Georges-de-Commiers  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Le lavoir de la Paute  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>L'épisode de « la noyade » de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Le Lac de Haute-Jarrie et les sècheresses  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Les ressources en eau de la commune de Saint-Pierre-de-Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Les ressources en eau de la commune de Saint-Pierre-de-Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>La foire de Beaucroissant  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Un monument historique classé en DANGER : Le prieuré de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>A propos de la mutilation des personnages  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>La page du poète. Le cimetière de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Premières écoles vizilloises  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Essai de toponymie de l'appellation Belledonne  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Les fossiles de Vaulnaveys-le-Bas  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Quand les élèves s'emparent de l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Quand les élèves s'emparent de l'histoire  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Souvenirs de guerre (39/45) d'un écolier vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Des représentations d'animaux dans le pays vizillois (2ème partie)  Résumé</td></tr>
-<tr><td>Mémoire n°57</td><td>nan</td><td>Le symbolisme au cimetière: les animaux (fère partie)  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>La faille de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Première ascension hivernale du Taillefer  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>De la pierre au ciment  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>La carrière oubliée  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>L'usine électrique et la glacière à Vaulnaveys-le-Haut  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Débits de boissons à Saint-Pierre-de-Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Une figure pittoresque du Château de Paille dans les années 1950 « Kiki la rate »  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Vizille à travers la presse et les revues  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>je suis descendu de ma tribune, mais je vais revenir  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Le Blanco  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Qu'est-ce qu'un zouave 7 (  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Châteauneuf à Haute-Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Résistance : Paul Reymond, un des derniers témoins  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Le symbolisme au cimetière Les animaux (2ème partie) (  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Une très curieuse adoption apparaît dans un registre d'état civil de Jarrie  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>L'eau, les canaux Lignes de vie de notre histoire  Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Table des articles publiés dans Mémoire du n° 56 au n° 63 Résumé</td></tr>
-<tr><td>Mémoire n°58</td><td>nan</td><td>Table des articles publiés dans Mémoire du n° 49 au n° 55 Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>La fin du carreau minier de Saint-Georges-de-Commiers Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Marius Bœuf (1898-1985), conducteur de trains sur le chemin de fer de La Mure  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Souvenirs de la période 1939-1945 - Rencontre avec Fernand Bœuf  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Les origines de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Vieille-Morte « Une histoire de roche, d'eau... et d'hommes » (  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Le premier festival de Vizille en 1973 - Till l'espiègle  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Le Manoir des Rolland  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Saint-Roch, patron des épidémies (Monique Bonvallet) Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>La peste en 1348 ..  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Brèves de peste  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Regards d'artistes  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>« Marianne de profil » à l'Hôtel de Ville de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°59</td><td>nan</td><td>Le tableau de l'Assemblée de Vizille par Alexandre Debelle  - Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Le retour de Lucie Baud  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Un nouveau siège - De Notre-Dame de Mésage à Vizille ( Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Quatre prix  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Quatre prix  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Les grands rendez-vous de l'histoire du Pays Vizillois Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Les numéros spéciaux  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Mémoire, la revue  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Les assemblées générales, de Vizille à Champ-sur-Drac Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Vizille, ville en transition  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Faisons chanter « l'orgue du Pays Vizillois »  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>S.O.S. Prieuré  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>La mascarade passe, et lonlonlère...  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Les nouveaux outils de communication  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Le patrimoine funéraire  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Saint-Roch, patron des épidémies (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°60</td><td>nan</td><td>Histoire de Haute-Jarrie et de la famille Teyssier de Savy (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>L'épopée de Napoléon, d'une île à l'autre  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Le destin de la statue équestre de l'empereur  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Dominique Jean Larrey, chirurgien en chef de la Grande Armée  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Napoléon et la réglementation minière - La loi du 21 avril 1810  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>La statue équestre de Napoléon à Laffrey  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Les « Réfugiés Politiques Espagnols »  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Le catalogue  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>La vie de deux adolescents dans la tourmente de la guerre (1939-1945) - Pierre Ruibet et Mathilde Robert  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Pierre Ruibet - Histoire complète  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Mistral gagnant à la Gaffe Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>La Pierre des rois  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Souvenir de l'Occupation à Saint-Georges-de-Commiers (rencontre avec Jany Filhol)  Résumé</td></tr>
-<tr><td>Mémoire n°61</td><td>nan</td><td>Qui était « Patte d'ours » et que nous raconte Alexandre Debelle ?  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Première du Festival de Vizille  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Les festivals de Louis Beyler - 1976-La mère  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Paul Michel, photographe  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Paul Michel, photographe  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Paul Michel, photographe  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Les élèves découvrent Vizille - Le château du Roi  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Les élèves découvrent Vizille - Notre Mairie  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Mathématiques et chemins de fer (ou René Thom sur le petit train de La Mure] (-  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>La maison de Petichet  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Raconte-moi Allemond  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Ambiance à Vaulnaveys (  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Les ascensions oubliées des officiers géographes (1748-1778) Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Le prieuré de Vizille en BD  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Le prieuré de Vizille en BD  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>La Pierre des Rois (suite)  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Pour en savoir plus - Une promenade dans les salles du Louvre Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>L'histoire discrète de l'église Saint-Antoine de Livet  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Le travail textile à Vizille  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Vieille-Morte - Des logis et des écuries ? Des ruines...  Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Les déplacements de Jean Jaurès en région « Rhône-Alpes » () Résumé</td></tr>
-<tr><td>Mémoire N°62</td><td>nan</td><td>Les déplacements de Jean Jaurès en région «Rhône-Alpes» - 2ème partie  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>L'ancien canton de Vizille de la préhistoire à l'AN MIL  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>La « Fontaine puant » au hameau des Essoulieux (commune du Bourg d'Oisans)  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Le dernier train  -  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Les mémoires de Carmen Saunier  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Les Gourlus  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Le prieuré de Vizille en BD  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>L'histoire du château de Cornage de Lesdiguières à nos jours  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Bon Repos - Grandeur et décadence ou les misères d'un château Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>L'Académie Delphinale, 250 ans d'histoire et de mémoire en Dauphiné Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>1982 - Les Trois Mousquetaires - Louis Beyler Le Festival de Vizille fête ses 10 ans...  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Casimir, André, Gérard Berthon et le rugby  Résumé</td></tr>
-<tr><td>Mémoire n°63</td><td>nan</td><td>Balade vizilloise au fil des panneaux  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Le poids public de Vizille ou « la bascule »  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Le cahier de route de Charvet  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Le tram ne viendra plus sur la place  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Ils eurent leur temps de célébrité...! maintenant nos vieux trams tombent sous les coups des démolisseurs  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Le petit train départemental des V.F.D. a fait son dernier voyage  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Des locomotives au pied des Alpes - De la gare Jarrie-Vizille à la gare  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Champagne à Brié - Mont-Rolland  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Le prieuré de Vizille en BD  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>1979 - Ah ! Si Arthur était là... Le Vilème festival de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Histoire de la famille Brun - Du rouleau à pâtisserie au rouleau compresseur !  - Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Les facteurs ruraux du Pays Vizillois sous le Second Empire  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Le centre d'apprentissage bilan d'une année de travail - 14 juillet 1952  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Jean Seyer (Surville nom de code dans la Résistance) un Lorrain au maquis de l'Disans  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Essai sur l'histoire minière et minéralogique des anciennes mines de fer de la commune de Saint-Pierre de Mésage  Résumé</td></tr>
-<tr><td>Mémoire n°64</td><td>nan</td><td>Les courriers de nos lecteurs  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>La recherche historique, une histoire à rebondissements  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>La centrale hydroélectrique des Vernes - Une histoire remarquable  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Les édifices religieux de l'ancien canton de Vizille - fère partie Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>La remplaçante  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>La poésie du jour par l'intelligence artificielle sur Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Symphonie lacustre - Les lacs du Dauphiné - fère partie  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Parrainage des tuyaux d'orgue  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Symphonie lacustre - Les lacs du Dauphiné (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Restauration de la locomotive à vapeur bicabine n° 31 en Ardèche  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Maurice Gaillard  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>L'histoire dans les archives communales - Le vingt-quatrième des pauvres  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Souvenirs de Mohamed Boumeghra  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Les vingt ans de l'association des amis de la chapelle  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Les vingt ans de l'association des amis de la chapelle Saint-Barthélemy à Sersigaud  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>La chapelle Saint-Barthélemy à Sersigaud  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>La complainte de Mandrin  Résumé</td></tr>
-<tr><td>Mémoire n°65</td><td>nan</td><td>Vizille demain  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>40000€ pour le prieuré de Vizille  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Éditorial  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>L'ancien diocèse de Grenoble et son art roman - Le Pays Vizillois  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Bâtiments et monuments que la pierre a bâtis !  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Les édifices religieux de l'ancien canton de Vizille - 2ème partie  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>La remplaçante (suite)  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>La poésie du jour 0 par l'intelligence artificielle sur Vizille Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>les mines de l’hermine  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Lucie Baud a enfin son école à Saint-Pierre de Mésage Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Le tremplin de Saint-Nizier  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Cérémonie du 11 novembre 2023  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Rencontre à Séchilienne  Résumé</td></tr>
-<tr><td>Mémoire n°66</td><td>nan</td><td>Et si on parlait BD ?  Résumé</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Éditorial</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Les papeteries de Vizille - Une histoire de familles</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Château de Maupertuis dit Château d’Hugues</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Le chemin de croix de Luc Barbier à l’église de Vizille</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Un parcours historique vizillois</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>La poterne du Château du Roi</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>VIIIᵉ festival de Vizille : Roméo et Juliette 19, 20, 21, 24, 25, 26, 27, 28 juin 1980</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>IXᵉ festival de Vizille - 1981 - Songe d’une nuit d’été</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>La remplaçante (suite)</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>L’orgue de Vizille - À la recherche de parrains pour ses tuyaux</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Le clocher de l’église Sainte-Marie de Clelles</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>L’église Saint-Étienne de Haute-Jarrie</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Dans les secrets de la minéralogie en Matheysine</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Vizille, capitale du cinéma !</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Été 1903 : avec les chasseurs alpins au Mont Aiguille</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Souscription « Le Pays Vizillois à l’épreuve de la guerre - 1940 - 1945 »</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Carnet de route d’un maquisard Raymond BREDÈCHE</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>Rassemblons nos souvenirs</td></tr>
-<tr><td>Mémoire n°67</td><td>nan</td><td>La page utile</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Éditorial</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Exposition internationale de la Houille Blanche et du tourisme de Grenoble</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>La fonderie d’or de Saint-Maurice en Trièves - Témoin de la proto-industrialisation en milieu rural au milieu du XIVe siècle</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Des trésors d’Histoire à Vizille - Les collections du Centre de Ressources Albert Soboul</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Né à Vizille : Victor Ardouin-Dumazet - « Voyage en France »</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Le Prieuré de Vizille</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Vous reconnaissez-vous ?</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Des espions au Fort de Comboire</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>L’organiste, un conte d’Alphonse Daudet</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>La pisciculture du Domaine de Vizille</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Le Ve festival de Vizille - Louis Mandrin (1ère partie)</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Le Ve festival de Vizille - 1977 - Louis Mandrin (2ème partie)</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Compléments d’informations</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>Le Dauphiné gastronomique en 1930</td></tr>
-<tr><td>Mémoire n°68</td><td>nan</td><td>La page utile</td></tr></tbody>
-    </table>
-    <script>
-        $(document).ready(function() {
-            $('#chronologie-table').DataTable({
-                responsive: true,
-                pageLength: 10
-            });
-        });
-    </script>
+<h1>Frise Chronologique des Publications AHPV</h1>
+<div class="timeline">
+
+    <div class="container left">
+        <div class="content">
+            <h3>1991</h3>
+            <p>Publication du numéro Mémoire n°01</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1992</h3>
+            <p>Publication du numéro Mémoire n°02</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1992</h3>
+            <p>Publication du numéro Mémoire n°03</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1993</h3>
+            <p>Publication du numéro Mémoire n°04</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1993</h3>
+            <p>Publication du numéro Mémoire n°05</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1994</h3>
+            <p>Publication du numéro Mémoire n°06</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1994</h3>
+            <p>Publication du numéro Mémoire n°06 bis</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1994</h3>
+            <p>Publication du numéro Mémoire n°07</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1995</h3>
+            <p>Publication du numéro Mémoire n°08</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1995</h3>
+            <p>Publication du numéro Mémoire n°09</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1996</h3>
+            <p>Publication du numéro Mémoire n°10</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1996</h3>
+            <p>Publication du numéro Mémoire n°11</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1997</h3>
+            <p>Publication du numéro Mémoire n°12</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1997</h3>
+            <p>Publication du numéro Mémoire n°13</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1998</h3>
+            <p>Publication du numéro Mémoire n°14</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1998</h3>
+            <p>Publication du numéro Mémoire n°14 bis</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1998</h3>
+            <p>Publication du numéro Mémoire n°15</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>1999</h3>
+            <p>Publication du numéro Mémoire n°16</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>1999</h3>
+            <p>Publication du numéro Mémoire n°17</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2000</h3>
+            <p>Publication du numéro Mémoire n°18</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2000</h3>
+            <p>Publication du numéro Mémoire n°19</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2001</h3>
+            <p>Publication du numéro Mémoire n°20</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2001</h3>
+            <p>Publication du numéro Mémoire n°21</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2002</h3>
+            <p>Publication du numéro Mémoire n°22</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2002</h3>
+            <p>Publication du numéro Mémoire n°23</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2003</h3>
+            <p>Publication du numéro Mémoire n°24</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2003</h3>
+            <p>Publication du numéro Mémoire n°25</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2004</h3>
+            <p>Publication du numéro Mémoire n°26</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2004</h3>
+            <p>Publication du numéro Mémoire n°27</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2005</h3>
+            <p>Publication du numéro Mémoire n°28</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2005</h3>
+            <p>Publication du numéro Mémoire n°29</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2006</h3>
+            <p>Publication du numéro Mémoire n°30</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2006</h3>
+            <p>Publication du numéro Mémoire n°31</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2007</h3>
+            <p>Publication du numéro Mémoire n°32</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2007</h3>
+            <p>Publication du numéro Mémoire n°33</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2008</h3>
+            <p>Publication du numéro Mémoire n°34</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2008</h3>
+            <p>Publication du numéro Mémoire n°35</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2009</h3>
+            <p>Publication du numéro Mémoire n°36</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2009</h3>
+            <p>Publication du numéro Mémoire n°37</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2010</h3>
+            <p>Publication du numéro Mémoire n°38</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2010</h3>
+            <p>Publication du numéro Mémoire n°39</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2011</h3>
+            <p>Publication du numéro Mémoire n°41</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2012</h3>
+            <p>Publication du numéro Mémoire n°42</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2012</h3>
+            <p>Publication du numéro Mémoire n°43</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2013</h3>
+            <p>Publication du numéro Mémoire n°44</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2013</h3>
+            <p>Publication du numéro Mémoire n°45</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2014</h3>
+            <p>Publication du numéro Mémoire n°46</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2014</h3>
+            <p>Publication du numéro Mémoire n°47</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2015</h3>
+            <p>Publication du numéro Mémoire n°48</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2015</h3>
+            <p>Publication du numéro Mémoire n°49</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2016</h3>
+            <p>Publication du numéro Mémoire n°50</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2016</h3>
+            <p>Publication du numéro Mémoire n°51</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2017</h3>
+            <p>Publication du numéro Mémoire n°52</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2017</h3>
+            <p>Publication du numéro Mémoire n°53</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2018</h3>
+            <p>Publication du numéro Mémoire n°54</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2018</h3>
+            <p>Publication du numéro Mémoire n°55</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2019</h3>
+            <p>Publication du numéro Mémoire n°56</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2019</h3>
+            <p>Publication du numéro Mémoire n°57</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2020</h3>
+            <p>Publication du numéro Mémoire n°58</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2020</h3>
+            <p>Publication du numéro Mémoire n°59</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2021</h3>
+            <p>Publication du numéro Mémoire n°60</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2021</h3>
+            <p>Publication du numéro Mémoire n°61</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2022</h3>
+            <p>Publication du numéro Mémoire N°62</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2022</h3>
+            <p>Publication du numéro Mémoire n°63</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2023</h3>
+            <p>Publication du numéro Mémoire n°64</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2023</h3>
+            <p>Publication du numéro Mémoire n°65</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2024</h3>
+            <p>Publication du numéro Mémoire n°66</p>
+        </div>
+    </div>
+    
+    <div class="container right">
+        <div class="content">
+            <h3>2024</h3>
+            <p>Publication du numéro Mémoire n°67</p>
+        </div>
+    </div>
+    
+    <div class="container left">
+        <div class="content">
+            <h3>2025</h3>
+            <p>Publication du numéro Mémoire n°68</p>
+        </div>
+    </div>
+    
+</div>
 </body>
 </html>
