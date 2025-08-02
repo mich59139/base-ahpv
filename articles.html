@@ -1,42 +1,949 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Articles</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <h1>Articles</h1>
-    <table id="articles-table" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Numéro</th>
-                <th>Titre</th>
-                <th>Page(s)</th>
-                <th>Auteur(s)</th>
-                <th>Ville(s)</th>
-                <th>Theme(s)</th>
-                <th>Epoque</th>
-            </tr>
-        </thead>
+    <table id="articles-table" class="display">
+        <thead><tr><th>Numéro</th><th>Titre</th><th>Page(s)</th><th>Auteur(s)</th><th>Ville(s)</th><th>Theme(s)</th><th>Epoque</th></tr></thead>
+        <tbody><tr><td>Mémoire n°01</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille </td><td>Lieux remarquables ,  Vie de l'association , Patrimoine </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Comment la Ille République a sombré Journal de Marguerite Lebrun (août 39 julle 40)  Résumé</td><td>3</td><td>Eric Freysselinard </td><td>Vizille </td><td>Lieux remarquables ,  Histoires ,  Guerres , Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Les châteaux et autres demeures anciennes de l'ex-canton de Vizille Résumé</td><td>3</td><td>Jean-Claude Michel </td><td>- </td><td>Bâtiments et édifices ,  Histoires </td><td>Xe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Notre couverture  Résumé</td><td>6</td><td>Robert Aillaud </td><td>Pays vizillois </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Vie rurale à Brié pendant la période révolutionnaire  Résumé</td><td>07 à 13</td><td>Henri Rey </td><td>Brié et Angonnes </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Paul Michel, photographe  Résumé</td><td>12 à 16</td><td>- </td><td>Vizille </td><td>Arts </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>La bataille de Jarrie  Résumé</td><td>14 à 17</td><td>Yvette Virot </td><td>Jarrie </td><td>Religions ,  Guerres </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Alexandre Zeis - Une récente découverte  Résumé</td><td>15 à 19</td><td>Gérard Mingat </td><td>Pays vizillois </td><td>Histoires ,  Personnages remarquables </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Alexandre Zeis - Une récente découverte  Résumé</td><td>15</td><td>Gérard Mingat </td><td>Pays vizillois </td><td>Histoires ,  Personnages remarquables , Documents remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>L'inondation de 1928 à Bourg d'Oisans  Résumé</td><td>15</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Eau, rivières, canaux et fontaines </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Bains électriques d'air chaud au château de Vizille  Résumé</td><td>18 à 19</td><td>Gérard Mingat </td><td>Vizille </td><td>Bâtiments et édifices ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Le choléra dans nos contrées en 1854  Résumé</td><td>20 à 22</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Le pont de la Rivoire  Résumé</td><td>23 à 35</td><td>Yves Armand </td><td>Saint Georges de Commiers </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>D'aigua sioplait (de l'eau s'il vous plaît)  Résumé</td><td>26</td><td>Denis Bellon </td><td>Vizille </td><td>Vie locale ,  Personnages remarquables ,  Souvenirs </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Le souvenir  Résumé</td><td>27</td><td>Jean Danz </td><td>Vizille </td><td>Guerres ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Les Tissages de Vizille de 1918 à 1968 ()  Résumé</td><td>30</td><td>Jean Huyghe </td><td>Vizille </td><td>Lieux remarquables ,  Activités industrielles , Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>A propos du Prieuré de Vizille  Résumé</td><td>36 à 38</td><td>Jeanne De Gaudenzi </td><td>Vizille </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>I - Un séjour à émotion de Marcel Deprez  Résumé</td><td>39</td><td>Alain Emery </td><td>Jarrie </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Un grand mariage à Vizille au XVIIIe siècle  Résumé</td><td>40 à 41</td><td>Germaine Billon </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>La chapelle Sainte Madeleine  Résumé</td><td>42 à 44</td><td>Gilbert Gacon </td><td>Champ sur Drac ,  Notre Dame de Mésage </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°01</td><td>Les femmes dans la guerre de 14-18 - Seconde partie )  Résumé</td><td>68</td><td>Marie-Claude Argoud </td><td>Pays vizillois ,  Vizille </td><td>Histoires ,  Guerres ,  Grandes périodes ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>Comment a commencé ma collection d'objets sur les JeuxOlympiques d'hiver de Grenoble  Résumé</td><td>69</td><td>Marc Robert </td><td>Vizille </td><td>Evènements ,  Sport ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°01</td><td>La page utile  Résumé</td><td>84</td><td>- </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°02</td><td>Premiers noms connus à Séchilienne  Résumé</td><td>03 à 04</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>II - Biographie de Marcel Deprez  Résumé</td><td>05 à 08</td><td>Alain Emery </td><td>Jarrie </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Chapelle de Montchaboud  Résumé</td><td>09 à 11</td><td>Jacques Jérome </td><td>Montchaboud </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Incendie de Champ village  Résumé</td><td>12</td><td>Gérard Odore </td><td>Champ sur Drac </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Drame dans la montagne de Vaulnaveys  Résumé</td><td>13 à 15</td><td>Albert Gaillard </td><td>Vaulnaveys le haut </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Propriétaires successifs du Château de Vizille  Résumé</td><td>16</td><td>Gérard Mingat </td><td>Vizille </td><td>Bâtiments et édifices ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Le secret de la mine  Résumé</td><td>17 à 18</td><td>Laurent Vivarat </td><td>Vaulnaveys le haut </td><td>Mines et minéralogie ,  Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Foires, fêtes et loisirs à Brié  Résumé</td><td>19 à 24</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Recettes dauphinoises  Résumé</td><td>24</td><td>Adrienne Celso </td><td>Jarrie </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Lou rena et lou courba  Résumé</td><td>25 à 26</td><td>Valérie Robert-Michon </td><td>Pays vizillois </td><td>Patois ,  Toponymie ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Vizille en feu  Résumé</td><td>27 à 31</td><td>Bernard Mingone </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Evolution de l'art religieux : St Hippolyte des Angonnes  Résumé</td><td>32 à 36</td><td>Paul Wohlschlegel </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Louis XIII et Richelieu à Jarrie  Résumé</td><td>37 à 40</td><td>Adrienne Celso </td><td>Jarrie </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Manière de se soigner autrefois  Résumé</td><td>41 à 42</td><td>Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°02</td><td>Bibliographie et sources  Résumé</td><td>44</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>La romance des bruleurs de loups  Résumé</td><td>4</td><td>Paul Berret </td><td>Pays vizillois </td><td>Contes et légendes ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Stendhal en pays vizillois  Résumé</td><td>05 à 07</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Vie locale ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Le train dans le canton de Vizille  Résumé</td><td>08 à 14</td><td>Yvette Virot </td><td>Jarrie </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Peillaud, le guide de l'Ile Falcon  Résumé</td><td>15</td><td>Raymond Joffre </td><td>Saint Barthélémy de Séchilienne </td><td>Tourisme ,  Lieux remarquables ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Saint François Régis (chapelle)  Résumé</td><td>16 à 17</td><td>Gilles Strappazzon </td><td>Saint Barthélémy de Séchilienne </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Vizille et le tour de France  Résumé</td><td>18 à 23</td><td>Jean Guitton </td><td>Vizille </td><td>Sport </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Saint Georges de Commiers  Résumé</td><td>24 à 26</td><td>Fernand Boeuf </td><td>Saint Georges de Commiers </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>La marmite de Lesdiguières  Résumé</td><td>27</td><td>Gérard Mingat </td><td>Vizille </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>III - Marcel Deprez : l'expérience de Jarrie  Résumé</td><td>28 à 33</td><td>Alain Emery </td><td>Jarrie </td><td>Activités industrielles ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Vizille il y a 100 ans  Résumé</td><td>34 à 35</td><td>Robert Aillaud </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Journées mésageoises : exposition St-Pierre  Résumé</td><td>36 à 37</td><td>Robert Aillaud </td><td>Saint Pierre de Mésage </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>L'église de Vizille : un siècle de péripéties  Résumé</td><td>38 à 42</td><td>Raoul Naz </td><td>Vizille </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Le certificat d'études primaires  Résumé</td><td>43 à 44</td><td>Paul Wohlschlegel </td><td>Brié et Angonnes </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°03</td><td>Bibliographie et sources  Résumé</td><td>45 à 46</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>La vallée de la Romanche (moyenne et basse)  Résumé</td><td>04 à 09</td><td>Paul Wohlschlegel </td><td>Vizille </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Les docteurs Bonnardon  Résumé</td><td>10 à 11</td><td>Anne-Marie Causse </td><td>Vizille </td><td>Personnages remarquables ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Les tribulations du Baptiste  Résumé</td><td>12 à 13</td><td>Aline Pignat </td><td>Séchilienne </td><td>Vie locale ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Contrat de mariage  Résumé</td><td>14 à 15</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Villeneuve d'Uriage et son église  Résumé</td><td>16 à 18</td><td>Marguerite Vianney-Liaud </td><td>Villeneuve d'Uriage </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Cinquante ans déjà : la dissolution du 6e BCA  Résumé</td><td>19 à 25</td><td>Paul Blanc </td><td>Brié et Angonnes </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Le mariage de Céline : la mariée humoriste  Résumé</td><td>26</td><td>René Simiand </td><td>Jarrie </td><td>Histoires ,  Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Le train de St Georges  Résumé</td><td>27 à 30</td><td>Fernand Boeuf </td><td>Saint Georges de Commiers </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>De Grenoble à Brié  Résumé</td><td>31 à 33</td><td>Henri Rey </td><td>Brié et Angonnes </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>La guerre de 14/18  Résumé</td><td>34 à 38</td><td>Gérard Mingat ,  Aline Pignat </td><td>Pays vizillois </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Le quartier de la Gaffe  Résumé</td><td>39 à 41</td><td>Jean Fagno </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Bibliographie et sources  Résumé</td><td>42 à 46</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°04</td><td>Protection et restauration du Prieuré de Vizille  Résumé</td><td>47</td><td>Robert Aillaud </td><td>Vizille </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Organigramme de la direction du patrimoine  Résumé</td><td>2</td><td>Robert Aillaud </td><td>Isère </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Notre patrimoine : signification  Résumé</td><td>3</td><td>Robert Aillaud </td><td>Pays vizillois </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Le musée de Champ sur Drac  Résumé</td><td>4</td><td>Robert Aillaud </td><td>Champ sur Drac </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Faits divers : Incendie des Traverses à St Pierre de Mésage  Résumé</td><td>05 à 06</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Villages Laffrey et St Jean de Vaulx  Résumé</td><td>7</td><td>Robert Aillaud </td><td>Laffrey ,  Saint Jean de Vaux </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Route de Brié  Résumé</td><td>8</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Les papeteries de Vizille : plus de 400 ans cette année  Résumé</td><td>09 à 13</td><td>Robert Aillaud </td><td>Vizille </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Prieuré de Vizille : quoi de neuf !  Résumé</td><td>14</td><td>Robert Aillaud </td><td>Vizille </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>IV - Transport d'électricité - Marcel Deprez  Résumé</td><td>15 à 25</td><td>Alain Emery </td><td>Jarrie </td><td>Activités industrielles ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Une exploitation agricole au XVIIIe - St Pierre de Mésage  Résumé</td><td>26</td><td>André Glaudas </td><td>Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>La formation des groupes de résistance à Vizille  Résumé</td><td>27 à 40</td><td>Gérard Mingat </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Le Prieuré de St Michel de Connexe  Résumé</td><td>41 à 43</td><td>Gilbert Gacon </td><td>Champ sur Drac </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°05</td><td>Adduction d'eau à St Jean et Notre Dame de Vaulx  Résumé</td><td>44 à 45</td><td>René Villiot </td><td>Saint Jean de Vaux </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>La basse vallée de la Romanche  Résumé</td><td>03 à 10</td><td>Paul Wohlschlegel </td><td>Vizille </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>I - La vie en 1793 à Champ sur Drac sous la révolution Résumé</td><td>11 à 14</td><td>Gilbert Gacon </td><td>Champ sur Drac </td><td>Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>Métiers d'antan  Résumé</td><td>15 à 16</td><td>Fernand Boeuf </td><td>Saint Georges de Commiers </td><td>Activités artisanales </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>50 ans déjà : la Rafle du 18 février 1944  Résumé</td><td>17 à 37</td><td>Robert Aillaud ,  Gérard Mingat </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>I - le fort des 4 seigneurs  Résumé</td><td>38 à 39</td><td>Robert Bornecque ,  Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>II - le fort des 4 seigneurs  Résumé</td><td>40 à 42</td><td>Robert Bornecque ,  Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>Poème d'hier : si mes grands-parents revenaient  Résumé</td><td>43</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>Vie quotidienne : la buille chez nos grans-mères  Résumé</td><td>44</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>Vins futés des grands-mères  Résumé</td><td>45</td><td>Germaine Billon </td><td>Notre Dame de Mésage </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°06</td><td>Bibliographie et sources  Résumé</td><td>46 à 48</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°06 bis</td><td>Libération du pays vizillois - 22 aout 1944 (n° spécial)  Résumé</td><td>01 à 142</td><td>Robert Aillaud ,  Gérard Mingat </td><td>Pays vizillois </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>II - La vie en 1793 à Champ sur Drac sous la révolution Résumé</td><td>08 à 12</td><td>Gilbert Gacon </td><td>Champ sur Drac </td><td>Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Guigues II : neuvième prieur des Chartreux  Résumé</td><td>13 à 17</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Un peu de toponymie  Résumé</td><td>18</td><td>André Frances </td><td>Vizille </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Visite de l'évêque de Grenoble : 1672 à Séchilienne  Résumé</td><td>19 à 21</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Les vins futés de nos grands-mères  Résumé</td><td>22</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Souvenirs autour de St Firmin  Résumé</td><td>22</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Adolphe Delleda : coureur cycliste  Résumé</td><td>23 à 30</td><td>Jean Guitton </td><td>Vizille </td><td>Sport </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Docteur Billerey à Brié  Résumé</td><td>31 à 36</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Personnages remarquables ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>22 aout 1944 : le film oublié  Résumé</td><td>38 à 40</td><td>Robert Aillaud </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Le moulin neuf de Tavernolles  Résumé</td><td>41 à 43</td><td>Richard Dupuy </td><td>Brié et Angonnes </td><td>Vie locale ,  Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Métiers ambulants  Résumé</td><td>44 à 45</td><td>Germaine Billon </td><td>Pays vizillois </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Bibliographie et sources : le Prieuré de Vizille  Résumé</td><td>46 à 47</td><td>Pierre Melquiond </td><td>Vizille </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°07</td><td>Il était une fois à Jarrie : les travaux des champs  Résumé</td><td>05 à 07</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Facheux XXe siècle : St Michel de Connexe  Résumé</td><td>2</td><td>Robert Aillaud </td><td>Champ sur Drac ,  Séchilienne </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>La vallée de la Romanche  Résumé</td><td>03 à 11</td><td>Paul Wohlschlegel </td><td>Pays vizillois </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Un instrument insolite  Résumé</td><td>12</td><td>Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>15 mars 1777 : testament de l'abbé de Beauregard  Résumé</td><td>13 à 17</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Tournerie de Vaulnaveys le haut  Résumé</td><td>18</td><td>Josiane Morel </td><td>Vaulnaveys </td><td>Activités artisanales </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>La pierre cerise  Résumé</td><td>19</td><td>André Falco ,  Edith Falco </td><td>Saint Pierre de Mésage </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Une belle trouvaille, un bon réflexe  Résumé</td><td>19</td><td>Robert Aillaud </td><td>Jarrie </td><td>Archéologie </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>St Barthélémy : église raconte moi ton histoire  Résumé</td><td>20 à 26</td><td>Michel Vial </td><td>Saint Barthélémy de Séchilienne </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Il était une fois Jarrie : les plaisirs de neige  Résumé</td><td>27 à 29</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Vie locale ,  Sport </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Le rideau de scène de la cité Navarre  Résumé</td><td>32 à 33</td><td>Sylvie Vincent </td><td>Champ sur Drac </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Un contrat d'apprentissage : 1895 à Brié  Résumé</td><td>34 à 35</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Traditions et coutumes dans la région  Résumé</td><td>36 à 37</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Construction d'un pont Tarron par le génie  Résumé</td><td>38</td><td>Robert Aillaud </td><td>Vizille </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Renards d'aujourd'hui, loups d'autrefois  Résumé</td><td>39</td><td>Aline Pignat </td><td>Séchilienne </td><td>Vie locale ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>La croix de Chamrousse  Résumé</td><td>40 à 43</td><td>Raymond Joffre </td><td>Chamrousse </td><td>Tourisme ,  Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°08</td><td>Bibliographie et sources  Résumé</td><td>44 à 48</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Au revoir père Meyer  Résumé</td><td>4</td><td>Jeanette Cheveu D'or </td><td>Champ sur Drac </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Attention : un malentendu peut en cacher un autre  Résumé</td><td>5</td><td>Louis Bourdat </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Une soirée inoubliable  Résumé</td><td>06 à 07</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>La St Barnard (et chanson)  Résumé</td><td>08 à 09</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Vie religieuse à Vaulnaveys  Résumé</td><td>10 à 14</td><td>Marguerite Vianney-Liaud </td><td>Vaulnaveys le haut </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>I - Les aventures de Charvet - Citoyen vizillois  Résumé</td><td>15 à 32</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Conventions rapport  Résumé</td><td>33 à 36</td><td>Adrienne Celso </td><td>Bresson </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Cure et littérature à Uriage  Résumé</td><td>37 à 39</td><td>Pierre Bourdat </td><td>Uriage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>La bataille de St Barthélémy de Séchilienne  Résumé</td><td>40 à 41</td><td>Bernard Mingone </td><td>Saint Barthélémy de Séchilienne </td><td>Religions ,  Guerres </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Les sapeurs pompiers St Georgeois  Résumé</td><td>42 à 43</td><td>Fernand Boeuf </td><td>Saint Georges de Commiers </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°09</td><td>Chantier archéologique de Varces  Résumé</td><td>44 à 47</td><td>Eric Plassot </td><td>Varces </td><td>Archéologie </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Naissance d'un blason  Résumé</td><td>04 à 06</td><td>Gilbert Vanel </td><td>Vaulnaveys le bas </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>II - Les aventures de Charvet  Résumé</td><td>07 à 15</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Paysages du canton de Vizille  Résumé</td><td>16 à 17</td><td>Paul Wohlschlegel </td><td>Pays vizillois </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Vizille 1711 : un contrat d'apprentissage  Résumé</td><td>16 à 17</td><td>Pierre Melquiond </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Chateau d'Herbeys  Résumé</td><td>18 à 25</td><td>Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Enfant à Vizille dans les années 30  Résumé</td><td>26 à 28</td><td>Jean Perrin </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Religion réformée - Brié en 1727  Résumé</td><td>29</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>St Pierre de Mésage - son église  Résumé</td><td>30 à 36</td><td>Michel Vial </td><td>Saint Pierre de Mésage </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Que ferons-nous de nos églises ?  Résumé</td><td>37 à 39</td><td>Claire Marconnet </td><td>Pays vizillois </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Familles nobles du M.A. à Brié  Résumé</td><td>40 à 43</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Un intérieur paysan en 1710 et 1880  Résumé</td><td>44 à 45</td><td>Pierre Melquiond </td><td>Brié et Angonnes ,  Saint Pierre de Mésage </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Le "port" de Gavet  Résumé</td><td>45</td><td>Yves Marcel </td><td>Livet et Gavet </td><td>Voies de communication ,  Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Comment fut fixé le prix du pain à Vizille en 1615 Résumé</td><td>46 à 47</td><td>Pierre Coing Boyat </td><td>Vizille </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°10</td><td>Le village nègre  Résumé</td><td>48</td><td>Gabriel Perrin </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Le raffour de la montagne du Péage  Résumé</td><td>2</td><td>André Falco ,  Edith Falco </td><td>Vizille </td><td>Mines et minéralogie ,  Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Balade automnale d'un enfant vers 1930  Résumé</td><td>3</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Vie locale ,  Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Lo Toëne de Monchaffrey  Résumé</td><td>04 à 06</td><td>Raymond Joffre </td><td>Vaulnaveys le bas </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>III - Les aventures de Charvet  Résumé</td><td>07 à 14</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>L'histoire du Mont-Larron  Résumé</td><td>15</td><td>Paul Courteaud </td><td>Vaulnaveys le bas </td><td>Vie locale ,  Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Missionnaire de la Salette : le révérend Père Archier  Résumé</td><td>16 à 17</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Archéologie : la plaine du Lavanchon  Résumé</td><td>18 à 23</td><td>Eric Plassot </td><td>Saint Paul de Varces </td><td>Archéologie </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Le musée historique de la vallée de la Romanche  Résumé</td><td>24 à 25</td><td>Caroline Curnier </td><td>Livet et Gavet </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>En 1782 : les vaches de Brié étaient-elles folles ?  Résumé</td><td>26 à 28</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Vie locale ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Quand Jean-Jacques Rousseau cherchait une maison  Résumé</td><td>29 à 33</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Souvenir des usines Keller  Résumé</td><td>34 à 39</td><td>André Clergeot ,  Yvette Emieux </td><td>Livet et Gavet </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Il était une fois Jarrie : les commerces  Résumé</td><td>40 à 41</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Retour à l'école des cadres d'Uriage  Résumé</td><td>42 à 45</td><td>Pierre Bourdat </td><td>Uriage </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Soirée Rigodon à Pellafol 10 aout 1996  Résumé</td><td>46</td><td>Germaine Billon </td><td>Pellafol </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Pique-nique avec les amis de la vallée de la Gresse  Résumé</td><td>47</td><td>Germaine Billon </td><td>Monestier de Clermont </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°11</td><td>Les deux mulets (poème)  Résumé</td><td>48</td><td>Gérard Mingat ,  Michel Vial </td><td>Vaulnaveys le bas </td><td>Patois ,  Toponymie ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>I - Les registres paroissiaux de Brié  Résumé</td><td>04 à 10</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>IV - Les aventures de Charvet  Résumé</td><td>11 à 17</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Le plâtre d'Herbeys  Résumé</td><td>18 à 19</td><td>Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Un aspect de la vie des campagnes - St Barthélémy de Séchilienne Résumé</td><td>20 à 25</td><td>Bernard Mingone </td><td>Saint Barthélémy de Séchilienne </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>18 février 1944  Résumé</td><td>26 à 28</td><td>Jean Perrin </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Vizille fait divers : 18 février 1944  Résumé</td><td>29 à 32</td><td>Louis Girard-Reydet </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Les scouts de Vizille  Résumé</td><td>33 à 34</td><td>Jean Fagno </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Moulin syndical de Vaulnaveys le haut  Résumé</td><td>35 à 39</td><td>Anne Cayol Gerin </td><td>Vaulnaveys le haut </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>La chartreuse de Prémol  Résumé</td><td>40 à 41</td><td>Marguerite Vianney-Liaud </td><td>Vaulnaveys le haut </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Dramatiques évènements aux Angonnes  Résumé</td><td>42 à 43</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Toponymie et origine des noms des communes  Résumé</td><td>44 à 45</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°12</td><td>Bibliographie et sources  Résumé</td><td>46 à 47</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>"L'aigle a deux têtes" vu par Raymond Voinquel  Résumé</td><td>03 à 05</td><td>Alain Chevalier </td><td>Vizille </td><td>Vie locale ,  Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>II - Les registres paroissiaux de Brié  Résumé</td><td>06 à 17</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Défense et illustration du patrimoine  Résumé</td><td>18</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>,  Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Il revient : retour de Napoléon  Résumé</td><td>19 à 23</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Un projet de monument commémoratif du passage de Napoléon  Résumé</td><td>23 à 25</td><td>Roger Morard </td><td>Laffrey </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Les conscrits (St Pierre et Notre Dame)  Résumé</td><td>26 à 27</td><td>Germaine Billon ,  Aline Pignat </td><td>Notre Dame de Mésage ,  Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Le battage, du fléau à la batteuse  Résumé</td><td>28 à 30</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Une coutume religieuse : "le pain bénit"  Résumé</td><td>31 à 32</td><td>Gilbert Gacon </td><td>Champ sur Drac </td><td>Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>V - Les aventures de Charvet : 1814-1816  Résumé</td><td>33 à 47</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°13</td><td>Journées du patrimoine 21 septembre 1997  Résumé</td><td>48</td><td>Germaine Billon </td><td>Grenoble </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>La croix du Mottet  Résumé</td><td>04 à 07</td><td>Michel Vial </td><td>Séchilienne </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>A propos de cloche  Résumé</td><td>8</td><td>Suzanne Ehrhard </td><td>Brié et Angonnes </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Un curé de choc à St Martin de la Cluze  Résumé</td><td>09 à 11</td><td>Pierre Coing Boyat </td><td>Saint Martin de la Cluze </td><td>Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>III - Les registres paroissiaux de Brié (fin)  Résumé</td><td>12 à 18</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Quand les vizillois chantaient  Résumé</td><td>19</td><td>Robert Aillaud </td><td>Vizille </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>VI - Les aventures de Charvet  Résumé</td><td>20 à 28</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Les débuts du tourisme dans notre région  Résumé</td><td>29</td><td>Marie-Thérèse Emery </td><td>Pays vizillois </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Un mariage compromis à Jarrie  Résumé</td><td>30 à 33</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Avis de recherche  Résumé</td><td>34</td><td>Robert Aillaud </td><td>Vizille </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Un trépas très suivi  Résumé</td><td>34</td><td>Bernard Mingone </td><td>Vaulnaveys le haut </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Chamrousse : station olympique de Duhamel à Killy  Résumé</td><td>35 à 38</td><td>Bernadette Belmont </td><td>Chamrousse </td><td>Tourisme ,  Lieux remarquables ,  Sport </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Le monologue de Janin  Résumé</td><td>39</td><td>Jean Millet </td><td>Pays vizillois </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Histoire d'un site industriel  Résumé</td><td>40 à 41</td><td>Alain Emery </td><td>Jarrie </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Vogues avec violence  Résumé</td><td>42 à 43</td><td>Daniel Templier </td><td>Cholonge </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Le dore  Résumé</td><td>44</td><td>Georges Mancat </td><td>La Morte </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Traditions et coutumes de Vizille  Résumé</td><td>45 à 46</td><td>Claude Muller </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Actualités : les 20 ans de Bonrepos  Résumé</td><td>47</td><td>Robert Aillaud </td><td>Jarrie </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°14</td><td>Abbaye de Boscodon : sortie du 6 juin 1998  Résumé</td><td>47 à 48</td><td>Michel Vial </td><td>Crots </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°14 bis</td><td>Le tour de France en pays Vizillois (n° spécial)  Résumé</td><td>01 à 128</td><td>Gérard Mingat ,  Jean Guitton </td><td>Pays vizillois </td><td>Sport </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>Le chatelain d'Herbeys  Résumé</td><td>3</td><td>Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>Les cloutiers de St Barthélémy  Résumé</td><td>04 à 05</td><td>Bernard Mingone </td><td>Saint Barthélémy de Séchilienne </td><td>Mines et minéralogie ,  Activités artisanales </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>Le président Gaston Doumergue à Prémol  Résumé</td><td>06 à 08</td><td>Lucienne Cret </td><td>Chamrousse </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>Le trolleybus du Péage de Vizille  Résumé</td><td>09 à 17</td><td>Jean Perrin </td><td>Vizille </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>VII - Les aventures de Charvet (fin)  Résumé</td><td>18 à 31</td><td>Gérard Mingat </td><td>Vizille </td><td>Grandes périodes ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>A la fin du XVIIe siècle, un évêque en visite pastorale dans notre région  Résumé</td><td>32 à 42</td><td>Michel Vial </td><td>Notre Dame de Mésage ,  Saint Pierre de Mésage </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°15</td><td>L'appareil judiciaire grenoblois Napoléon et la magistrature  Résumé</td><td>43 à 47</td><td>Roger Morard </td><td>Grenoble </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°16</td><td>Le chateau de Bonrepos  Résumé</td><td>04 à 14</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°16</td><td>L'historique de la fusillade des Tillegrets  Résumé</td><td>15</td><td>Fernand Boeuf </td><td>Saint Georges de Commiers </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°16</td><td>I - Le fort de Montavie : les fortifications  Résumé</td><td>16 à 29</td><td>Michaël Galle </td><td>Brié et Angonnes </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°16</td><td>L'abjuration  Résumé</td><td>30</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°16</td><td>I - Les visites pastorales du Cardinal Le Camus en Pays Vizillois  Résumé</td><td>31 à 44</td><td>Michel Vial </td><td>Brié et Angonnes ,  Herbeys </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°16</td><td>Jadis et naguère Chamrousse-Béranger  Résumé</td><td>45 à 51</td><td>Bernadette Belmont </td><td>Chamrousse </td><td>Tourisme ,  Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>II - Le fort de Montavie : un projet de reconversion  Résumé</td><td>04 à 14</td><td>Michaël Galle </td><td>Brié et Angonnes </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>Un cheval peu ordinaire  Résumé</td><td>15</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Vie locale ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>Il était une fois Jarrie : la colonie de St Maurice en Trièves  Résumé</td><td>16 à 19</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>La restauration de la chapelle des Angonnes  Résumé</td><td>20 à 21</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>Comme autrefois  Résumé</td><td>22 à 23</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>Accident du grand mur dans la cote de Laffrey : 25 aout 1946  Résumé</td><td>24 à 25</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>Relation des incidents survenus à Jarrie en juillet et août 44  Résumé</td><td>26</td><td>Georgette Balor </td><td>Jarrie </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>L'art roman dans le canton de Vizille  Résumé</td><td>27 à 33</td><td>Paul Wohlschlegel </td><td>Notre Dame de Mésage </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>Chroniques de Champagnier dans les grimoires de Bonrepos  Résumé</td><td>34 à 37</td><td>Pierre Coing Boyat </td><td>Champagnier </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°17</td><td>II - Les visites pastorales du Cardinal Le Camus en Pays Vizillois  Résumé</td><td>38 à 48</td><td>Michel Vial </td><td>Pays vizillois </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>Il était une fois Jarrie : traditions chrétiennes d'antan  Résumé</td><td>04 à 05</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>1943 - 1944 : la voiture au gazo de mon père  Résumé</td><td>06 à 08</td><td>Jean Perrin </td><td>Vizille </td><td>Vie locale ,  Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>29 février 1632 : ordonnance de médecins lyonnais  Résumé</td><td>9</td><td>Pierre Coing Boyat </td><td>Lyon </td><td>Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>St Jean de Vaulx  Résumé</td><td>10 à 11</td><td>Germaine Billon </td><td>Saint Jean de Vaux </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>Comment Lesdiguières punit cruellement Jacquet le Maraudeur Résumé</td><td>12 à 14</td><td>Germaine Billon </td><td>Vizille </td><td>Contes et légendes </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>Les distractions vers les années 30  Résumé</td><td>15 à 17</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>Vizille, camp des veilles ou pays des eaux  Résumé</td><td>18 à 22</td><td>André Frances </td><td>Vizille </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>16 juillt 1911 : Remédo pire que le mâ  Résumé</td><td>23</td><td>Raymond Joffre </td><td>Vaulnaveys le bas </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>III - Les visites pastorales du Cardinal Le Camus en Pays Vizillois Résumé</td><td>24 à 35</td><td>Michel Vial </td><td>Séchilienne ,  Saint Barthélémy de Séchilienne </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>III - Le fort de Montavie : un projt de reconversion  Résumé</td><td>36 à 45</td><td>Michaël Galle </td><td>Brié et Angonnes </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°18</td><td>Mémoire d'une communauté : visages de Jarrie  Résumé</td><td>46 à 47</td><td>Robert Aillaud </td><td>Jarrie ,  Vizille </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>Il était une fois Jarrie : nos pélerinages  Résumé</td><td>04 à 05</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Vie locale ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>La famille de Saint-Léger fête 1000 ans d'histoire  Résumé</td><td>06 à 08</td><td>Bernard De Saint-Léger </td><td>Jarrie </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>Sur les traces d'André Charvet : citoyen vizillois  Résumé</td><td>9</td><td>Robert Aillaud </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>Belledonne ou "qui sait le mot sait les choses" (Platon dans "Le Cratyle")  Résumé</td><td>10 à 14</td><td>Raymond Joffre </td><td>Belledonne </td><td>Tourisme ,  Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>Contrat de mariage  Résumé</td><td>15</td><td>Yves Marcel </td><td>Séchilienne </td><td>Documents remarquables ,  Généalogie , Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>La chapelle baroque des Angonnes  Résumé</td><td>16 à 22</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>Déjà la circulation en 1924 : le tramway à Brié  Résumé</td><td>23</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>IV - Le fort de Montavie : un projet de reconversion (fin)  Résumé</td><td>24 à 29</td><td>Michaël Galle </td><td>Brié et Angonnes </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>IV - Les visites pastorales du Cardinal Le Camus en pays Vizillois : Notre-Dame de Jarrie  Résumé</td><td>30 à 40</td><td>Michel Vial </td><td>Champ sur Drac , Jarrie </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°19</td><td>Les aventures de Basile Bonnardon : médecin à Vizille au XIXe siècle  Résumé</td><td>41 à 45</td><td>Robert Aillaud </td><td>Vizille </td><td>Personnages remarquables ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Une affaire entre Casimir Périer et Claude Rouget de Lisle  Résumé</td><td>03 à 04</td><td>Gérard Mingat </td><td>Vizille </td><td>Vie locale ,  Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>1843 : Histoire d'eau - 1852 : Histoire de débit de boisson  Résumé</td><td>05 à 06</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Les fièvres intermittentes à Vaulnaveys au cours du XVIIIe siècle  Résumé</td><td>07 à 11</td><td>Gérard Mingat </td><td>Vaulnaveys le haut </td><td>Vie locale ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Mon ami le père Paradis : le dernier des tueurs d'ours  Résumé</td><td>12 à 13</td><td>Roger Morard </td><td>Claix </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Le premier gardien de refuge : le père Tasse  Résumé</td><td>14 à 24</td><td>Raymond Joffre </td><td>Chamrousse </td><td>Tourisme ,  Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Le bas-relief du château de Vizille  Résumé</td><td>25 à 31</td><td>Gérard Mingat </td><td>Vizille </td><td>,  Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Un faire-part de décès original  Résumé</td><td>32 à 33</td><td>Gérard Mingat </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>V - Les visites pastorales du Cardinal Le Camus en Pays Vizillois : prieuré de Vaulnaveys Résumé</td><td>34 à 44</td><td>Michel Vial </td><td>Vaulnaveys </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>Enigme à Champanier Printemps 44  Résumé</td><td>45</td><td>Philippe Vatin-Perignon </td><td>Champagnier </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°20</td><td>L'élection de St Pierre de Mésage : février 1790  Résumé</td><td>46 à 48</td><td>Denis Chambaz </td><td>Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>Les mémoires du docteur Bonnardon  Résumé</td><td>04 à 09</td><td>Robert Aillaud </td><td>Séchilienne </td><td>Personnages remarquables ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>Des nouvelles de nos chateaux  Résumé</td><td>10</td><td>Robert Aillaud </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>Le pont de Vizille et son péage  Résumé</td><td>11 à 17</td><td>Bernard François </td><td>Vizille </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>La carte postale témoin de l'histoire  Résumé</td><td>18 à 19</td><td>Gérard Mingat </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>Le centre de documentation du domaine départemental  Résumé</td><td>20</td><td>Robert Aillaud </td><td>Vizille </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>L'ours de la Poyat  Résumé</td><td>21 à 22</td><td>René Faure </td><td>Fontaine </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>Trois vizilloises dans la vie "chamboulée" des normaliennes  Résumé</td><td>24 à 29</td><td>Aline Pignat </td><td>Grenoble </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>VI - Les visites pastorales du cardinal Le Camus : pays d'Uriage  Résumé</td><td>30 à 43</td><td>Michel Vial </td><td>Uriage </td><td>Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°21</td><td>Lieudit et bail à ferme à Jarrie en 1653  Résumé</td><td>44 à 47</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Vie locale ,  Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Votre grand-père fait-il partie de cette brochette de cycliste ?  Résumé</td><td>3</td><td>Robert Aillaud </td><td>Vizille </td><td>Sport </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>La wehrmacht à Vizille du 10 au 21 aout 1944  Résumé</td><td>04 à 11</td><td>Jean Perrin </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Raconte grand-père... Souvenirs d'école  Résumé</td><td>12 à 13</td><td>Jean Perrin </td><td>Vizille </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>La mairie école des Chaberts  Résumé</td><td>14 à 15</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Une maison disparue au passé revenu  Résumé</td><td>16</td><td>Renée Gachet Berthon </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Trois siècles de mémoire  Résumé</td><td>17 à 19</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Les présidents de la République vus par un enfant  Résumé</td><td>20 à 21</td><td>Paul Wohlschlegel </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Un blason pour la commune de Brié et Angonnes  Résumé</td><td>22</td><td>Patrice Dore </td><td>Brié et Angonnes </td><td>Généalogie ,  Héraldique </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Un diplôme d'honneur pour Brié et Angonnes  Résumé</td><td>23</td><td>Jean-Claude Ogier </td><td>Brié et Angonnes </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>Laffrey  Résumé</td><td>24 à 30</td><td>Germaine Billon </td><td>Laffrey </td><td>Vie locale ,  Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>I - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>31 à 38</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>I - L'annuaire d'un curé de campagne aux Angonnes  Résumé</td><td>39 à 44</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>A propos d'un sauvetage  Résumé</td><td>45</td><td>Adrienne Celso </td><td>Jarrie </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°22</td><td>La mort du maire de Vizille  Résumé</td><td>46</td><td>Adrienne Celso </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>II - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>04 à 12</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>Le renard et la cigogne  Résumé</td><td>13</td><td>Albert Ravanat </td><td>Pays vizillois </td><td>Patois ,  Toponymie ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>Les sites du canton vous ouvrent leurs portes  Résumé</td><td>14 à 16</td><td>Pierre Coing Boyat </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>La dolomite de St Pierre de Mésage  Résumé</td><td>17 à 26</td><td>Robert Aillaud ,  José Duarte </td><td>Saint Pierre de Mésage </td><td>Mines et minéralogie </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>VII - Les visites pastorales du cardinal Le Camus : la Matheysine (fin) Résumé</td><td>27 à 39</td><td>Michel Vial </td><td>Matheysine </td><td>Bâtiments et édifices ,  Religions ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>Le domaine Rabit à Herbeys  Résumé</td><td>40 à 42</td><td>Marguerite Vianney-Liaud </td><td>Herbeys </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>Mondanité à Grenoble et Vizille - 1950  Résumé</td><td>43 à 46</td><td>Gérard Mingat </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°23</td><td>Histoire d'ours dans la montagne de Séchilienne  Résumé</td><td>47</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>Nouvelles histoires d'ours  Résumé</td><td>03 à 06</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>L'église de Brié  Résumé</td><td>07 à 11</td><td>Henri Rey </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>Un mésageois à la découverte du monde  Résumé</td><td>12 à 22</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>Les bassins de Notre-Dame de Mésage  Résumé</td><td>23 à 28</td><td>Aline Pignat </td><td>Notre Dame de Mésage </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>Dendrochronologie  Résumé</td><td>29 à 31</td><td>Pierre Coing Boyat </td><td>Pays vizillois </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>St Sauveur souvenir de guerre  Résumé</td><td>32</td><td>Roger Finet </td><td>Notre Dame de Mésage </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>Les premiers guides dauphinois sont de Belledonne  Résumé</td><td>33 à 42</td><td>Raymond Joffre </td><td>Pays vizillois </td><td>Tourisme ,  Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°24</td><td>III - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>43 à 51</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°25</td><td>Les suites du spectacle"A la claire fontaine"  Résumé</td><td>4</td><td>Robert Aillaud </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°25</td><td>IV - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>05 à 15</td><td>Pierre Coing Boyat </td><td>Pays vizillois </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°25</td><td>"La Marianne" : le monument commémoratif de l'assemble de Vizille  Résumé</td><td>26 à 31</td><td>Robert Chagny </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°25</td><td>II - L'annuaire d'un curé de campagne aux Angonnes  Résumé</td><td>32 à 40</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°25</td><td>Montjean sur Vizille  Résumé</td><td>41 à 48</td><td>Bernard Mingone </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Herbeys dans l'histoire - La complainte du kiosque  Résumé</td><td>04 à 06</td><td>Le Kiosque </td><td>Herbeys </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Les problèmes de la route des Hautes-Alpes  Résumé</td><td>07 à 10</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Histoire de cloche... à Vizille  Résumé</td><td>11 à 12</td><td>Michel Vial </td><td>Vizille </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Les mémoires de Basile Bonnardon  Résumé</td><td>13 à 17</td><td>Robert Aillaud </td><td>Pays vizillois </td><td>Personnages remarquables ,  Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Le temps des échafaudages  Résumé</td><td>18 à 22</td><td>Robert Aillaud </td><td>Pays vizillois </td><td>Bâtiments et édifices ,  Activités artisanales </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>V - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>23 à 32</td><td>Pierre Coing Boyat </td><td>Pays vizillois </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>A Brié... Des fontaines républicaines et radicales socialistes Résumé</td><td>33 à 36</td><td>Pierre Melquiond </td><td>Brié </td><td>Bâtiments et édifices ,  Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Autour de la légende du mmur du château de Vizille  Résumé</td><td>37 à 41</td><td>Jean Guitton </td><td>Vizille </td><td>Contes et légendes </td><td>- </td></tr>
+<tr><td>Mémoire n°26</td><td>Un hôte de marque à Vizille : Jean Jaurès  Résumé</td><td>42 à 55</td><td>Gérard Mingat ,  Pierre Coing Boyat </td><td>Vizille </td><td>Vie locale ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Un peu de nouveauté  Résumé</td><td>3</td><td>Robert Aillaud </td><td>- </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Assemblé générale des Amis de l'Histoire  Résumé</td><td>4</td><td>Gaby Vair </td><td>Montchaboud </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Contribution à l'histoire de la Libération de Vizille. Le 22 aout 1944  Résumé</td><td>05 à 08</td><td>Jean Perrin </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Les 4 saisons de Léonce et Renée  Résumé</td><td>09 à 19</td><td>Magali Roux </td><td>Jarrie </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>VI - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>20 à 32</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Le patronnage Champ - Jarrie  Résumé</td><td>33 à 37</td><td>Jeanette Cheveu D'or </td><td>Champ sur Drac ,  Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Fontaines et bassins de Vaulnaveys-le-Haut  Résumé</td><td>38 à 42</td><td>Jean Guitton ,  Renée Guitton </td><td>Vaulnaveys le haut </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Le bureau de poste de Brié et Angonnes  Résumé</td><td>43 à 47</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Vie locale ,  Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Le service postal à Herbeys  Résumé</td><td>48 à 49</td><td>Marie-Thérèse Emery </td><td>Herbeys </td><td>Vie locale ,  Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°27</td><td>Mon premier poste d'institutrice  Résumé</td><td>50 à 55</td><td>Aline Pignat </td><td>Séchilienne </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Edito  Résumé</td><td>2</td><td>Robert Aillaud </td><td>- </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Le saut du moine  Résumé</td><td>03 à 07</td><td>Michel Vial ,  Henri Jobert </td><td>Jarrie </td><td>Contes et légendes </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>La fonderie de la mine d'argent de Brandes en Oisans  Résumé</td><td>08 à 20</td><td>Bernard François </td><td>Brandes en Oisans </td><td>Mines et minéralogie </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Connaissance et actions du patrimoine  Résumé</td><td>21 à 22</td><td>Patrice Dore </td><td>Brié et Angonnes </td><td>Bâtiments et édifices , Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Le triste sort de Pierre Guymet-Node de Montchaffrey qui avait un peu trop fêté la St-Barthélémy 1805  Résumé</td><td>23 à 26</td><td>Gérard Mingat ,  Bernard Mingone </td><td>Livet et Gavet , Montchaffrey </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Recherches sur la première église de Vizille  Résumé</td><td>27 à 28</td><td>Jean-Claude Michel </td><td>Vizille </td><td>Bâtiments et édifices , Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>VII - Les moulins de Jarrie à travers l'histoire  Résumé</td><td>29 à 38</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>L'hydroscope de Montjean  Résumé</td><td>39 à 45</td><td>Jean Guitton ,  Renée Guitton </td><td>Montjean </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Commune de Livet et Gavet - Aout 1944  Résumé</td><td>46 à 54</td><td>Alain Romestant </td><td>Livet et Gavet </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°28</td><td>Brié et Angonnes - La commune parraine le village martyr ardennais d'Etrepigny (1920) Résumé</td><td>55 à 56</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Des amis de l'histoire à l'honneur  Résumé</td><td>02 à 03</td><td>- </td><td>- </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Souvenirs personnels de la libération de Vizille  Résumé</td><td>04 à 07</td><td>Jean Guitton </td><td>Vizille </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>L'église de Séchilienne  Résumé</td><td>08 à 13</td><td>Michel Vial </td><td>Séchilienne </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Jarrie et ses montagnes  Résumé</td><td>14</td><td>Jeanette Cheveu D'or </td><td>Jarrie </td><td>Lieux du pays vizillois ,  Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Ceux du magnésium  Résumé</td><td>15</td><td>René Villiot </td><td>Jarrie </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Mérimée, professeur d'architecture de Stendhal  Résumé</td><td>16 à 23</td><td>Geneviève Dumolard ,  ? Murienne </td><td>- </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>La Pauline  Résumé</td><td>24 à 25</td><td>Denise - </td><td>Vizille </td><td>Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Le chateau de paille : les habitants passent, le cadre reste  Résumé</td><td>26 à 33</td><td>Peter Fletcher </td><td>Vizille </td><td>Vie locale ,  Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°29</td><td>Lucis Baud (1870 - 1913)  Résumé</td><td>34 à 54</td><td>Gérard Mingat </td><td>Vizille </td><td>Vie locale ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>Une journée festive et conviviale - 100 ans d'école à Vizille  Résumé</td><td>2</td><td>- </td><td>Vizille </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>Un cas de rage à Vizille  Résumé</td><td>03 à 07</td><td>Pascale Beyls </td><td>Vizille </td><td>Médecine </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>Notre-Dame des Autels à Champ-sur-Drac  Résumé</td><td>08 à 15</td><td>Michel Vial </td><td>Champ sur Drac </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>Le tourisme en Oisans  Résumé</td><td>16 à 20</td><td>Raymond Joffre </td><td>L'Oisans </td><td>Tourisme </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>Visite du château de Vizille en 1628  Résumé</td><td>21 à 23</td><td>Robert Aillaud </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>Vizille et ses commerces - 1ère partie de la rue Général De Gaulle  Résumé</td><td>24 à 34</td><td>- </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°30</td><td>Quatre ans de retard pour la classe  Résumé</td><td>35</td><td>- </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°30</td><td>L'antiquité du plateau de Champagnier  Résumé</td><td>36 à 55</td><td>Pierre Melquiond </td><td>Champagnier </td><td>Archéologie </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>La photographie, irremplacable témoin  Résumé</td><td>2</td><td>Robert Aillaud </td><td>- </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>17 juin 1788 - 14 juillet 1789  Résumé</td><td>3</td><td>- </td><td>- </td><td>Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>Une famille au Bessey d'Oz au siècle dernier  Résumé</td><td>04 à 15</td><td>Michelle Tournoud </td><td>Bessey d'Oz </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>1790 : Dominique Bonnet, curé de St Pierre de Mésage, prête serment à la Constitution Civile du Clergé  Résumé</td><td>16 à 19</td><td>Denis Chambaz ,  Pierre Coing Boyat </td><td>Saint Pierre de Mésage </td><td>Religions ,  Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>Vizille et ses commerces : la place Stalingrad  Résumé</td><td>20 à 28</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°31</td><td>100 ans d'école à Vizille - Encore des témoignages  Résumé</td><td>29 à 30</td><td>Ecole Paul Langevin </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>La Fayette à Vizille  Résumé</td><td>31 à 33</td><td>Germaine Billon </td><td>Vizille </td><td>Vie locale ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>Un café peu ordinaire  Résumé</td><td>34 à 36</td><td>Paul Wohlschlegel </td><td>Rioupéroux </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>Souvenirs au fil du temps : les usines de l'Alliance et du Tissage  Résumé</td><td>37 à 48</td><td>Magali Roux </td><td>Vizille </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>Commune de Livet et Gavet, aout 1944  Résumé</td><td>49 à 50</td><td>Alain Romestant </td><td>Livet et Gavet </td><td>Guerres ,  Grandes périodes </td><td>- </td></tr>
+<tr><td>Mémoire n°31</td><td>Un accident du train de la société des VFD  Résumé</td><td>51 à 54</td><td>Gérard Mingat </td><td>La Paute ,  Bourg d'Oisans </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Femmes  Résumé</td><td>2</td><td>- </td><td>Herbeys </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Le tragique éboulement du 1er avril 1827 à Séchilienne  Résumé</td><td>03 à 04</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Etrange détour dans la destinée d'un pionnier de l'Alpe d'Huez  Résumé</td><td>05 à 06</td><td>Roger Canac </td><td>L'Alpe d'Huez </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Des nouvelles de 1903  Résumé</td><td>07 à 13</td><td>Jean Perrier </td><td>Grenoble </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Industries minières et métallurgiques tombées dans l'oubli à Vaulnaveys-le-Bas et à Uriage Résumé</td><td>14 à 17</td><td>B ? Bronner ,  Claude Bronner </td><td>Uriage ,  Vaulnaveys le bas </td><td>Mines et minéralogie </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>L'électrification de Grenoble, un enjeu disputé  Résumé</td><td>18 à 22</td><td>Alain Romestant </td><td>Grenoble </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Vizille et ses commerces : un quartier dans la ville  Résumé</td><td>23 à 39</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°32</td><td>A lire... ou à danser  Résumé</td><td>40 à 42</td><td>- </td><td>Pays vizillois </td><td>Vie de l'association </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>100 ans d'école à Vizille - Encore des témoignages  Résumé</td><td>43</td><td>Danielle Amar </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Personnages et demeures de Jarrie, Bon Repos et la Valentine au temps des Vaucanson et Benoit Duperier  Résumé</td><td>44 à 52</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Bâtiments et édifices ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°32</td><td>Ils auraient 100 ans cette année - classe 1927 de Vizille  Résumé</td><td>55</td><td>Gérard Mingat </td><td>Vizille </td><td>Vie locale ,  Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Structure et histoire géologique du plateau de champagnier  Résumé</td><td>04 à 11</td><td>Robert Aillaud </td><td>Champagnier </td><td>Mines et minéralogie </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Géologie et contruction  Résumé</td><td>12 à 16</td><td>Robert Aillaud </td><td>Champagnier </td><td>Bâtiments et édifices ,  Mines et minéralogie </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Des passionnés d'aviation  Résumé</td><td>17 à 22</td><td>Alain Romestant </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Vizille et ses commerces : dernière partie de la rue Général de Gaulle  Résumé</td><td>23 à 35</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°33</td><td>Année 1815 : le retour de Napoléon et son passage à Vizille  Résumé</td><td>36 à 44</td><td>Gilbert Gacon </td><td>Vizille </td><td>Personnages remarquables ,  Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Les aventures du capitaine Randon en marge du passage de Napoléon à Vizille Résumé</td><td>45 à 46</td><td>Robert Aillaud </td><td>Vizille </td><td>Personnages remarquables ,  Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Un peu de mémoire qui s'en va  Résumé</td><td>47</td><td>- </td><td>- </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Edition  Résumé</td><td>48 à 52</td><td>- </td><td>- </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>Un vizillois Huguenot émigré en Prusse au XVIIe siècle  Résumé</td><td>53 à 54</td><td>Gérard Mingat </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°33</td><td>A propos du chevalier Bayard et du chateau d'Uriage  Résumé</td><td>55</td><td>Geneviève Dumolard </td><td>Uriage </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Encore deux nouvelles éditions  Résumé</td><td>3</td><td>Robert Aillaud </td><td>- </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Vizille : foires, marchés, quinzaines commerciales, braderies  Résumé</td><td>04 à 15</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°34</td><td>Du chateau médiéval au palais du Connétable  Résumé</td><td>16 à 18</td><td>Céline Laforest </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Le chateau de Vizille avant la Révolution Française  Résumé</td><td>19 à 20</td><td>Céline Laforest </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Fresque de la façade de l'école Jean Jaurès  Résumé</td><td>21</td><td>Yvette Bonnaire </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Quand la restauration d'objets du patrimoins provoque une cérémonie officielle de l'église catholique Résumé</td><td>22 à 24</td><td>Patrice Dore </td><td>Vizille </td><td>Bâtiments et édifices , Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>La mine de zinc de Laffrey : une ruineuse chimère  Résumé</td><td>25 à 27</td><td>Claude Bronner </td><td>Laffrey </td><td>Mines et minéralogie </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>L'incendie du village de Montchaffrey  Résumé</td><td>28 à 29</td><td>Bernard Mingone </td><td>Montchaffrey </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Le tonneau de Diogène, Diogène le cynique  Résumé</td><td>30 à 31</td><td>Alain Romestant </td><td>- </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Olivier Messiaen, l'un des plus grands musiciens du XXe siècle à Petichet  Résumé</td><td>32 à 39</td><td>Pierre Coing Boyat </td><td>Petichet </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>1816 : le coup d'état manqué de Jean-Paul Didier  Résumé</td><td>40 à 46</td><td>Gilbert Gacon </td><td>Pays vizillois </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Un peu de toponymie : chanse, chansure...  Résumé</td><td>47 à 49</td><td>André Frances </td><td>Pays vizillois </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Un triste mois de janvier à Brié : le meurtre du café restaurant Vigier  Résumé</td><td>50 à 53</td><td>Pierre Melquiond </td><td>Brié </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Actualités  Résumé</td><td>54</td><td>- </td><td>- </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°34</td><td>Les anciennes familles de Brié et Angonnes : la famille Ogier  Résumé</td><td>55</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°35</td><td>La ferme "présidentielle" du chateau de Vizille  Résumé</td><td>04 à 08</td><td>Danielle Amar </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°35</td><td>Promenade découverte à partir du saut du moine  Résumé</td><td>09 à 16</td><td>Alain Romestant </td><td>Champagnier </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°35</td><td>Nos hommes de la révolutions  Résumé</td><td>17 à 21</td><td>Pierre Melquiond </td><td>Pays vizillois </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°35</td><td>Vizille et ses commerces - Les rues : Casimir. Périer, de la République, Sadi Carnot  Résumé</td><td>22 à 30</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°35</td><td>I - Le parc du chateau du roi  Résumé</td><td>31 à 35</td><td>Denis Bellon </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°35</td><td>Le chateau des Simianes à Haute-Jarrie  Résumé</td><td>36 à 49</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°35</td><td>Souvenirs de Georges Vivier : un "personnage", une "figure" humaniste  Résumé</td><td>50</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>La toponymie  Résumé</td><td>3</td><td>Robert Aillaud </td><td>- </td><td>Patois ,  Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Fermage à Chachatier en 1730  Résumé</td><td>04 à 05</td><td>Bernard Mingone </td><td>Vaulnaveys le bas </td><td>Activités agricoles </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Un courroux... magistral  Résumé</td><td>06 à 07</td><td>Paul Kiener </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>La méridienne du bar de la Paix  Résumé</td><td>08 à 10</td><td>Denis Bellon </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Hercule de retour à Vizille  Résumé</td><td>11 à 14</td><td>Robert Aillaud </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Vizille, les maisons de l'abbé Pierre  Résumé</td><td>15 à 20</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°36</td><td>Accident miraculeux à Huez  Résumé</td><td>21</td><td>Michèle Bruyat </td><td>L'Alpe d'Huez </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Barrage de l'Etroit... de l'eau qui a fait couler beaucoup d'encre!  Résumé</td><td>22 à 30</td><td>Alain Romestant </td><td>Pays vizillois </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>A Brié, elles aussi ont une histoire  Résumé</td><td>31</td><td>Pierre Melquiond </td><td>Brié </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Brié et ses environs en 1922 : promenade d'automne autour des 4 seigneurs  Résumé</td><td>32 à 36</td><td>Pierre Melquiond </td><td>Eybens </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Curiosités de nos archives communales - Jarrie  Résumé</td><td>37 à 40</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Eté 2009 - Patrimoine en fête  Résumé</td><td>41 à 42</td><td>- </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>La desserte ferroviaire de la vallée de la Romanche  Résumé</td><td>43 à 48</td><td>Jean-Louis Rochaix </td><td>L'Oisans </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°36</td><td>Appel à témoins  Résumé</td><td>51</td><td>- </td><td>- </td><td>- </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Le patrimoine vizillois  Résumé</td><td>3</td><td>Robert Aillaud </td><td>Pays vizillois , Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Brié et ses environs en 1922 : promenade d'automne autour des 4 Seigneurs Résumé</td><td>04 à 11</td><td>J. Vaujany </td><td>Herbeys </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Canal de navigation ou chemin de fer entre Grenoble et Vizille - Rêves et réalité  Résumé</td><td>12 à 17</td><td>Alain Romestant </td><td>Vizille </td><td>Voies de communication ,  Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Vizille et ses commerces : La rue Aristide Briand (rue d'Italie)  Résumé</td><td>18 à 23</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>II - Le parc du vieux château du roi  Résumé</td><td>24 à 27</td><td>Denis Bellon </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Souvenirs d'enfance de Gavet au Poursollet  Résumé</td><td>28</td><td>Annie Achard </td><td>Livet et Gavet </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Centenaire des sapeurs-pompiers de Brié et Angonnes : 1909-2009  Résumé</td><td>29 à 33</td><td>Paul Wohlschlegel </td><td>Brié </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>L'auto-école il y a 40 ans  Résumé</td><td>34</td><td>Robert Guillaud </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>La prise du château de Champ par Lesdiguières le 1er avril 1587  Résumé</td><td>35 à 37</td><td>Robert Aillaud </td><td>Champ sur Drac </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Une très jeune dame de 100 ans  Résumé</td><td>38</td><td>Renée Gachet Berthon </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>Le petit musée de la coiffure  Résumé</td><td>39 à 42</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°37</td><td>Curiosités de nos archives communales - Les curés racontent l'histoire Résumé</td><td>43 à 45</td><td>Pierre Coing Boyat </td><td>Haute-Jarrie </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°37</td><td>La masse d'arme du Chevalier Bayard  Résumé</td><td>46 à 51</td><td>Robert Aillaud </td><td>- </td><td>Personnages remarquables ,  Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Adrienne  Résumé</td><td>1</td><td>Robert Aillaud </td><td>Jarrie </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>La pierre plate à Rioupéroux  Résumé</td><td>2</td><td>Annie Achard </td><td>Rioupéroux </td><td>Lieux remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Vizille et ses comerces : la boucherie Cret - 1908 à 1979 -1ère partie de la rue Jean Jaurès Résumé</td><td>03 à 06</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°38</td><td>Vizille et ses commerces : La rue Aristide Briand (rue d'Italie) - 2ème partie  Résumé</td><td>07 à 13</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°38</td><td>Brié et ses environs en 1922 : promenade d'automne autour des 4 Seigneurs  Résumé</td><td>14 à 20</td><td>J. Vaujany </td><td>Villeneuve d'Uriage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Ou l'on retrouve les Hache ?  Résumé</td><td>21 à 24</td><td>Pierre Melquiond </td><td>Brié </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Une ténébreuse affaire : la conspiration Didier  Résumé</td><td>25 à 31</td><td>Alain Romestant </td><td>Pays vizillois </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>L'histoire dans les archives - Le fonds Jouvin - Carnet du Sieur Corréard  Résumé</td><td>32 à 33</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>A propos de... Les livres de raison  Résumé</td><td>34</td><td>Denis Bellon </td><td>France </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>L'alambic de la Gaffe  Résumé</td><td>35 à 37</td><td>Renée Rodolphe Vigroux </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Le chateau de paille dans les années 50  Résumé</td><td>38 à 42</td><td>Michèle Ferrafiat Delahaye </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Histoires d'eaux au château de Paille  Résumé</td><td>43 à 46</td><td>Denis Bellon </td><td>Vizille </td><td>Eau, rivières, canaux et fontaines </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Ozias Féronce : un grand astronome vizillois méconnu  Résumé</td><td>47 à 50</td><td>Robert Aillaud </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°38</td><td>Attention... aux excès de vitesse !  Résumé</td><td>52</td><td>Bernard Mingone </td><td>Séchilienne </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Hommage à Pierre Melquiond  Résumé</td><td>3</td><td>Robert Aillaud </td><td>Brié et Angonnes </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Histoire de la Poste (1e partie) à Vizille  Résumé</td><td>04 à 05</td><td>Paul Fournier </td><td>Vizille </td><td>Vie locale ,  Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Sur la route de Montchaffrey  Résumé</td><td>06 à 09</td><td>Jeannette Della-Vedova </td><td>Montchaffrey </td><td>Voies de communication </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°39</td><td>Le secret d'Hercule - Conte de Noël  Résumé</td><td>10 à 13</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Contes et légendes </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°39</td><td>Un ouvrage sur le château de Bon Repos  Résumé</td><td>13</td><td>- </td><td>Jarrie </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>L'histoire dans les archives (suite)  Résumé</td><td>14 à 29</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>L'authenticité éxigée par l'histoire  Résumé</td><td>30 à 35</td><td>Pierre Melquiond </td><td>Brié et Angonnes </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Emile Rivet  Résumé</td><td>36 à 37</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Les cavalcades à Vizille (1e partie)  Résumé</td><td>38 à 41</td><td>Danielle Amar </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>1310 - 2010, déjà 700 ans! Les libertés communales de Vizille  Résumé</td><td>42 à 45</td><td>Denis Bellon </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Les chroniques oubliées : le contrat de mariage  Résumé</td><td>46 à 50</td><td>Claude Ferradou </td><td>Saint Pierre de Mésage </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>Appel à recettes  Résumé</td><td>51</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°39</td><td>La fabrication du pain à la ferme  Résumé</td><td>51</td><td>Germaine Billon </td><td>- </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Témoignage de Micheline Hauss  Résumé</td><td>3</td><td>Micheline Hauss </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Tous à vos souvenirs ! Qui peut compléter cette grille ?  Résumé</td><td>4</td><td>- </td><td>Pays vizillois </td><td>Souvenirs </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Les hommes de la conspiration Didier  Résumé</td><td>05 à 11</td><td>Alain Romestant </td><td>Pays vizillois </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Histoire de la Poste (2e partie)  Résumé</td><td>12 à 17</td><td>Paul Fournier </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Les cavalcades à Vizille (2e partie)  Résumé</td><td>18 à 20</td><td>Danielle Amar </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Les chroniques oubliées : le contrat de mariage  Résumé</td><td>21 à 24</td><td>Claude Ferradou </td><td>Saint Pierre de Mésage </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Historique de la maison Chamoux  Résumé</td><td>25</td><td>? Chamoux </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Vizille et ses commerces : la rue Jean Jaurès (suite)  Résumé</td><td>26 à 29</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°41</td><td>Etre royaliste  Résumé</td><td>30</td><td>- </td><td>France </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>La tradition de Guignol à Uriage  Résumé</td><td>31 à 34</td><td>Charles Paillet </td><td>Uriage </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Notre-Dame-de-Jarrie  Résumé</td><td>35 à 46</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Berthe Vial  Résumé</td><td>47</td><td>Yves Vial </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°41</td><td>Le fils d'Ozias Féronce, l'astronome vizillois  Résumé</td><td>48 à 50</td><td>Robert Aillaud </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Le cimetière de Vizille  Résumé</td><td>2</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Le monument aux morts de Vizille  Résumé</td><td>03 à 07</td><td>Denis Bellon </td><td>Vizille </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Les Jeux Olympiques modernes, une invention Grenobloise  Résumé</td><td>08 à 16</td><td>Gérard Mingat ,  Alain Romestant </td><td>Grenoble </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Repas de fête  Résumé</td><td>17 à 18</td><td>Paul Wohlschlegel </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Notre-Dame-de-Jarrie (2e partie)  Résumé</td><td>19 à 27</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Le Lac Mort de Laffrey à Saint-Barthélémy-de-Séchilienne  Résumé</td><td>28 à 33</td><td>Alain Romestant </td><td>Séchilienne </td><td>Vie locale ,  Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Mon premier travail...  Résumé</td><td>34 à 35</td><td>Marie Del Net </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Curiosité  Résumé</td><td>35</td><td>Paul Fournier </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Histoire de la Poste à Vizille (3e partie)  Résumé</td><td>36 à 40</td><td>Paul Fournier </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Cavalcades organisées par le Comité du sou des écoles (3e partie)  Résumé</td><td>41 à 45</td><td>Danielle Amar </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Mon enfance à Livet - Jeanne Fagno née Bergonzoli  Résumé</td><td>46 à 49</td><td>Jeannette Della-Vedova </td><td>Livet et Gavet </td><td>Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°42</td><td>La chapelle Notre-Dame-sous-la-Croix à Chamrousse  Résumé</td><td>50 à 54</td><td>Charles Paillet </td><td>Chamrousse </td><td>Bâtiments et édifices ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Souvenirs d'enfance aux Peyrauds  Résumé</td><td>55 à 56</td><td>Germaine Billon </td><td>Saint Pierre de Mésage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>Parcours d'un Français libre  Résumé</td><td>57 à 58</td><td>Gwénaëlle Leyssieux </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°42</td><td>La vie de l'association  Résumé</td><td>59 à 60</td><td>Denis Bellon </td><td>Vizille </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Avis de recherche  Résumé</td><td>1</td><td>- </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Les orgues historiques de Vizille  Résumé</td><td>03 à 09</td><td>Denis Bellon </td><td>Vizille </td><td>Bâtiments et édifices , Musique </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>La chapelle des Angonnes en 1867  Résumé</td><td>10 à 13</td><td>Patrice Dore </td><td>Vizille </td><td>Bâtiments et édifices , Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Histoire de la Reine de Mai ou le conte de l'Aspérule  Résumé</td><td>14 à 18</td><td>Claude Ferradou </td><td>Pays vizillois </td><td>Contes et légendes </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Les fêtes de Jarrie en 1867  Résumé</td><td>19 à 23</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Les tenues des facteurs  Résumé</td><td>24</td><td>Paul Kiener </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>L'incroyable vie de Charles d'Albigny, seigneur de Séchilienne  Résumé</td><td>25 à 31</td><td>Robert Aillaud </td><td>Séchilienne </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>L'oeuvre de Charles Albert Keller dans l'électrométallurgie et la production d'énergie électrique  Résumé</td><td>32 à 38</td><td>Alain Romestant </td><td>Livet et Gavet </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Le chemin des Huguenots  Résumé</td><td>39 à 41</td><td>Renée Rodolphe Vigroux </td><td>France </td><td>Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Nomination d'un garde champêtre à Vizille  Résumé</td><td>42 à 43</td><td>Paul Fournier </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Les champignons  Résumé</td><td>44 à 45</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°43</td><td>La société mycologique de Vizille  Résumé</td><td>46 à 53</td><td>Jeannette Della-Vedova ,  Jacques Boffo </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°43</td><td>La tombe de la famille Du Terrail-Couvat dans l'ancien cimetière de Vizille  Résumé</td><td>54 à 59</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Les productions des Amis de l'Histoire du Pays Vizillois  Résumé</td><td>60</td><td>- </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>Nos publications hors-séries  Résumé</td><td>61</td><td>- </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°43</td><td>La vie de l'association  Résumé</td><td>62 à 64</td><td>- </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Michelle Perrot à travers la presse...  Résumé</td><td>2</td><td>- </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Michelle Perrot : sur les traces de Lucie Baud  Résumé</td><td>03 à 05</td><td>Michèle Perrot </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Témoignage de Lucie Baud  Résumé</td><td>06 à 14</td><td>Lucie Baud </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>L'histoire de l'Alliance Textile  Résumé</td><td>15 à 24</td><td>Denis Bellon </td><td>Vizille </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Un carré de soie représentant le château de Vizille  Résumé</td><td>25</td><td>Raymond Platel </td><td>Vizille </td><td>Divers </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Une autre vision peu flatteuse de Vizille en 1882  Résumé</td><td>26</td><td>Paul Fournier </td><td>Vizille </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Une résistante vizilloise à l'honneur  Résumé</td><td>27</td><td>Renée Gachet Berthon </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Adolphe Grimaldi  Résumé</td><td>28 à 38</td><td>Gérard Mingat </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Parcs et jardins de Brié et Angonnes  Résumé</td><td>39 à 41</td><td>Patrice Dore </td><td>Brié et Angonnes </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Champ-sur-Drac et son musée d'histoire locale "Autrefois"  Résumé</td><td>42 à 46</td><td>Gilbert Gacon </td><td>Champ sur Drac </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Le moulin de Tavernolles  Résumé</td><td>47 à 49</td><td>Paul Wohlschlegel </td><td>Tavernolles </td><td>Bâtiments et édifices </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>La maison Allard au Louvaroux  Résumé</td><td>50 à 55</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Napoléon 1er à Tavernolles  Résumé</td><td>56 à 59</td><td>Louis Sarte </td><td>Tavernolles </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Reculement de la Grande Rue à Vizille en 1893  Résumé</td><td>60 à 61</td><td>Renée Gachet Berthon ,  Gérard Berthon </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Les gypsoducs de Champ au XVIIIe siècle  Résumé</td><td>62 à 66</td><td>Robert Aillaud </td><td>Champ sur Drac </td><td>Activités industrielles </td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>Le symbolisme dans le cimetière de Vizille  Résumé</td><td>67 à 69</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°44</td><td>La vie de l'association  Résumé</td><td>70 à 72</td><td>- </td><td>Vizille </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Vous avez dit patrimoine ?  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Bain de jouvence pour le château de Vizille  Résumé</td><td>03 à 05</td><td>Paul Wohlschlegel </td><td>Vizille </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Lesdiguières, le renard des montagnes  Résumé</td><td>06 à 09</td><td>Denis Bellon </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Claudine de Bérenger et François de Bonne, duc de Lesdiguières Résumé</td><td>10 à 17</td><td>Andrée Barras-Tixier </td><td>Sassenage </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>L'évêque de Grenoble se suicide dans son château d'Herbeys  Résumé</td><td>18 à 20</td><td>Gilbert Gacon </td><td>Herbeys </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Vous avez dit : lieux-dits ? Une histoire de toponymes  Résumé</td><td>21 à 23</td><td>Paul Bernard </td><td>Haute-Jarrie </td><td>Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Le balancier et le bon Saint-Eloi  Résumé</td><td>24</td><td>Patrice Dore </td><td>Brié et Angonnes </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Les archives anciennes de Brié et Angonnes  Résumé</td><td>25 à 26</td><td>Patrice Dore </td><td>Brié et Angonnes </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Souvenir... souvenir... Les Jeux Olympiques de Grenoble en 1968 Résumé</td><td>27 à 29</td><td>Henri Girardy </td><td>Grenoble </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Une tentative d'incendie à Vizille  Résumé</td><td>30 à 34</td><td>Pascale Beyls </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>L'association des "Amis de l'orgue de Vizille" est née  Résumé</td><td>35</td><td>Denis Bellon </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Le refuge de la société des Touristes du Dauphiné à La Morte  Résumé</td><td>36 à 39</td><td>Daniel Etienne </td><td>La Morte </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Vizille et ses commerces : la rue Jean Jaurès (3ème et dernière partie) Résumé</td><td>40 à 50</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°45</td><td>Vizille, ville d'eau  Résumé</td><td>51 à 52</td><td>Gérard Berthon </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>La généalogie de Lucie Baud  Résumé</td><td>53 à 54</td><td>Daniel Etienne </td><td>Notre Dame de Mésage ,  Saint Pierre de Mésage </td><td>Généalogie </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>La maison d'Hugues-Allerme au Louvaroux  Résumé</td><td>55 à 58</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Le cimetière de Vizille  Résumé</td><td>59</td><td>Pierre Raymond Bonnardon </td><td>Vizille </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Le symbolisme dans le cimetière de Vizille (suite)  Résumé</td><td>60 à 67</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>nan</td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>La vie de l'association  Résumé</td><td>68 à 70</td><td>Collectif - les Amis de l'Histoire </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°45</td><td>Table des articles publiés dans Mémoire 41 à 44  Résumé</td><td>71 à 72</td><td>Collectif - les Amis de l'Histoire </td><td>- </td><td>Divers </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Editorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Ambroise Croizat ou l'invention sociale  Résumé</td><td>03 à 04</td><td>Michel Etievent </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Jean Métral raconte  Résumé</td><td>05 à 07</td><td>Jean Metral </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Les jours heureux - Le programme du Conseil National de la Résistance  Résumé</td><td>08 à 14</td><td>CNR </td><td>France </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Les Etats Généraux de la Résistance à Vizille  Résumé</td><td>15 à 19</td><td>Denis Bellon </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Les Justes - Justes parmi les Nations  Résumé</td><td>20</td><td>Denis Bellon </td><td>France </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Circonstances du sauvetage et recherches  Résumé</td><td>21 à 25</td><td>Jacqueline Szister-Bismuth </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>La République des enfants de Moulin Vieux (1)  Résumé</td><td>26 à 27</td><td>Denis Bellon </td><td>La Morte </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Le stade René Perrouault à Champ-sur-Drac  Résumé</td><td>28 à 30</td><td>Jacques Nivon </td><td>Champ sur Drac </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Le sous-lieutenant Joseph Auguste Floxoli  Résumé</td><td>31</td><td>Alain Floxoli </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Quelques heures avant la Libération  Résumé</td><td>32 à 37</td><td>Cécile Riviere </td><td>Vizille </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Une triste fin  Résumé</td><td>38 à 40</td><td>Paul Wohlschlegel </td><td>Rioupéroux </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Ils venaient d'avoir 18 ans... Les conscrits  Résumé</td><td>41 à 49</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°46</td><td>Aout 1944 - Une période tragique à La Morte et dans le Taillefer  Résumé</td><td>50 à 59</td><td>Daniel Etienne </td><td>La Morte </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Les chantiers de la jeunesse  Résumé</td><td>60 à 61</td><td>Denis Bellon </td><td>France </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>Chantiers de jeunesse n°12  Résumé</td><td>62 à 69</td><td>Raymond Devey </td><td>Belledonne </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°46</td><td>La vie de l'association - Deuxième semestre 2013  Résumé</td><td>70 à 72</td><td>Collectif - les Amis de l'Histoire </td><td>- </td><td>Actualités </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Albert Lebrun, le dernier Président de la IIIe République  Résumé</td><td>03 à 08</td><td>Eric Freysselinard </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>A travers la presse régionale et nationale  Résumé</td><td>09 à 24</td><td>Collectif - les Amis de l'Histoire </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>L'orgue de Vizille  Résumé</td><td>24</td><td>Denis Bellon </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Aimé Guille, portrait d'un résistant  Résumé</td><td>25 à 26</td><td>Gilbert Gacon ,  Denis Bellon </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Les états généraux de la Résistance  Résumé</td><td>27 à 28</td><td>- </td><td>France </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Yvonne Bonthoux et Jean-Marcel Champon  Résumé</td><td>29 à 30</td><td>Dominique Rossi </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Ma rencontre avec Pierre Draï  Résumé</td><td>31</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°47</td><td>La mémoire dévérouillée  Résumé</td><td>32 à 33</td><td>Pierre Draï </td><td>France </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Moulin-Vieux ou les enfants de la République  Résumé</td><td>34 à 40</td><td>Pierre Draï </td><td>La Morte </td><td>Enseignement </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Le château de Vizille efface les traces de ses blessures  Résumé</td><td>41 à 42</td><td>- </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Les timbres de la Libération  Résumé</td><td>43</td><td>Paul Kiener </td><td>France </td><td>Divers </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Groupes-francs contre les Forces de l'Ordre dans l'Isère  Résumé</td><td>44 à 48</td><td>- </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>André Morel, mon voisin de palier  Résumé</td><td>49 à 51</td><td>Alain Romestant </td><td>Grenoble </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Morts pour la France dans le Pays Vizillois  Résumé</td><td>52 à 55</td><td>Renée Vigroux </td><td>Pays vizillois </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>La grande guerre de 1914-1918 - Vizille et ses soldats décédés en 1914  Résumé</td><td>56 à 63</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Vie locale ,  Guerres </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>La guerre 14/18 et l'utilisation des gaz de combat  Résumé</td><td>64 à 66</td><td>Gilbert Gacon </td><td>Claix ,  Jarrie </td><td>Evènements </td><td>- </td></tr>
+<tr><td>Mémoire n°47</td><td>Les belles années des corsos à Vizille - 1971/1997  Résumé</td><td>67 à 81</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°47</td><td>La chasse aux bornes est ouverte...  Résumé</td><td>82 à 84</td><td>Robert Aillaud </td><td>Isère </td><td>Divers </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Le séjour de Napoléon à l'île d'Elbe  Résumé</td><td>03 à 06</td><td>Denis Bellon </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>La route Napoléon  Résumé</td><td>07 à 13</td><td>Gilbert Gacon ,  Denis Bellon </td><td>France </td><td>Voies de communication </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>La statue de Napoléon 1er à Laffrey  Résumé</td><td>14 à 20</td><td>Jeannette Della-Vedova </td><td>Laffrey </td><td>Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°48</td><td>Les mémoires de Basile Bonnardon, médecin à Vizille 1786-1863  Résumé</td><td>21</td><td>Basile Bonnardon </td><td>Pays vizillois </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Le cadastre napoléonien  Résumé</td><td>22</td><td>Denis Bellon </td><td>France </td><td>Documents remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Alexandre Debelle  Résumé</td><td>23</td><td>Denis Bellon </td><td>Grenoble </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Le passage de Napoléon lors de son retour de l'île d'Elbe  Résumé</td><td>24</td><td>Daniel Blanc-Gonnet </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Alexandre Zeis, instituteur et géomètre  Résumé</td><td>27 à 29</td><td>Gérard Mingat </td><td>Vaulnaveys </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Le colonel Moustache de St-Barthélémy de Séchilienne  Résumé</td><td>30 à 38</td><td>Gilles Strappazzon </td><td>Saint Barthélémy de Séchilienne </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Vizille a toujours été fidèle à l'Empereur et à sa descendance  Résumé</td><td>39</td><td>Paul Fournier </td><td>Vizille </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>La grande guerre de 1914-1918 - Vizille et ses soldats décédés entre le 1er janvier et le 30 juin 1915  Résumé</td><td>40 à 43</td><td>Daniel Blanc-Gonnet ,  Marie-Claude Argoud </td><td>Vizille </td><td>Vie locale ,  Guerres </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Uriage-les-Bains - Hôpital militaire complémentaire n°42 (1914-1919)  Résumé</td><td>44 à 54</td><td>Charles Paillet </td><td>Uriage </td><td>Vie locale </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Le mystère de Saint Firmin ou la légende de la cloche à la sauge  Résumé</td><td>55 à 70</td><td>Claude Ferradou </td><td>Notre Dame de Mésage </td><td>Contes et légendes </td><td>- </td></tr>
+<tr><td>Mémoire n°48</td><td>Les belles années des corsos à Vizille - les années 80 (suite)  Résumé</td><td>71 à 83</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Mourir une deuxième fois  Résumé</td><td>2</td><td>Denis Bellon </td><td>- </td><td>Edito </td><td>- </td></tr>
+<tr><td>Mémoire n°49</td><td>Histoire d'un résistant un peu spécial : Jean Freysselinard , le gendre du président Albert Lebrun à Vizille  Résumé</td><td>03 à 05</td><td>Eric Freysselinard </td><td>Villeneuve d'Uriage </td><td>Vie locale ,  Guerres ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>la SAMA Société Anonyme des Meles artificielles  Résumé</td><td>06 à 09</td><td>Denis Bellon </td><td>Vizille </td><td>Activités industrielles </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Souvenirs au fil des saisons  Résumé</td><td>10 à 11</td><td>Marie Del Net </td><td>Vizille </td><td>Vie locale ,  Souvenirs </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>La Grande Guerre de 1914-1918 : Vizille et ses soldats décédés entre le 1er juillet et le 31 décembre 1915  Résumé</td><td>12 à 18</td><td>Daniel Blanc-Gonnet ,  Marie-Claude Argoud </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Les quatrièmes grand rendez-vous de l'histoire du Pays Vizillois : mai/juin 2016 Résumé</td><td>19</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>L'hôpital temporaire de La Valentine  Résumé</td><td>20 à 23</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Guerres ,  Médecine </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Vizille et sa piscine  Résumé</td><td>24 à 29</td><td>Danielle Amar </td><td>Vizille </td><td>Vie locale ,  Bâtiments et édifices , Sport </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Le centre d'apprentissage de Vizille  Résumé</td><td>30 à 33</td><td>Pierre Draï </td><td>Vizille </td><td>Enseignement ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Les eaux d'Uriage : des Thermes romains à l'entreprise industrielle : 2000 ans d'histoire  Résumé</td><td>34 à 39</td><td>Charles Paillet </td><td>Uriage </td><td>Eau, rivières, canaux et fontaines </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Histoire courte des cordiers de Vizille  Résumé</td><td>40 à 41</td><td>Patrice Dore </td><td>Vizille </td><td>Activités artisanales </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>La corde à 13 noeuds  Résumé</td><td>42 à 44</td><td>Michel Merlin </td><td>France </td><td>Histoires </td><td>- </td></tr>
+<tr><td>Mémoire n°49</td><td>ElirViallet capitaine de chasseurs alpins ; Août 1914- Juin 1915  Résumé</td><td>45 à 48</td><td>Jacques Gasqui </td><td>Saint Georges de Commiers </td><td>Guerres ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Raoul Naz  Résumé</td><td>49 à 50</td><td>Raoul Naz </td><td>Vizille </td><td>Religions ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>L'orgue de Vizille  Résumé</td><td>51 à 52</td><td>Raoul Naz </td><td>Vizille </td><td>,  Religions </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>1799, l'exode du Pape Pie VI et son passage à Vizille  Résumé</td><td>53 à 55</td><td>Gilbert Gacon </td><td>Isère ,  Vizille </td><td>Religions </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Les belles années des corsos ; les années 1990  Résumé</td><td>56 à 67</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Vizille et ses commerces: Désiré Trouillon, marchand de vin  Résumé</td><td>68 à 73</td><td>Pierre Trouillon </td><td>Vizille </td><td>Activités commerçantes </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Jean Guitton 1917-2015  Résumé</td><td>74 à 75</td><td>Gérard Mingat ,  Marie Del Net </td><td>Vaulnaveys le haut </td><td>Souvenirs </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>La page des poètes : Moi Connétable  Résumé</td><td>76</td><td>Pierre Fiat </td><td>Vizille </td><td>Personnages remarquables ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>Une des trois grandes usines de tissage de Vizille  Résumé</td><td>77</td><td>- </td><td>Vizille </td><td>Activités industrielles </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°49</td><td>La page des jeux  Résumé</td><td>81</td><td>Pierre Fiat </td><td>Vizille </td><td>Divers </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Morts pour la France  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>14-18 Folie meurtrière  Résumé</td><td>2ème de couverture</td><td>Monique Bonvallet </td><td>France </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Compte rendu de la mobilisation à Vizille (1er août 1914)  Résumé</td><td>3</td><td>Denis Bellon </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>La grande guerre de 1914-1918 . Vizille et ses soldats décédés entre le 1er janvier et le 30 juin 1906  Résumé</td><td>04 à 08</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>François-Joseph Durand mort pour la France  Résumé</td><td>09 à 16</td><td>Denis Bellon </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Gabriel Fiat Carnets de guerre - 1914-1918  Résumé</td><td>17 à 32</td><td>Gabriel Fiat </td><td>Séchilienne </td><td>Guerres ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>M. l'abbé Biard  Résumé</td><td>33 à 35</td><td>Transcription </td><td>Vizille </td><td>Guerres ,  Souvenirs ,  Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Saint-Georges-de-Commiers . Morts pour la France pendant la grande guerre Résumé</td><td>36 à 47</td><td>Jacques Gasqui </td><td>Saint Georges de Commiers </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Pour de vrais "poilus"  Résumé</td><td>48</td><td>Raoul Naz </td><td>Verdun </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>La complainte du guetteur  Résumé</td><td>49</td><td>Sergent A.B.C. </td><td>France </td><td>Chants ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>La Madelon  Résumé</td><td>50</td><td>Monique Bonvallet </td><td>France </td><td>Chants ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>L'histoire des Clavel, bourreliers à Vizille, place du château  Résumé</td><td>51 à 56</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Vie locale ,  Activités artisanales ,  Activités commerçantes </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Vizille et ses commerces ; Place de la Libération, Place du château 1ère partie Résumé</td><td>57 à 62</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Activités commerçantes </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Elles se souviennent et elles racontent  Résumé</td><td>63 à 66</td><td>Yvette Bonnaire </td><td>Vizille </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Hier, le chemin de fer  Résumé</td><td>67 à 69</td><td>Aliette Viard </td><td>Jarrie ,  Vizille , L'Oisans </td><td>Lieux du pays vizillois ,  Voies de communication </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Mon premier club sportif  Résumé</td><td>70 à 74</td><td>Pierre Martin </td><td>Vizille </td><td>Vie locale ,  Sport </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°50</td><td>Théâtre d'antan La muette de Vizille  Résumé</td><td>75 à 81</td><td>Pierre Fiat </td><td>Lyon </td><td>Théâtre </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Heureux 25 ans  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Edito </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>En amont du spectacle - l'écriture  Résumé</td><td>3</td><td>Pierrette Tournier </td><td>Pays vizillois </td><td>Théâtre </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Mémoires ouvrières - Le spectacle - La compagnie Partage  Résumé</td><td>04 à 31</td><td>Pierrette Tournier </td><td>Vizille </td><td>Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Les industries de Vizille  Résumé</td><td>32 à 43</td><td>Denis Bellon </td><td>Vizille </td><td>Activités industrielles </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Brèves d'archives - Pour le renom de la ville: la propreté  Résumé</td><td>44 à 45</td><td>Paul Fournier </td><td>Vizille </td><td>Vie locale </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Accidents industriels en Pays Vizillois  Résumé</td><td>46 à 49</td><td>Pierre Fiat </td><td>Pays vizillois </td><td>Activités industrielles </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>La grande guerre de 1914-1918 - Vizille et ses soldats décédés entre le 1er juillet et le 31 décembre 1916  Résumé</td><td>50 à 56</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Transports Paul Vallet  Résumé</td><td>57 à 59</td><td>Alain Romestant </td><td>Vizille </td><td>Activités industrielles </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Vizille et ses commerces - Place de la Libération/Place du Château - 2ème partie  Résumé</td><td>60 à 68</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Activités commerçantes </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Les quatrièmes grands rendez-vous de l'histoire du Pays Vizillois  Résumé</td><td>69 à 73</td><td>Denis Bellon </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Inauguration de l'orgue de Vizille le dimanche 26 novembre 1899  Résumé</td><td>75 à 76</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Vie locale ,  ,  Musique , Religions </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>Le protonotaire et le curé de Vizille  Résumé</td><td>77 à 78</td><td>Denis Bellon </td><td>Vizille </td><td>Religions </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°51</td><td>L'orgue de Vizille  Résumé</td><td>79</td><td>Transcription </td><td>Vizille </td><td>Vie locale ,  ,  Musique </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Guy Delahaye , photographe  Résumé</td><td>02 de couverture</td><td>Denis Bellon </td><td>Vizille </td><td>Personnages remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>2017,Année Lesdiguières  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille </td><td>Edito </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>Vizille et le festival 1973/ 1988 ; Le Diable et le Capitaine -1983  Résumé</td><td>03 à 11</td><td>Robert Aillaud ,  Jeannette Della-Vedova </td><td>Vizille </td><td>Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>A la rencontre de François de Bonne  Résumé</td><td>12 à 17</td><td>Pierrette Tournier </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>Marie Vignon seconde femme du connétable  Résumé</td><td>18 à 22</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Personnages remarquables </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Les ancêtres de Lesdiguières  Résumé</td><td>23</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>Chronologie de la vie de François de Bonne, Duc de Lesdiguières  Résumé</td><td>24 à 34</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Personnages remarquables </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Les rois de France du temps de Lesdiguières  Résumé</td><td>35 à 36</td><td>Pierre Fiat </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>Lesdiguières dans tous ses états  Résumé</td><td>37 à 43</td><td>Pierre Fiat </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>Le Château des Diguières ( Propriété de Lesdiguières) ; Le Glaizil ( Hautes-Alpes)  Résumé</td><td>44 à 49</td><td>Marie-Claude Argoud </td><td>France </td><td>Personnages remarquables </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>Le pont Lesdiguières à Claix  Résumé</td><td>50 à 51</td><td>Pierre Fiat </td><td>Claix </td><td>Lieux remarquables ,  Voies de communication </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>La prise du Château de Champ, du Pont de Cognet, du Château du Monestier  Résumé</td><td>52 à 56</td><td>Marie-Claude Argoud </td><td>Isère </td><td>Guerres ,  Personnages remarquables </td><td>XVIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Une épouvantable défaite-1587 : la bataille de Jarrie vue du côté suisse  Résumé</td><td>57 à 65</td><td>Guy Le Comte </td><td>Jarrie </td><td>Guerres </td><td>XVIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Les enfants et notre patrimoine : le Château, les arts  Résumé</td><td>66</td><td>Jocelyne BELLON </td><td>Vizille </td><td>,  Enseignement </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Un élixir ...tiré par les cheveux  Résumé</td><td>67</td><td>Denis Bellon </td><td>France </td><td>Cuisine et recettes </td><td>- </td></tr>
+<tr><td>Mémoire n°52</td><td>La Grande Guerre de 1914-1918 : Vizille et ses soldats décédés entre le 1er Janvier et le 30 juin 1917  Résumé</td><td>68 à 72</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Vie locale ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Notre chère Annie  Résumé</td><td>73</td><td>Pierre Coing Boyat </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Vizille et ses commerces : Place de la Libération / Place du Château - 3ème partie Résumé</td><td>74 à 81</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Activités commerçantes </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Les pages des jeux : Lesdiguières  Résumé</td><td>82 à 83</td><td>Pierre Fiat </td><td>Vizille </td><td>Divers </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°52</td><td>Un orgue historique à restaurer  Résumé</td><td>84</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>nan</td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Jean-Claude Gallotta , chorégraphe  Résumé</td><td>02 de couverture</td><td>Denis Bellon </td><td>Isère </td><td>Danse </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>A la découverte de l'art  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Divers </td><td>- </td></tr>
+<tr><td>Mémoire n°53</td><td>Madame et Monsieur de Lesdiguières...  Résumé</td><td>03 à 07</td><td>Robert Aillaud ,  Patrice Dore </td><td>Pays vizillois </td><td>Personnages remarquables , Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Complément à l'histoire de la Chapelle des Angonnes  Résumé</td><td>8</td><td>Pierre Coing Boyat </td><td>Brié et Angonnes </td><td>,  Bâtiments et édifices , Religions </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Olivier Messiaen à Petichet  Résumé</td><td>09 à 15</td><td>Pierre Coing Boyat </td><td>Petichet </td><td>Musique </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>La musique à Vizille depuis 1873 -1ère partie : La fanfare de Vizille ou "La Vizilloise" - 1873/1982  Résumé</td><td>16 à 26</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Musique </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Séraphin Guimet  Résumé</td><td>27</td><td>Denis Bellon </td><td>Vizille </td><td>Vie locale ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Les groupes musicaux  Résumé</td><td>28 à 33</td><td>Denis Bellon ,  Georges Martin </td><td>Vizille </td><td>Vie locale ,  Musique </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>L'art vivant - La danse : Jean-Claude Gallotta  Résumé</td><td>34 à 37</td><td>Denis Bellon </td><td>Isère ,  Pays vizillois , Vizille </td><td>Vie locale ,  Danse ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Daise , Guy Desarmagnat  Résumé</td><td>38 à 43</td><td>Denis Bellon </td><td>Isère ,  Vizille </td><td>Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>L'art...de la table au temps des Dauphins  Résumé</td><td>44 à 46</td><td>Pierre Fiat </td><td>France </td><td>Arts </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>L'art sur le plateau de Champagnier  Résumé</td><td>47 à 51</td><td>Pierre Coing Boyat </td><td>Champagnier </td><td>Religions ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Les tableaux restaurés de l'église de Saint Georges de Commiers  Résumé</td><td>52 à 54</td><td>Jacques Gasqui ,  Marc Masimbert </td><td>Saint Georges de Commiers </td><td>Religions ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>L'église Saint-Blaise à Champ sur Drac  Résumé</td><td>55 à 56</td><td>Gilbert Gacon </td><td>Champ sur Drac </td><td>Bâtiments et édifices ,  Religions </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Enquête sur les tribulations d'un meuble d'église  Résumé</td><td>57 à 59</td><td>Michel Merlin </td><td>Jarrie </td><td>,  Religions ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Un regard artistique sur le patrimoine industriel local par L'Artelier d'Uriage  Résumé</td><td>60 à 62</td><td>André Rossi </td><td>Pays vizillois ,  Uriage </td><td>Vie locale ,  ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>L'Ecole Nationale Professionnelle de jeunes filles de Vizille - l'ENP  Résumé</td><td>63 à 65</td><td>Pierre Fiat </td><td>Vizille </td><td>Bâtiments et édifices , Enseignement ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>La BD Jojo de la Gaffe  Résumé</td><td>66 à 67</td><td>Georges Martin </td><td>Vizille </td><td>Vie locale ,  Souvenirs ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Les portes du Château de Vizille  Résumé</td><td>68</td><td>Pierre Fiat </td><td>Vizille </td><td>,  Bâtiments et édifices </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Uriage : la fontaine de la déesse Hygie  Résumé</td><td>69 à 70</td><td>Denis Bellon </td><td>Uriage </td><td>Eau, rivières, canaux et fontaines ,  Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>La première foire de Champagnier en 1758  Résumé</td><td>71</td><td>Pierre Fiat </td><td>Champagnier </td><td>Vie locale </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>La Grande Guerre de 1914-1918 : Vizille et ses soldats décédés entre le 1er juillet et le31 décembre 1917  Résumé</td><td>72 à 75</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Une page de l'histoire se tourne...L'hôpital-hospice  Résumé</td><td>76 à 78</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Vie locale , </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°53</td><td>Vizille et ses commerces : Place de la Libération - 4ème partie  Résumé</td><td>79 à 84</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Activités commerçantes </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Adrienne Celso  Résumé</td><td>1</td><td>Pierre Coing Boyat </td><td>Champ sur Drac </td><td>Vie de l'association ,  Souvenirs ,  Récits </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Les retours et la reconstruction  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille ,  - </td><td>Histoires ,  Grandes périodes </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Le général Regard de la Grande Guerre à la Résistance  Résumé</td><td>3</td><td>Jacques Gasqui </td><td>Grenoble ,  Isère ,  Saint Georges de Commiers ,  France </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Montagne ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Centenaire de la mort de Serge Basset, homme de lettres, auteur dramatique et journaliste français  Résumé</td><td>12</td><td>Charles Paillet </td><td>Grenoble ,  Uriage ,  France </td><td>Histoires ,  Guerres ,  Littérature ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Victor Chambe 1896-1965  Résumé</td><td>17</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Guerres ,  Divers ,  Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Une famille qui a failli disparaître dans la tourmente de la pere guerre mondiale  Résumé</td><td>23</td><td>Jacques Gasqui , Marc Masimbert </td><td>Vizille </td><td>Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Deuxième carnet* Fiat Gabriel - Etapes depuis la Somme  Résumé</td><td>30</td><td>Gabriel Fiat </td><td>France </td><td>Guerres ,  Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Les cérémonies du souvenir en Days Vizillois  Résumé</td><td>35</td><td>Denis Bellon </td><td>Vizille </td><td>Histoires ,  Guerres ,  Traditions </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>Les soldats de Brié-et-Angonnes décédés durant le conflit…  Résumé</td><td>58</td><td>Marie-Claude Argoud </td><td>Brié et Angonnes </td><td>Histoires ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>La grande guerre de 1914-1918 Vizille et ses soldats décédés entre le 1*' janvier et le 30 juin 1918  Résumé</td><td>66</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Histoires ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>L'épopée du ski jarrois - père partie - 1947/1968  Résumé</td><td>71</td><td>Claudie Picot </td><td>Jarrie </td><td>Sport </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°54</td><td>De la Vizilloise à l'Harmonie de Vizille - 2° partie - 1983-2017  Résumé</td><td>76</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Musique ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Sommaire  Résumé</td><td>2</td><td>Collectif - les Amis de l'Histoire </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>•« Plus jamais ça ! »  Résumé</td><td>3</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Récits </td><td>- </td></tr>
+<tr><td>Mémoire n°55</td><td>• L'hirondelle de Vizille  Résumé</td><td>3</td><td>Denis Bellon </td><td>Isère ,  Pays vizillois </td><td>Musique ,  Personnages remarquables ,  Arts ,  Récits </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>La pisciculture du Château de Vizile  Résumé</td><td>8</td><td>Danielle Amar </td><td>Vizille </td><td>Lieux remarquables ,  Activités artisanales ,  Activités commerçantes , Activités agricoles ,  Eau, rivières, canaux et fontaines </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Une vie au... Parc des Princes ; La ferme prince à FontReygner, hameau de Saint jean de Vaux  Résumé</td><td>10</td><td>Denis Bellon </td><td>Saint Jean de Vaux ,  Vizille </td><td>Lieux remarquables ,  Activités agricoles ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Le général Auguste Lardant soldat des troupes de montagne Résumé</td><td>13</td><td>Jacques Gasqui </td><td>Isère ,  Saint Georges de Commiers </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>L'été 1944 au Péage-de-Vizile André raconte  Résumé</td><td>18</td><td>André Finet </td><td>Pays vizillois , Vizille </td><td>Vie locale ,  Guerres ,  Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Les femmes dans la guerre de 1914 à 1918  Résumé</td><td>21</td><td>Marie-Claude Argoud </td><td>Pays vizillois , Vizille </td><td>Vie locale ,  Guerres ,  Grandes périodes ,  Activités industrielles , Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Joseph et François Baldacci  Résumé</td><td>34</td><td>Jeannette Della-Vedova </td><td>Pays vizillois , Vizille </td><td>Vie locale ,  Guerres ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>La grande guerre de 1914-1918 Viille et ses soldats décédés entre le 1* juillet et le 31 décembre 1918  Résumé</td><td>39</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Guerres ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Homblières  Résumé</td><td>46</td><td>Marie-Claude Argoud </td><td>France </td><td>Histoires ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Les anciennes routes du Pays Vizilois  Résumé</td><td>47</td><td>Pierre Fiat </td><td>Pays vizillois , Uriage ,  Vizille </td><td>Voies de communication ,  Histoires ,  Transports </td><td>XVIe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>• L'épopée du ski jarrois - 2° partie - 1969/2017  Résumé</td><td>50</td><td>Claudie Picot </td><td>Jarrie </td><td>Vie locale ,  Souvenirs ,  Sport </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>•La « Samba Parade » de 2006 à Vizille  Résumé</td><td>55</td><td>Jeannette Della-Vedova ,  Jean Danz </td><td>Vizille </td><td>Vie locale ,  Evènements ,  Souvenirs </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Les soldats de Saint-Barthélémy-de-Séchilienne décédés durant la Grande Guerre  Résumé</td><td>66</td><td>Marie-Claude Argoud </td><td>Saint Barthélémy de Séchilienne </td><td>Guerres ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>• Un passé bien antérieur ! Coupe de bois à Jarrie en 1743 Résumé</td><td>75</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Histoires ,  Activités artisanales ,  Récits </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Moi collectionneur  Résumé</td><td>82</td><td>Marc Robert </td><td>Vizille </td><td>Vie locale ,  Divers </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°55</td><td>Une liqueur oubliée La «Benoîte d'Uriage »  Résumé</td><td>84</td><td>Pierre Fiat </td><td>Uriage ,  Vizille </td><td>Activités artisanales ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>L'esprit de Résistance  Résumé</td><td>2</td><td>Denis Bellon </td><td>Isère ,  Pays vizillois , L'Oisans </td><td>Histoires ,  Guerres ,  Personnages remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Germaine et Louis Vallier Résistants  Résumé</td><td>6</td><td>Dominique Rossi </td><td>Pays vizillois ,  Vizille </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Jean-Marcel Champon Résistant  Résumé</td><td>10</td><td>Dominique Rossi </td><td>Vizille </td><td>Histoires ,  Guerres ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>/Users/michelt/Pictures/Photothèque.photoslibrary/originals/0/02DF1CB0-B94D-4170-A15F-41A54515EAB3.png  Résumé</td><td>13</td><td>Dominique Rossi </td><td>Vizille </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Parcours d'un Résistant sans frontière Ces étrangers qui ont fait la France (Dominique Rossi)  Résumé</td><td>15</td><td>Dominique Rossi </td><td>Vizille </td><td>Histoires ,  Guerres ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>La famille Marangoni - Une triste histoire ()  Résumé</td><td>18</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Renée et André Berthon se souviennent ()  Résumé</td><td>21</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Histoires ,  Guerres ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>L'équipage américain du B24 - Libérator ()  Résumé</td><td>22</td><td>Pierre Lafaverges </td><td>L'Oisans ,  L'Alpe d'Huez </td><td>Histoires ,  Guerres ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Huez et l'Alpe - Été 1944 ()  Résumé</td><td>25</td><td>Gilbert ORCEL </td><td>L'Alpe d'Huez </td><td>Histoires ,  Guerres ,  Personnages remarquables ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>« Retour à Rivesaltes » - Le film des 8e grands rendez-vous de l'Histoire du Pays Vizillois ()  Résumé</td><td>29</td><td>Denis Bellon </td><td>France </td><td>Histoires ,  Personnages remarquables ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Des représentations d'animaux dans le Pays Vizillois ()  Résumé</td><td>36</td><td>Annie Achard </td><td>Pays vizillois ,  Vizille </td><td>Lieux remarquables ,  Arts ,  Patrimoine </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Catalogue 2019  Résumé</td><td>41</td><td>- </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>D'où vient le mot Jarrie et que veut-il dire ? ()  Résumé</td><td>49</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Toponymie </td><td>- </td></tr>
+<tr><td>Mémoire n°56</td><td>Des Vizillois oubliés ()  Résumé</td><td>53</td><td>Pierre Fiat </td><td>Vizille </td><td>Personnages remarquables ,  Souvenirs </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Le train de la Romanche ()  Résumé</td><td>66</td><td>Jean-Louis Philip </td><td>Pays vizillois ,  Vizille </td><td>Voies de communication ,  Activités industrielles ,  Transports ,  technologies </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Herbeys - Chemins d'hier et d'aujourd'hui ()  Résumé</td><td>66</td><td>Danièle Prud'homme </td><td>Herbeys </td><td>Voies de communication </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°56</td><td>Un espace culturel Paul Bernard à Jarrie ()  Résumé</td><td>84</td><td>Denis Bellon </td><td>Champagnier ,  Jarrie , Pays vizillois ,  Vizille </td><td>Vie locale ,  Religions ,  Personnages remarquables ,  Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Histoires ,  Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>14 septembre 1219: les jours d'après à Vizille  Résumé</td><td>3</td><td>Georges Martin </td><td>Pays vizillois ,  Vizille </td><td>Evènements ,  Eau, rivières, canaux et fontaines </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Les paléo-lacs d'Oisans - Une histoire de 30 000 ans  Résumé</td><td>4</td><td>Marie-Christine Bailly-Maitre - </td><td>L'Oisans </td><td>Eau, rivières, canaux et fontaines ,  Montagne </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Histoire d'eau à Saint-Georges-de-Commiers  Résumé</td><td>17</td><td>Jacques Gasqui </td><td>Saint Georges de Commiers </td><td>Vie locale ,  Eau, rivières, canaux et fontaines </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Le lavoir de la Paute  Résumé</td><td>20</td><td>Denis Bellon </td><td>Vizille </td><td>Vie locale ,  Eau, rivières, canaux et fontaines </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>L'épisode de « la noyade » de Vizille  Résumé</td><td>21</td><td>Pascale Beyls </td><td>Vizille </td><td>Histoires ,  Personnages remarquables ,  Littérature </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Le Lac de Haute-Jarrie et les sècheresses  Résumé</td><td>24</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Eau, rivières, canaux et fontaines </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Les ressources en eau de la commune de Saint-Pierre-de-Mésage  Résumé</td><td>30</td><td>Jean-Claude Vayr </td><td>Saint Pierre de Mésage </td><td>Vie locale ,  Eau, rivières, canaux et fontaines </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Les ressources en eau de la commune de Saint-Pierre-de-Mésage  Résumé</td><td>30</td><td>Jean-Claude Vayr </td><td>Saint Pierre de Mésage </td><td>Eau, rivières, canaux et fontaines </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>La foire de Beaucroissant  Résumé</td><td>34</td><td>Denis Bellon </td><td>Isère </td><td>Lieux remarquables ,  Histoires ,  Activités commerçantes </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Un monument historique classé en DANGER : Le prieuré de Vizille  Résumé</td><td>35</td><td>Collectif - les Amis de l'Histoire </td><td>Vizille </td><td>Lieux remarquables ,  Religions ,  Vie de l'association </td><td>Xe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>A propos de la mutilation des personnages  Résumé</td><td>44</td><td>Collectif - les Amis de l'Histoire </td><td>Vizille </td><td>Lieux remarquables ,  Patrimoine </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>La page du poète. Le cimetière de Vizille  Résumé</td><td>47</td><td>- </td><td>Vizille </td><td>Enseignement ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Premières écoles vizilloises  Résumé</td><td>51</td><td>Denis Bellon </td><td>Vizille </td><td>Vie locale ,  Grandes périodes ,  Enseignement , Souvenirs </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Essai de toponymie de l'appellation Belledonne  Résumé</td><td>52</td><td>Raymond Joffre </td><td>Belledonne </td><td>Lieux remarquables ,  Toponymie ,  Montagne </td><td>XVe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Les fossiles de Vaulnaveys-le-Bas  Résumé</td><td>58</td><td>Bruno Vallois </td><td>Vaulnaveys le bas </td><td>Lieux remarquables ,  Mines et minéralogie </td><td>Avant J-C </td></tr>
+<tr><td>Mémoire n°57</td><td>Quand les élèves s'emparent de l'histoire  Résumé</td><td>63</td><td>- </td><td>Saint Pierre de Mésage </td><td>Histoires ,  Enseignement </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Quand les élèves s'emparent de l'histoire  Résumé</td><td>63</td><td>Axelle Burnet ,  Stéphane Callot </td><td>Saint Pierre de Mésage </td><td>Histoires ,  Enseignement </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Souvenirs de guerre (39/45) d'un écolier vizillois  Résumé</td><td>70</td><td>Jean Huyghe </td><td>Pays vizillois ,  Vizille </td><td>Guerres ,  Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Des représentations d'animaux dans le pays vizillois (2ème partie)  Résumé</td><td>75</td><td>Marie-Claude Argoud </td><td>Pays vizillois </td><td>Lieux du pays vizillois ,  Lieux remarquables , Religions ,  Arts </td><td>XVIIe siècle </td></tr>
+<tr><td>Mémoire n°57</td><td>Le symbolisme au cimetière: les animaux (fère partie)  Résumé</td><td>83</td><td>Marie-Claude Argoud </td><td>- </td><td>Traditions </td><td>- </td></tr>
+<tr><td>Mémoire n°58</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>La faille de Vizille  Résumé</td><td>3</td><td>Thierry Grand </td><td>Pays vizillois ,  Vizille </td><td>Géologie </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Première ascension hivernale du Taillefer  Résumé</td><td>16</td><td>Raymond Joffre </td><td>Isère </td><td>Souvenirs ,  Récits </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>De la pierre au ciment  Résumé</td><td>20</td><td>Paul Girard </td><td>Vizille </td><td>Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>La carrière oubliée  Résumé</td><td>24</td><td>Georges Martin </td><td>Notre Dame de Mésage , Pays vizillois </td><td>Histoires ,  Arts ,  Géologie </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>L'usine électrique et la glacière à Vaulnaveys-le-Haut  Résumé</td><td>30</td><td>Charles Paillet </td><td>Uriage </td><td>Vie locale ,  Activités industrielles ,  Activités artisanales , Personnages remarquables </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Débits de boissons à Saint-Pierre-de-Mésage  Résumé</td><td>33</td><td>Gaby Vair </td><td>Saint Pierre de Mésage </td><td>Vie locale ,  Activités commerçantes </td><td>XVIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Une figure pittoresque du Château de Paille dans les années 1950 « Kiki la rate »  Résumé</td><td>36</td><td>Colette Expilly </td><td>Vizille </td><td>Souvenirs ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Vizille à travers la presse et les revues  Résumé</td><td>38</td><td>- ,  Jean Gonnet </td><td>Vizille </td><td>Vie locale </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>je suis descendu de ma tribune, mais je vais revenir  Résumé</td><td>39</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Patrimoine </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Le Blanco  Résumé</td><td>47</td><td>Denis Bellon </td><td>Matheysine ,  Pays vizillois </td><td>Vie locale </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Qu'est-ce qu'un zouave 7 (  Résumé</td><td>48</td><td>Jean Caelen </td><td>Pays vizillois </td><td>Histoires ,  Guerres </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Châteauneuf à Haute-Jarrie  Résumé</td><td>51</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Lieux remarquables ,  Patrimoine </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Résistance : Paul Reymond, un des derniers témoins  Résumé</td><td>61</td><td>Dominique Rossi </td><td>Vizille </td><td>Guerres ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Le symbolisme au cimetière Les animaux (2ème partie) (  Résumé</td><td>64</td><td>Marie-Claude Argoud </td><td>Vizille </td><td>Lieux du pays vizillois ,  Lieux remarquables ,  Traditions </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Une très curieuse adoption apparaît dans un registre d'état civil de Jarrie  Résumé</td><td>68</td><td>Pierre Coing Boyat </td><td>Jarrie ,  Vizille </td><td>Histoires </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>L'eau, les canaux Lignes de vie de notre histoire  Résumé</td><td>71</td><td>Marie-Claude Argoud </td><td>Pays vizillois ,  Vizille </td><td>Vie locale ,  Lieux du pays vizillois ,  Activités industrielles </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Table des articles publiés dans Mémoire du n° 56 au n° 63 Résumé</td><td>73</td><td>Collectif - les Amis de l'Histoire </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°58</td><td>Table des articles publiés dans Mémoire du n° 49 au n° 55 Résumé</td><td>80</td><td>- </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>La fin du carreau minier de Saint-Georges-de-Commiers Résumé</td><td>03 à 09</td><td>Jacques Gasqui </td><td>Matheysine ,  Saint Georges de Commiers </td><td>,  Mines et minéralogie ,  Activités industrielles ,  Transports </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Marius Bœuf (1898-1985), conducteur de trains sur le chemin de fer de La Mure  Résumé</td><td>10 à 11</td><td>Fernand Boeuf </td><td>Matheysine ,  Saint Georges de Commiers </td><td>Mines et minéralogie ,  Transports </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Souvenirs de la période 1939-1945 - Rencontre avec Fernand Bœuf  Résumé</td><td>12 à 14</td><td>Jacques Gasqui </td><td>Saint Georges de Commiers </td><td>Mines et minéralogie ,  Activités industrielles ,  Transports </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Les origines de Vizille  Résumé</td><td>20</td><td>Quentin Jagadzinskil </td><td>Pays vizillois ,  Vizille </td><td>Histoires </td><td>IIe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Vieille-Morte « Une histoire de roche, d'eau... et d'hommes » (  Résumé</td><td>28</td><td>Nathalie Poiret </td><td>Pays vizillois ,  Bourg d'Oisans </td><td>Lieux du pays vizillois ,  Lieux remarquables ,  Eau, rivières, canaux et fontaines ,  Archéologie </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Le premier festival de Vizille en 1973 - Till l'espiègle  Résumé</td><td>35</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Le Manoir des Rolland  Résumé</td><td>53</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Lieux du pays vizillois ,  ,  Bâtiments et édifices </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Saint-Roch, patron des épidémies (Monique Bonvallet) Résumé</td><td>60</td><td>Denis Bellon , Monique Bonvallet </td><td>France </td><td>Personnages remarquables </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>La peste en 1348 ..  Résumé</td><td>65</td><td>Denis Bellon </td><td>Jarrie ,  Vizille </td><td>Histoires ,  Grandes périodes </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Brèves de peste  Résumé</td><td>69</td><td>Pierre Coing Boyat </td><td>Pays vizillois </td><td>Histoires ,  Grandes périodes ,  Récits </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Regards d'artistes  Résumé</td><td>73</td><td>Henri Ondel </td><td>Vizille </td><td>Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>« Marianne de profil » à l'Hôtel de Ville de Vizille  Résumé</td><td>77</td><td>Denis Bellon </td><td>Vizille </td><td>Lieux remarquables ,  Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°59</td><td>Le tableau de l'Assemblée de Vizille par Alexandre Debelle  - Résumé</td><td>80</td><td>Paul Girard </td><td>Isère ,  Vizille ,  France </td><td>Lieux remarquables ,  Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Le retour de Lucie Baud  Résumé</td><td>3</td><td>Michèle Perrot </td><td>Vizille </td><td>Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Un nouveau siège - De Notre-Dame de Mésage à Vizille ( Résumé</td><td>04 à 06</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Quatre prix  Résumé</td><td>7</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Quatre prix  Résumé</td><td>7</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Les grands rendez-vous de l'histoire du Pays Vizillois Résumé</td><td>07 à 26</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Les numéros spéciaux  Résumé</td><td>43</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Mémoire, la revue  Résumé</td><td>53</td><td>Collectif - les Amis de l'Histoire </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Les assemblées générales, de Vizille à Champ-sur-Drac Résumé</td><td>55</td><td>Jacques Gasqui </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Vizille, ville en transition  Résumé</td><td>57</td><td>Denis Bellon </td><td>Vizille </td><td>Activités industrielles ,  Activités artisanales ,  Activités commerçantes ,  Actualités </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Faisons chanter « l'orgue du Pays Vizillois »  Résumé</td><td>60</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Lieux remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>S.O.S. Prieuré  Résumé</td><td>65</td><td>Pierrette Tournier ,  Nathalie Poiret </td><td>Vizille </td><td>,  Lieux remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>La mascarade passe, et lonlonlère...  Résumé</td><td>68 à 70</td><td>- ,  Michèle Delahaye-Ferrafiat </td><td>Vizille </td><td>Vie locale ,  Récits </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Les nouveaux outils de communication  Résumé</td><td>70</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>Vie de l'association ,  Medias ,  technologies </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Le patrimoine funéraire  Résumé</td><td>73</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>,  Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°60</td><td>Saint-Roch, patron des épidémies (suite)  Résumé</td><td>73</td><td>Monique Bonvallet </td><td>Pays vizillois </td><td>Religions ,  Traditions </td><td>- </td></tr>
+<tr><td>Mémoire n°60</td><td>Histoire de Haute-Jarrie et de la famille Teyssier de Savy (suite)  Résumé</td><td>76</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>Histoires ,  Personnages remarquables </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Laffrey ,  Vizille </td><td>Edito </td><td>XVe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>L'épopée de Napoléon, d'une île à l'autre  Résumé</td><td>03 à 09</td><td>Patrick Laudet </td><td>Laffrey ,  Pays vizillois , Vizille ,  Brié ,  France </td><td>Vie locale ,  Histoires ,  Grandes périodes , Personnages remarquables </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Le destin de la statue équestre de l'empereur  Résumé</td><td>10 à 14</td><td>Raymond Joffre </td><td>Grenoble ,  Laffrey ,  Pays vizillois </td><td>Histoires ,  Personnages remarquables ,  Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Dominique Jean Larrey, chirurgien en chef de la Grande Armée  Résumé</td><td>15 à 20</td><td>Denis Bellon ,  Jacques Gasqui </td><td>Pays vizillois </td><td>Guerres ,  Grandes périodes ,  Personnages remarquables </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Napoléon et la réglementation minière - La loi du 21 avril 1810  Résumé</td><td>21 à 22</td><td>Marie-Christine Bailly-Maitre - </td><td>Pays vizillois ,  France </td><td>Mines et minéralogie ,  Grandes périodes </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>La statue équestre de Napoléon à Laffrey  Résumé</td><td>23 à 25</td><td>- </td><td>Laffrey </td><td>Histoires ,  Personnages remarquables ,  Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Les « Réfugiés Politiques Espagnols »  Résumé</td><td>26 à 28</td><td>Carlos Vasquez-Marquénez </td><td>Vizille </td><td>Histoires ,  Guerres </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Le catalogue  Résumé</td><td>41</td><td>- </td><td>- </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>La vie de deux adolescents dans la tourmente de la guerre (1939-1945) - Pierre Ruibet et Mathilde Robert  Résumé</td><td>54 à 57</td><td>Albert Samuell </td><td>Vizille </td><td>Guerres ,  Personnages remarquables , Evènements </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Pierre Ruibet - Histoire complète  Résumé</td><td>58 à 61</td><td>gérard Guétat </td><td>Vizille ,  France </td><td>Guerres ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Mistral gagnant à la Gaffe Vizille  Résumé</td><td>62 à 67</td><td>Cécile Mauvy (Vivarat) , Monique Canie </td><td>Vizille </td><td>Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>La Pierre des rois  Résumé</td><td>68 à 70</td><td>Interview </td><td>Pays vizillois </td><td>Histoires </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Souvenir de l'Occupation à Saint-Georges-de-Commiers (rencontre avec Jany Filhol)  Résumé</td><td>71 à 73</td><td>Jacques Gasqui , Interview </td><td>Pays vizillois ,  Saint Georges de Commiers </td><td>Histoires ,  Guerres ,  Récits </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°61</td><td>Qui était « Patte d'ours » et que nous raconte Alexandre Debelle ?  Résumé</td><td>74 à 78</td><td>- ,  Jean Vallon </td><td>Vizille </td><td>Histoires ,  Arts </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Première du Festival de Vizille  Résumé</td><td>03 à 04</td><td>Louis Beyler </td><td>Vizille </td><td>Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Les festivals de Louis Beyler - 1976-La mère  Résumé</td><td>05 à 11</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Paul Michel, photographe  Résumé</td><td>12 à 15</td><td>Jean Huyghe </td><td>Vizille </td><td>Arts </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Paul Michel, photographe  Résumé</td><td>12 à 15</td><td>Jean Huyghe </td><td>Vizille ,  Belledonne , L'Oisans </td><td>Arts </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Paul Michel, photographe  Résumé</td><td>12 à16</td><td>Jean Huyghe </td><td>Massif de Belledonne , Vizille ,  L'Oisans </td><td>Lieux remarquables ,  Souvenirs ,  Photographie </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Les élèves découvrent Vizille - Le château du Roi  Résumé</td><td>17 à 18</td><td>- </td><td>Vizille </td><td>Lieux remarquables ,  Histoires </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Les élèves découvrent Vizille - Notre Mairie  Résumé</td><td>19 à 20</td><td>Rémi Riolan </td><td>Vizille </td><td>Lieux remarquables ,  Histoires </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Mathématiques et chemins de fer (ou René Thom sur le petit train de La Mure] (-  Résumé</td><td>21 à 22</td><td>Jacques Gasqui </td><td>Matheysine ,  Vizille </td><td>Voies de communication ,  Transports </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>La maison de Petichet  Résumé</td><td>23 à 25</td><td>- ,  Evelyne Dress </td><td>Matheysine </td><td>Lieux remarquables ,  Littérature </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Raconte-moi Allemond  Résumé</td><td>26 à 31</td><td>Pierrette Tournier </td><td>Allemond (38114) </td><td>Histoires ,  Théâtre </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Ambiance à Vaulnaveys (  Résumé</td><td>32 à 34</td><td>Pierre Coing Boyat </td><td>Vaulnaveys le haut </td><td>Souvenirs </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Les ascensions oubliées des officiers géographes (1748-1778) Résumé</td><td>35 à 40</td><td>Olivier Joseph ,  Paul Billon-grand </td><td>L'Oisans </td><td>Lieux remarquables ,  Histoires </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Le prieuré de Vizille en BD  Résumé</td><td>41 à 44</td><td>Pierre Martin </td><td>Vizille </td><td>Lieux remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Le prieuré de Vizille en BD  Résumé</td><td>41 à 44</td><td>Georges Martin </td><td>Vizille </td><td>Lieux du pays vizillois ,  Bâtiments et édifices ,  Lieux remarquables ,  Religions </td><td>Xe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>La Pierre des Rois (suite)  Résumé</td><td>45 à 46</td><td>Georges Martin </td><td>Saint Pierre de Mésage </td><td>Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Pour en savoir plus - Une promenade dans les salles du Louvre Résumé</td><td>47 à 49</td><td>Denis Bellon </td><td>Pays vizillois ,  France </td><td>Lieux remarquables ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>L'histoire discrète de l'église Saint-Antoine de Livet  Résumé</td><td>50 à 54</td><td>Caroline Guérin </td><td>Livet et Gavet </td><td>Lieux du pays vizillois ,  ,  Lieux remarquables , Religions ,  Arts </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Le travail textile à Vizille  Résumé</td><td>55 à 69</td><td>Quentin Jagadzinskil </td><td>Vizille </td><td>,  Activités industrielles </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Vieille-Morte - Des logis et des écuries ? Des ruines...  Résumé</td><td>70 à 79</td><td>Nathalie POIRET </td><td>L'Oisans </td><td>,  Histoires </td><td>XIIe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Les déplacements de Jean Jaurès en région « Rhône-Alpes » () Résumé</td><td>79</td><td>Catherine Moulin </td><td>Vizille </td><td>Personnages remarquables ,  Evènements </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire N°62</td><td>Les déplacements de Jean Jaurès en région «Rhône-Alpes» - 2ème partie  Résumé</td><td>80 à 83</td><td>- </td><td>Vizille </td><td>Histoires ,  Personnages remarquables </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Pays vizillois ,  Vizille </td><td>,  Histoires </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>L'ancien canton de Vizille de la préhistoire à l'AN MIL  Résumé</td><td>03 à 09</td><td>Jean-Claude Michel </td><td>Pays vizillois ,  Vizille </td><td>Lieux du pays vizillois ,  ,  Grandes périodes </td><td>Avant J-C </td></tr>
+<tr><td>Mémoire n°63</td><td>La « Fontaine puant » au hameau des Essoulieux (commune du Bourg d'Oisans)  Résumé</td><td>10 à 11</td><td>Nathalie Poiret </td><td>Bourg d'Oisans </td><td>Lieux remarquables ,  Eau, rivières, canaux et fontaines </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Le dernier train  -  Résumé</td><td>12 à 19</td><td>Denis Bellon </td><td>Pays vizillois ,  Vizille </td><td>Voies de communication </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Les mémoires de Carmen Saunier  Résumé</td><td>20 à 36</td><td>Carmen Saunier </td><td>Pays vizillois ,  Vizille ,  Bourg d'Oisans </td><td>Histoires ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Les Gourlus  Résumé</td><td>37 à 40</td><td>Claudie Picot </td><td>Vizille </td><td>Théâtre </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Le prieuré de Vizille en BD  Résumé</td><td>41 à 44</td><td>Georges Martin </td><td>Vizille </td><td>,  Bâtiments et édifices ,  Lieux remarquables , Religions </td><td>XIIe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>L'histoire du château de Cornage de Lesdiguières à nos jours  Résumé</td><td>45 à 46</td><td>Gérard Mingat , Gilles Rey </td><td>Vizille </td><td>,  Bâtiments et édifices ,  Lieux remarquables </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Bon Repos - Grandeur et décadence ou les misères d'un château Résumé</td><td>47 à 55</td><td>Pierre Coing Boyat </td><td>Jarrie </td><td>,  Bâtiments et édifices ,  Lieux remarquables </td><td>XIVe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>L'Académie Delphinale, 250 ans d'histoire et de mémoire en Dauphiné Résumé</td><td>56 à 58</td><td>Denis Bellon </td><td>Isère </td><td>,  Documents remarquables </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>1982 - Les Trois Mousquetaires - Louis Beyler Le Festival de Vizille fête ses 10 ans...  Résumé</td><td>59 à 66</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Théâtre ,  Arts </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Casimir, André, Gérard Berthon et le rugby  Résumé</td><td>67 à 72</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Souvenirs ,  Sport </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°63</td><td>Balade vizilloise au fil des panneaux  Résumé</td><td>73 à 81</td><td>Pierrette Tournier </td><td>Vizille </td><td>,  Bâtiments et édifices ,  Lieux remarquables ,  Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille ,  - </td><td>Lieux du pays vizillois ,  ,  Lieux remarquables , Divers </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Le poids public de Vizille ou « la bascule »  Résumé</td><td>12 à 20</td><td>Nathalie POIRET </td><td>- </td><td>Bâtiments et édifices ,  Histoires </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Le cahier de route de Charvet  Résumé</td><td>20 à 27</td><td>Pierrette Tournier </td><td>Vizille ,  - </td><td>Histoires ,  Personnages remarquables </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Le tram ne viendra plus sur la place  Résumé</td><td>28</td><td>Denis Bellon </td><td>Vizille </td><td>Voies de communication ,  Histoires </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Ils eurent leur temps de célébrité...! maintenant nos vieux trams tombent sous les coups des démolisseurs  Résumé</td><td>29</td><td>Aimé Mollard </td><td>Vizille </td><td>Voies de communication ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Le petit train départemental des V.F.D. a fait son dernier voyage  Résumé</td><td>30 à 31</td><td>Denis Bellon </td><td>Vizille ,  Bourg d'Oisans </td><td>Voies de communication </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Des locomotives au pied des Alpes - De la gare Jarrie-Vizille à la gare  Résumé</td><td>32 à 35</td><td>Pascal Reinhard </td><td>Jarrie ,  Vizille </td><td>Voies de communication </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Champagne à Brié - Mont-Rolland  Résumé</td><td>36 à 40</td><td>Pierre Coing Boyat , Denise Rostaing </td><td>Jarrie </td><td>Histoires ,  Enseignement </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Le prieuré de Vizille en BD  Résumé</td><td>41 à 44</td><td>Georges Martin </td><td>Vizille </td><td>,  Bâtiments et édifices ,  Lieux remarquables , Religions ,  Arts </td><td>XIIIe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>1979 - Ah ! Si Arthur était là... Le Vilème festival de Vizille  Résumé</td><td>45 à 52</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Contes et légendes ,  Théâtre </td><td>XIIe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Histoire de la famille Brun - Du rouleau à pâtisserie au rouleau compresseur !  - Résumé</td><td>53 à 59</td><td>Jean-Louis Philip </td><td>Vizille </td><td>Activités industrielles ,  Activités commerçantes , Personnages remarquables </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Les facteurs ruraux du Pays Vizillois sous le Second Empire  Résumé</td><td>60 à 63</td><td>Jacques Gasqui </td><td>Vizille ,  Canton (38220) </td><td>Vie locale </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Le centre d'apprentissage bilan d'une année de travail - 14 juillet 1952  Résumé</td><td>64 à 65</td><td>Denis Bellon </td><td>Vizille </td><td>Enseignement ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Jean Seyer (Surville nom de code dans la Résistance) un Lorrain au maquis de l'Disans  Résumé</td><td>66 à 70</td><td>Denis Bellon </td><td>Vizille </td><td>Histoires ,  Guerres ,  Grandes périodes , Evènements </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Essai sur l'histoire minière et minéralogique des anciennes mines de fer de la commune de Saint-Pierre de Mésage  Résumé</td><td>71 à 81</td><td>- </td><td>Saint Pierre de Mésage </td><td>Mines et minéralogie </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°64</td><td>Les courriers de nos lecteurs  Résumé</td><td>82</td><td>- </td><td>- </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Éditorial  Résumé</td><td>2</td><td>Denis Bellon </td><td>Vizille </td><td>Vie de l'association </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>La recherche historique, une histoire à rebondissements  Résumé</td><td>03 à 09</td><td>Pierre Coing Boyat </td><td>Canton (38220) </td><td>Lieux du pays vizillois ,  Lieux remarquables ,  Histoires , Documents remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>La centrale hydroélectrique des Vernes - Une histoire remarquable  Résumé</td><td>10 à 17</td><td>Marie-Christine Bailly-Maitre - </td><td>Séchilienne ,  Livet et Gavet ,  Rioupéroux </td><td>Activités industrielles ,  Personnages remarquables ,  Eau, rivières, canaux et fontaines </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Les édifices religieux de l'ancien canton de Vizille - fère partie Résumé</td><td>18 à 30</td><td>Jean-Claude Michel </td><td>Canton (38220) </td><td>,  Bâtiments et édifices ,  Religions </td><td>Ve siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>La remplaçante  Résumé</td><td>31 à 35</td><td>Collectif - les Amis de l'Histoire </td><td>Vizille </td><td>Littérature </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>La poésie du jour par l'intelligence artificielle sur Vizille  Résumé</td><td>36</td><td>Roland Mastrorillo </td><td>Vizille </td><td>Divers </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Symphonie lacustre - Les lacs du Dauphiné - fère partie  Résumé</td><td>38 à 40</td><td>Thierry Grand </td><td>Laffrey ,  L'Oisans ,  Canton (38220) </td><td>Lieux remarquables ,  Eau, rivières, canaux et fontaines </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Parrainage des tuyaux d'orgue  Résumé</td><td>41 à 44</td><td>Daniel Blanc-Gonnet </td><td>Vizille </td><td>,  Bâtiments et édifices ,  Lieux remarquables ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Symphonie lacustre - Les lacs du Dauphiné (suite)  Résumé</td><td>45 à 49</td><td>Thierry Grand </td><td>Massif de Belledonne , L'Oisans </td><td>Lieux remarquables ,  Eau, rivières, canaux et fontaines </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Restauration de la locomotive à vapeur bicabine n° 31 en Ardèche  Résumé</td><td>50 à 51</td><td>Denis Bellon </td><td>France </td><td>,  Voies de communication </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Maurice Gaillard  Résumé</td><td>52 à 54</td><td>Bernard Tixier </td><td>Vizille </td><td>Guerres ,  Grandes périodes ,  Personnages remarquables </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>L'histoire dans les archives communales - Le vingt-quatrième des pauvres  Résumé</td><td>55 à 56</td><td>Pierre Coing Boyat </td><td>France ,  Canton (38220) </td><td>Religions ,  Divers </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Souvenirs de Mohamed Boumeghra  Résumé</td><td>57 à 58</td><td>Jeannette Della-Vedova </td><td>Vizille </td><td>Vie locale ,  Evènements ,  Souvenirs </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Les vingt ans de l'association des amis de la chapelle  Résumé</td><td>59 à 60</td><td>- </td><td>Vizille </td><td>,  Actualités </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Les vingt ans de l'association des amis de la chapelle Saint-Barthélemy à Sersigaud  Résumé</td><td>59 à ,60</td><td>Jocelyne BELLON </td><td>France </td><td>,  Bâtiments et édifices ,  Lieux remarquables ,  Personnages remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>La chapelle Saint-Barthélemy à Sersigaud  Résumé</td><td>61 à 68</td><td>Paul Schwoerer </td><td>Matheysine </td><td>,  Bâtiments et édifices ,  Lieux remarquables ,  Religions </td><td>- </td></tr>
+<tr><td>Mémoire n°65</td><td>La complainte de Mandrin  Résumé</td><td>69 à 72</td><td>Gilbert Jacquet </td><td>France </td><td>Histoires </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°65</td><td>Vizille demain  Résumé</td><td>73 à 78</td><td>Denis Bellon </td><td>Vizille </td><td>Activités artisanales ,  Activités commerçantes ,  Arts </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>40000€ pour le prieuré de Vizille  Résumé</td><td>1</td><td>Denis Bellon </td><td>Vizille </td><td>Lieux remarquables ,  Vie de l'association ,  Patrimoine </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Éditorial  Résumé</td><td>2</td><td>- </td><td>Pays vizillois </td><td>Edito </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>L'ancien diocèse de Grenoble et son art roman - Le Pays Vizillois  Résumé</td><td>3</td><td>Apolinne Troyes </td><td>Pays vizillois </td><td>Lieux du pays vizillois ,  Lieux remarquables ,  Histoires ,  Religions , Arts </td><td>IXe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Bâtiments et monuments que la pierre a bâtis !  Résumé</td><td>19</td><td>Thierry Grand </td><td>Pays vizillois </td><td>Lieux remarquables ,  Mines et minéralogie </td><td>Avant J-C </td></tr>
+<tr><td>Mémoire n°66</td><td>Les édifices religieux de l'ancien canton de Vizille - 2ème partie  Résumé</td><td>31</td><td>Jean-Claude Michel </td><td>Pays vizillois </td><td>Lieux du pays vizillois ,  Bâtiments et édifices ,  Lieux remarquables ,  Religions ,  Arts </td><td>IXe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>La remplaçante (suite)  Résumé</td><td>44</td><td>- </td><td>Pays vizillois </td><td>Personnages remarquables ,  Littérature </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>La poésie du jour 0 par l'intelligence artificielle sur Vizille Résumé</td><td>49</td><td>- </td><td>Vizille </td><td>Littérature ,  technologies </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>les mines de l’hermine  Résumé</td><td>50</td><td>Marie-Christine Bailly-Maitre - </td><td>L'Oisans ,  L'Alpe d'Huez </td><td>Activités industrielles ,  Montagne ,  Récits ,  Géologie </td><td>XIXe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Lucie Baud a enfin son école à Saint-Pierre de Mésage Résumé</td><td>61</td><td>Denis Bellon </td><td>Saint Pierre de Mésage </td><td>Histoires ,  Grandes périodes ,  Personnages remarquables </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Le tremplin de Saint-Nizier  Résumé</td><td>64</td><td>Denis Bellon </td><td>Grenoble </td><td>Lieux remarquables ,  Histoires ,  Evènements ,  Sport </td><td>XXe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Cérémonie du 11 novembre 2023  Résumé</td><td>67</td><td>Pierrette Tournier </td><td>Pays vizillois , Vizille </td><td>Vie locale ,  Guerres ,  Souvenirs ,  Récits ,  Traditions </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Rencontre à Séchilienne  Résumé</td><td>69</td><td>Bernard Ycart </td><td>Pays vizillois </td><td>Histoires ,  Personnages remarquables ,  Récits </td><td>XVIIIe siècle </td></tr>
+<tr><td>Mémoire n°66</td><td>Et si on parlait BD ?  Résumé</td><td>78</td><td>Georges Martin </td><td>Pays vizillois </td><td>Arts ,  Bande dessinée </td><td>XXIe siècle </td></tr>
+<tr><td>Mémoire n°67</td><td>Éditorial</td><td>2</td><td>Denis Bellon</td><td>Vizille</td><td>Vie associative / Introduction</td><td>XXIe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Les papeteries de Vizille - Une histoire de familles</td><td>3</td><td>Gérard Coste</td><td>Vizille</td><td>Histoire industrielle / Papeterie</td><td>XIXe-XXe siècles</td></tr>
+<tr><td>Mémoire n°67</td><td>Château de Maupertuis dit Château d’Hugues</td><td>15</td><td>Pierre Coing-Boyat</td><td>Vizille</td><td>Patrimoine bâti / Châteaux</td><td>Moyen Âge</td></tr>
+<tr><td>Mémoire n°67</td><td>Le chemin de croix de Luc Barbier à l’église de Vizille</td><td>23</td><td>Michel Merlin, Michel Vallon</td><td>Vizille</td><td>Art religieux / Patrimoine religieux</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Un parcours historique vizillois</td><td>27</td><td>nan</td><td>Vizille</td><td>Parcours patrimonial / Découverte locale</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>La poterne du Château du Roi</td><td>29</td><td>La classe de CM1 de l’École Jean Jaurès à Vizille</td><td>Vizille</td><td>Patrimoine bâti / Architecture militaire</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>VIIIᵉ festival de Vizille : Roméo et Juliette 19, 20, 21, 24, 25, 26, 27, 28 juin 1980</td><td>33</td><td>Jeannette Della Vedova</td><td>Vizille</td><td>Culture / Festivals / Théâtre</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>IXᵉ festival de Vizille - 1981 - Songe d’une nuit d’été</td><td>37</td><td>Jeannette Della Vedova</td><td>Vizille</td><td>Culture / Festivals / Théâtre</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>La remplaçante (suite)</td><td>41</td><td>Henri Bordeaux</td><td>Vizille</td><td>Littérature / Souvenirs</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>L’orgue de Vizille - À la recherche de parrains pour ses tuyaux</td><td>47</td><td>Daniel Blanc-Gonnet</td><td>Vizille</td><td>Patrimoine musical / Orgues</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Le clocher de l’église Sainte-Marie de Clelles</td><td>51</td><td>Marcel Perrichon</td><td>Clelles</td><td>Patrimoine religieux / Architecture</td><td>XIXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>L’église Saint-Étienne de Haute-Jarrie</td><td>56</td><td>Pierre Coing-Boyat</td><td>Haute-Jarrie</td><td>Patrimoine religieux / Architecture</td><td>XIXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Dans les secrets de la minéralogie en Matheysine</td><td>62</td><td>Thierry Grand</td><td>Matheysine</td><td>Sciences naturelles / Minéralogie</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Vizille, capitale du cinéma !</td><td>71</td><td>Jean-Louis Rossi</td><td>Vizille</td><td>Culture / Cinéma</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Été 1903 : avec les chasseurs alpins au Mont Aiguille</td><td>74</td><td>Jacques Gasqui</td><td>Mont Aiguille</td><td>Mémoire militaire / Chasseurs alpins</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Souscription « Le Pays Vizillois à l’épreuve de la guerre - 1940 - 1945 »</td><td>77</td><td>nan</td><td>Vizille</td><td>Deuxième Guerre mondiale / Résistance</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Carnet de route d’un maquisard Raymond BREDÈCHE</td><td>78</td><td>Pierrette Tournier</td><td>Oisans ou Vizille</td><td>Deuxième Guerre mondiale / Résistance</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>Rassemblons nos souvenirs</td><td>84</td><td>Jocelyne Bellon</td><td>Vizille</td><td>Mémoire collective / Témoignages</td><td>XXe-XXIe siècle</td></tr>
+<tr><td>Mémoire n°67</td><td>La page utile</td><td>nan</td><td>nan</td><td>Vizille</td><td>Vie pratique / Informations utiles</td><td>XXIe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Éditorial</td><td>2</td><td>Denis Bellon</td><td>Vizille</td><td>Vie associative / Introduction</td><td>XXIe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Exposition internationale de la Houille Blanche et du tourisme de Grenoble</td><td>3</td><td>Alain Robert</td><td>Grenoble</td><td>Expositions / Tourisme / Hydroélectricité</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>La fonderie d’or de Saint-Maurice en Trièves - Témoin de la proto-industrialisation en milieu rural au milieu du XIVe siècle</td><td>14</td><td>Alice Rouch-Colomb</td><td>Saint-Maurice-en-Trièves</td><td>Proto-industrialisation / Métallurgie</td><td>XIVe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Des trésors d’Histoire à Vizille - Les collections du Centre de Ressources Albert Soboul</td><td>22</td><td>Bernard Ycart, Véronique Despine-Faure</td><td>Vizille</td><td>Collections patrimoniales / Musées</td><td>XXIe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Né à Vizille : Victor Ardouin-Dumazet - « Voyage en France »</td><td>35</td><td>Michel Thuillier</td><td>Vizille</td><td>Biographie / Voyage</td><td>XIXe-XXe siècles</td></tr>
+<tr><td>Mémoire n°68</td><td>Le Prieuré de Vizille</td><td>41</td><td>Georges Martin</td><td>Vizille</td><td>Patrimoine religieux / Architecture</td><td>Moyen Âge - XIXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Vous reconnaissez-vous ?</td><td>45</td><td>Denis Bellon</td><td>Vizille</td><td>Mémoire collective / Vie locale</td><td>XXe-XXIe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Des espions au Fort de Comboire</td><td>47</td><td>Denis Bellon</td><td>Comboire (Échirolles)</td><td>Histoire militaire / Espionnage</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>L’organiste, un conte d’Alphonse Daudet</td><td>49</td><td>Alphonse Daudet</td><td>nan</td><td>Littérature / Contes</td><td>XIXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>La pisciculture du Domaine de Vizille</td><td>52</td><td>Marie-Claude Argoud</td><td>Vizille</td><td>Économie locale / Pisciculture</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Le Ve festival de Vizille - Louis Mandrin (1ère partie)</td><td>62</td><td>Jeannette Della Vedova, Robert Aillaud</td><td>Vizille</td><td>Culture / Festivals / Théâtre</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Le Ve festival de Vizille - 1977 - Louis Mandrin (2ème partie)</td><td>71</td><td>nan</td><td>Vizille</td><td>Culture / Festivals / Théâtre</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Compléments d’informations</td><td>82</td><td>nan</td><td>nan</td><td>Informations / Vie locale</td><td>XXIe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>Le Dauphiné gastronomique en 1930</td><td>84</td><td>nan</td><td>Dauphiné</td><td>Gastronomie / Patrimoine culinaire</td><td>XXe siècle</td></tr>
+<tr><td>Mémoire n°68</td><td>La page utile</td><td>nan</td><td>nan</td><td>Vizille</td><td>Vie pratique / Informations utiles</td><td>XXIe siècle</td></tr></tbody>
     </table>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#articles-table').DataTable({
-                ajax: 'articles.csv',
-                columns: [
-                    { data: 'Numéro' },
-                    { data: 'Titre' },
-                    { data: 'Page(s)' },
-                    { data: 'Auteur(s)' },
-                    { data: 'Ville(s)' },
-                    { data: 'Theme(s)' },
-                    { data: 'Epoque' }
-                ],
-                dom: 'Bfrtip',
-                paging: true
+                responsive: true,
+                pageLength: 10
             });
         });
     </script>
