@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Articles – AHPV</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <style>
-    body { font-family: sans-serif; margin: 2rem; max-width: 1600px; }
-    table { width: 100%; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 <body>
-
-  <h1>Articles de la collection Mémoire</h1>
-  <table id="articles-table" class="display"></table>
-
-  <script>
-    Papa.parse("articles.csv", {
-      download: true,
-      header: true,
-      complete: function(results) {
-        const data = results.data;
-        const columns = Object.keys(data[0]).map(key => ({ title: key, data: key }));
-
-        $('#articles-table').DataTable({
-          data: data,
-          columns: columns,
-          pageLength: 10,
-          lengthMenu: [10, 25, 50, 100],
-          language: {
-            url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"
-          }
+    <h1>Articles</h1>
+    <table id="articles-table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Titre</th>
+                <th>Page(s)</th>
+                <th>Auteur(s)</th>
+                <th>Ville(s)</th>
+                <th>Theme(s)</th>
+                <th>Epoque</th>
+            </tr>
+        </thead>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#articles-table').DataTable({
+                ajax: 'articles.csv',
+                columns: [
+                    { data: 'Numéro' },
+                    { data: 'Titre' },
+                    { data: 'Page(s)' },
+                    { data: 'Auteur(s)' },
+                    { data: 'Ville(s)' },
+                    { data: 'Theme(s)' },
+                    { data: 'Epoque' }
+                ],
+                dom: 'Bfrtip',
+                paging: true
+            });
         });
-      }
-    });
-  </script>
-
+    </script>
 </body>
 </html>

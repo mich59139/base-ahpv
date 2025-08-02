@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Auteurs</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 <body>
-    <iframe src="auteurs.csv" width="100%" height="800"></iframe>
+    <h1>Auteurs</h1>
+    <table id="auteurs-table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Nombre d'articles</th>
+                <th>Dernier article</th>
+            </tr>
+        </thead>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#auteurs-table').DataTable({
+                ajax: 'auteurs.csv',
+                columns: [
+                    { data: 'Nom' },
+                    { data: 'Nombre d\'articles' },
+                    { data: 'Dernier article' }
+                ],
+                dom: 'Bfrtip',
+                paging: true
+            });
+        });
+    </script>
 </body>
 </html>
